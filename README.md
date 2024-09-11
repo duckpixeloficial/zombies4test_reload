@@ -29,5 +29,3 @@
 
  
 # Have fun! ..
-# zombies4test
-# zombies4test
