@@ -1,0 +1,13 @@
+# Blender MTL File: 'maca_hospital.blend'
+# Material Count: 1
+
+newmtl m_df083ac9-80a3-c360-4947-d4db35578d4c
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd hospital_gurney.png

@@ -1,0 +1,12 @@
+-- Sound :
+-- https://freesound.org/people/missozzy/sounds/169985/
+-- https://freesound.org/people/zglar/sounds/232289/
+-- swoosh1 : https://freesound.org/people/lesaucisson/sounds/585257/
+-- swoosh2 : https://freesound.org/people/lesaucisson/sounds/585256/
+-- sound : https://freesound.org/people/domiscz/sounds/461734/
+--- Sound : https://freesound.org/people/arialfa07/sounds/516618/
+-- sounds : https://freesound.org/people/DaveCarter/sounds/109138/ (DaveCarter
+-- cash : https://freesound.org/people/kjackson/sounds/32629/ (kjackson))
+-- Zombie death : https://freesound.org/people/tonsil5/sounds/555412/
+-- Zombie Hit : https://freesound.org/people/tonsil5/sounds/555420/
+-- Zombie Angry : https://freesound.org/people/ChuckChuckGoof/sounds/559558/
