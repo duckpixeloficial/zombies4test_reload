@@ -36,7 +36,7 @@ mobs:register_mob("zombies4test:tankzombie", {
 	view_range = 35,
 	drops = {
 		
-		{name = "zombies4test:chainsaw", chance = 2, min = 1, max = 1},
+		{name = "zombies4test:chainsaw", chance = 2, min = 1, max = 1}, ------- remover da loja pra ser item especial do tank
 		{name = "zombies4test:zcoin", chance = 1, min = 5, max = 5},
 		
 	},

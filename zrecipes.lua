@@ -330,7 +330,7 @@ minetest.register_craft({   ------ CRaFT
     output = "zombies4test:vases",
     recipe = {
         {"","group:leaves",""},
-        {"","group:tree",""},
+        {"","group:soil",""},
         {"","",""}
     }
  })

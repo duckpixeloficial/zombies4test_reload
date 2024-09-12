@@ -78,6 +78,7 @@
 [ Barbed Wire ] [ Barbed Wire ] [ ]
 
 [ Barbed Wire ] [ Barbed Wire ] [ ]
+
 [ ] [ ] [ ]
 
 
@@ -182,7 +183,7 @@
 
 [  ] [ Group Leaves ] [  ]
 
-[  ] [ Group Tree ] [  ]
+[  ] [ group:soil ] [  ]
 
 [  ] [ ] [ ]
      

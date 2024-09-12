@@ -1,5 +1,7 @@
-# "Zombies4Test Reload" is a rework of the Zombies4Test modpack, 
-# which adds zombies, items,tools, structures, and a new challenge to your world.
+### "Zombies4Test Reload" is a rework of the Zombies4Test modpack, 
+### which adds zombies, items,tools, structures, and a new challenge to your world.
+
+
 
  - BY : DUCKGO
  - LICENSE : MIT
@@ -9,23 +11,11 @@
 
  - depends = 
  - optional_depends = 
- 
- Zumbis :
-  - Walking zombie
-  - crawler Zombie
-  - Survivor Zombie
-  - Lumberjack Zombie
-  - Doctor Zombie
-  - Miner Zombie
-  - Runner Zombie (Has higher speed than other zombies)
-  - Spitter Zombie (A little more life, and spits acid)
-  - Tank (Lots of health and lots of damage)
 
-
- NPC :
-   - Jhom Trader
-   
-
+1 - [Getting Starded]()
+2 - [Mobs]()
+3 - [Recipes]()
 
  
-# Have fun! ..
+ 
+### Have fun! ..
