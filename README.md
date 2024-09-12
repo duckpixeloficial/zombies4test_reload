@@ -1,21 +1,28 @@
-### "Zombies4Test Reload" is a rework of the Zombies4Test modpack, 
-### which adds zombies, items,tools, structures, and a new challenge to your world.
 
+![Zombies4test](https://codeberg.org/pixelzone/zombies4test_reload/raw/branch/main/zombies4test.jpg)
 
+### Zombies4Test Reload" is a rework of the Zombies4Test modpack, 
+### which adds zombies, items,tools, structures, and a new challenge to your world...
+---
 
  - BY : DUCKGO
  - LICENSE : MIT
  - TEXTURE : CC-BY-4.0
- - VERSION: 0.1 Alpha
+ - VERSION: 0.1.3 Alpha
+ - depends = mobs
+ - optional_depends =  
+
+---
+
+1 - [Getting Starded](https://codeberg.org/pixelzone/zombies4test_reload/src/branch/main/zwiki/Getting_Started.md)
+
+2 - [Mobs](https://codeberg.org/pixelzone/zombies4test_reload/src/branch/main/zwiki/Mobs.md)
+
+3 - [Recipes](https://codeberg.org/pixelzone/zombies4test_reload/src/branch/main/zwiki/Recipes.md)  
 
 
- - depends = 
- - optional_depends = 
+---
+---
 
-1 - [Getting Starded]()
-2 - [Mobs]()
-3 - [Recipes]()
 
- 
- 
 ### Have fun! ..
