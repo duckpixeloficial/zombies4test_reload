@@ -9,8 +9,10 @@ local function add_boss()
             local pos = player:get_pos()
             local min_pos = {x = pos.x - 50, y = pos.y, z = pos.z - 50}
             local max_pos = {x = pos.x + 50, y = pos.y, z = pos.z + 50}
-            local spawn_pos = {x = pos.x + 20, y = pos.y + 3, z = pos.z + 20}
-
+            local spawn_pos = {x = pos.x + 10, y = pos.y + 3, z = pos.z + 10}
+            
+	    local nodes = minetest.find_nodes_in_area(min_pos, max_pos, {"group:dirt","group:sand","group:stone"})  
+	    
             minetest.sound_play({name = "emergency_power", gain = 1.0, max_hear_distance = 2})
             minetest.chat_send_all(core.colorize("#ff0000", "Attention: Invasion has started!"))
 
