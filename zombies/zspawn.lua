@@ -90,7 +90,7 @@ mobs:spawn({
 
 mobs:spawn({
 	name = "zombies4test:doctorzombie", -- somente em hospital
-	nodes = {"zombies4test:whiteblock","group:dirt"},
+	nodes = {"zombies4test:whiteblock","group:soil"},
 	min_light = 0,
 	max_light = 14,
 	chance = 7000,

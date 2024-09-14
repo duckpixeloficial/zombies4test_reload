@@ -75,7 +75,7 @@ minetest.register_node("zombies4test:road", {
 	description = "Road",
 	tiles = {"road.png"},
 	paramtype2 = "facedir",
-	--groups = {cracky = 3},
+	groups = {cracky = 3},
         drop = "zombies4test:road",
         
          sounds = {        
@@ -95,7 +95,7 @@ minetest.register_node("zombies4test:road2", {
 	description = "Road 2",
 	tiles = {"road_y.png"},
 	paramtype2 = "facedir",
-	--groups = {cracky = 3},
+	groups = {cracky = 3},
         drop = "zombies4test:road2",
         
          sounds = {        
@@ -114,7 +114,7 @@ minetest.register_node("zombies4test:road3", {
 	description = "Road 3",
 	tiles = {"curvedroad.png"},
 	paramtype2 = "facedir",
-	--groups = {cracky = 3},
+	groups = {cracky = 3},
         drop = "zombies4test:road3",
         
          sounds = {        
@@ -133,7 +133,7 @@ minetest.register_node("zombies4test:roadstopline", {
 	description = "Road Stop Line",
 	tiles = {"road_stop_line.png"},
 	paramtype2 = "facedir",
-	--groups = {cracky = 3},
+	groups = {cracky = 3},
         drop = "zombies4test:roadstopline",
        
         sounds = {        

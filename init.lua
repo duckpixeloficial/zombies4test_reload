@@ -21,7 +21,7 @@ dofile(path.."/zombies/spitterzombie.lua")
 dofile(path.."/zombies/survivorzombie.lua")
 dofile(path.."/zombies/tankzombie.lua")
 dofile(path.."/zombies/walkingzombie.lua")
-dofile(path.."/zombies/spawn.lua")
+dofile(path.."/zombies/zspawn.lua")
 
 
 dofile(path.."/weapons/guns.lua")
