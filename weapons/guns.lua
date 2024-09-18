@@ -7,6 +7,7 @@ minetest.register_tool(name.."_discharged", {
     inventory_image = def.inventory_image, --"glock_17_discharged.png", 
     color = "red",
     stack_max = 1,
+    groups = {weapons = 1},
     
     on_use = function(itemstack, user, pointed_thing)
 
@@ -41,7 +42,7 @@ minetest.register_tool(name.."_recharged", {
     description = def.description,--.." Recharged",
     inventory_image = def.inventory_image,  
     stack_max = 1,
-    groups = {not_in_creative_inventory = 1},
+    groups = {not_in_creative_inventory = 1,weapons = 1},
 
     on_use = function(itemstack, user, pointed_thing)
         local max_use = def.max_shot

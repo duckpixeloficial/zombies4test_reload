@@ -1,0 +1,5 @@
+
+#  Enable Invasion ,Alpha teste..
+
+enable_invasion (enable invasion) bool true
+

@@ -74,20 +74,10 @@ mobs:register_mob("zombies4test:minerzombie", {
 	end
 	]]
 	
-	on_die = function(self, pos) -- POSIÇÃO
-
-  	self.object:set_animation({x=260, y=380}, 20, 0)
-	for _,players in pairs(minetest.get_objects_inside_radius(pos,30)) do 
-			if players:is_player() then 
-			
-			local meta = players:get_meta()
-			local zombies_kills = meta:get_int("zombie_kills")  
-			zombies_kills = zombies_kills + 1
-			meta:set_int("zombie_kills", zombies_kills)  
-				
-			end
-		end
+	on_die = function(...) 
+  	zombies_count(...)
 	end
+
 
 
 })

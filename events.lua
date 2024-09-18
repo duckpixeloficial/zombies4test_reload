@@ -126,7 +126,7 @@ function huds_pos_days(player)
       zhuds[1] = player:hud_add({
         hud_elem_type = "image",
         alignment = {x=1, y=0},
-        offset = {x=1670, y=310},
+        offset = {x=1670, y=340},
         scale = {x=3.5, y=3.5},
         text = "hud_bg.png"
     })
@@ -135,7 +135,7 @@ function huds_pos_days(player)
     zhuds[2] = player:hud_add({
         hud_elem_type = "text",
         position = {x=1, y=0},
-        offset = {x=-140, y=280},
+        offset = {x=-140, y=310},
         scale = {x=1, y=1},
         text = "Player : "..p_name
     })
@@ -143,7 +143,7 @@ function huds_pos_days(player)
     zhuds[3] = player:hud_add({
         hud_elem_type = "text",
         position = {x=1, y=0},
-        offset = {x=-180, y=300},
+        offset = {x=-180, y=330},
         scale = {x=1, y=1},
         text = p_days
     })
@@ -151,7 +151,7 @@ function huds_pos_days(player)
     zhuds[4] = player:hud_add({
         hud_elem_type = "text",
         position = {x=1, y=0},
-        offset = {x=-160, y=320},
+        offset = {x=-160, y=350},
         scale = {x=1, y=1},
         text = "Zombie Kills : "..zombies_kills_hud
     })
@@ -159,7 +159,7 @@ function huds_pos_days(player)
     zhuds[5] = player:hud_add({
         hud_elem_type = "text",
         position = {x=1, y=0},
-        offset = {x=-120, y=340},
+        offset = {x=-120, y=370},
         scale = {x=1, y=1},
         text = pos_text
     })
@@ -225,8 +225,11 @@ end)
 -- GLOBAL STEP ATUALIZANDO TODOS OS EVENTOS ...=================================================
 
 minetest.register_globalstep(function(dtime)
-
-      invasion_update() -- atualizando invasão
+      
+      -- Opção de habilitar evento de  invasão..
+      if minetest.settings:get_bool("enable_invasion") then 
+         invasion_update() -- atualizando invasão
+      return end
     
      for _, player in ipairs(minetest.get_connected_players()) do
           huds_pos_day_update (player)
