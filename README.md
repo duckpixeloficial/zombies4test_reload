@@ -10,7 +10,7 @@
  - TEXTURE : CC-BY-4.0
  - VERSION: 0.1.3 Alpha
  - depends = mobs
- - optional_depends =  
+ - optional_depends = 
 
 ---
 
@@ -18,10 +18,11 @@
 
 2 - [Mobs](https://codeberg.org/pixelzone/zombies4test_reload/src/branch/main/zwiki/Mobs.md)
 
-3 - [Recipes](https://codeberg.org/pixelzone/zombies4test_reload/src/branch/main/zwiki/Recipes.md)  
+3 - [Recipes](https://codeberg.org/pixelzone/zombies4test_reload/src/branch/main/zwiki/Recipes.md)
 
 
 ---
+Thanks to all the testers, TenPlus1,and Darth_Tiktaalik for the help :)
 ---
 
 

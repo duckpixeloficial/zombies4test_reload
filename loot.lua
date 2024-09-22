@@ -52,7 +52,7 @@ minetest.register_node("zombies4test:gravestone", {
     sunlight_propagates = true,
     walkable = true, 
     floodable = false,
-    groups = {cracky = 3, oddly_breakable_by_hand = 1},
+    groups = {cracky = 2, oddly_breakable_by_hand = 1},
 
     drop = {
         max_items = 2,

@@ -274,6 +274,8 @@ minetest.register_node("zombies4test:wood_cabin_2", {
 })
 
 -- STRIS ============================================================
+
+--[[
 minetest.register_node("zombies4test:stair_coal", {
     description = "Stair Coal",
     tiles = {"default_coal_block.png"},
@@ -300,6 +302,8 @@ minetest.register_node("zombies4test:stair_coal", {
     
        on_place = minetest.rotate_node,
 })
+
+]]
 
 
 minetest.register_node("zombies4test:stair_wood_cabin", {

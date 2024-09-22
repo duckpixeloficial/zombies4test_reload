@@ -160,8 +160,7 @@ minetest.register_craft({
 
 
 
-minetest.register_craft({   
-    type = "shaped",
+minetest.register_craft({
     output = "zombies4test:barbed_wire 2",
     recipe = {
         {"","zombies4test:metal_can",""},
@@ -169,6 +168,9 @@ minetest.register_craft({
         {"","zombies4test:metal_can",""}
     }
 })
+
+
+
 
 minetest.register_craft({   
     type = "shaped",
@@ -212,7 +214,7 @@ minetest.register_craft({   ------ CRaFT
     recipe = {
        -- {"","",""},
        -- {"","",""},
-        {"group:tree","group:tree","group:tree"}
+        {"group:stick","group:stick","group:stick"}
     }
 })
 
@@ -308,7 +310,7 @@ minetest.register_craft({   ------ CRaFT
     output = "zombies4test:computer",
     recipe = {
         {"zombies4test:metal_can","zombies4test:metal_can","zombies4test:metal_can"},
-        {"zombies4test:metal_can","default:glass","zombies4test:metal_can"},
+        {"zombies4test:metal_can","group:glass","zombies4test:metal_can"},
         {"","group:glass",""}
     }
          
@@ -334,4 +336,5 @@ minetest.register_craft({   ------ CRaFT
         {"","",""}
     }
  })
+
 
