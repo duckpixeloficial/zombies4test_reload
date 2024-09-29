@@ -190,4 +190,8 @@
      
         
       
+### Repixture Recipes 
+
+Crafting items in Repixture is different, so check out the [recipes tab](#) to craft them.
+
 

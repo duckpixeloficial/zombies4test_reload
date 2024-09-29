@@ -5,10 +5,10 @@
 ### which adds zombies, items,tools, structures, and a new challenge to your world...
 ---
 
- - BY : DUCKGO
+ - BY : DuckGo / [PixelZone](https://codeberg.org/pixelzone)
+ - CREDITS : [TenPlus1](https://content.minetest.net/users/TenPlus1/),[Darth_Tiktaalik](https://codeberg.org/Darth_Tiktaalik)
  - LICENSE : MIT
  - TEXTURE : CC-BY-4.0
- - VERSION: 0.1.3 Alpha
  - depends = mobs
  - optional_depends = 
 

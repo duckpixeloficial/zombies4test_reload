@@ -44,7 +44,24 @@ dofile(path .. "/events.lua")
 
 
 -- MATERIALS :
-dofile(path .. "/zrecipes.lua")
+-- dofile(path .. "/zrecipes.lua")
+
+
+-- Recipe support for Repixture, made by : Darth_Tiktaalik
+
+if minetest.get_modpath("rp_crafting") then 
+   dofile(path .. "/zrecipes_repixture.lua")
+
+else
+
+   dofile(path .. "/zrecipes.lua")
+
+end
+
+
+
+
+
 --[[
 
 if minetest.registered_nodes["nyancat:nyancat_rainbow"] then

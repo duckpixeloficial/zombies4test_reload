@@ -145,10 +145,12 @@ minetest.register_node("zombies4test:vendingmachine", {
 	
 		if item_name == "zombies4test:zcoin" then
 		
-		
+		-- Sound : https://freesound.org/people/Kyodon/sounds/153422/
+		minetest.sound_play("v_machine", {pos = pos,gain = 1.0,max_hear_distance = 3,})
+
 		inv:add_item("main", "zombies4test:soda 1")
 		itemstack:take_item()
-	
+	    
 		
 		else
 		minetest.chat_send_player(clicker:get_player_name()," Insert one zcoin to buy Soda !")
@@ -299,7 +301,7 @@ minetest.register_node("zombies4test:computer", {
 	},
 	
 	 on_rightclick = function(pos, node, player, itemstack, pointed_thing)
-        local formspec = "size[8,8;]image[-0.9,-0.3;12,11;pc.png]"
+        local formspec = "size[8,8;]image[-0.9,-0.35;12,11;pc.png]"
         minetest.show_formspec(player:get_player_name(), "mymod:img_formspec", formspec) -- falta a imagem
     end
 	
@@ -357,7 +359,7 @@ minetest.register_node("zombies4test:armchair", {
 
 
 
----- ARMCHAIR :
+---- hospital_gurney :
 minetest.register_node("zombies4test:hospital_gurney", {
 	description = "Hospital Gurney",
 	drawtype = "mesh",
@@ -396,13 +398,49 @@ minetest.register_node("zombies4test:hospital_gurney", {
         -- Animação
         --minetest.get_player_by_name(player):set_animation({x = 162,  y = 166}, 30, 0)
         minetest.after(0.2, function()
-        minetest.get_player_by_name(player):set_animation({x = 162,  y = 166}, 30, 0)
-        end)
-   		end,
+           minetest.get_player_by_name(player):set_animation({x = 162,  y = 166}, 30, 0)
+           end)
+   	end,
 		
 
 	
 })
+
+
+
+---- bedside_cabinet :
+minetest.register_node("zombies4test:bedside_cabinet", {
+	description = "Bedside Cabinet",
+	drawtype = "mesh",
+	mesh = "bedside_cabinet.obj",
+	--visual_size = {x=1, y=1},
+	--inventory_image = "",
+	tiles = {"bedside_cabinet.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	--on_place = minetest.rotate_node,
+	sunlight_propagates = true,
+	walkable = true, 
+	floodable = false,
+	groups = {cracky = 3, oddly_breakable_by_hand = 1},
+	drop = "zombies4test:bedside_cabinet",
+	--sounds = default.node_sound_wood_defaults(),
+	
+	selection_box = {
+		type = "fixed",
+		--    esqueda,altura,tras..,direita ,negativo aumenta para baixo, positivo aumenta para cima
+		fixed = {-0.4, -0.5, -0.4, 0.4, 0.5, 0.4},
+	},
+	
+	node_box = {
+		type = "fixed", 
+		fixed = {-0.4, -0.5, -0.4, 0.4, 0.5, 0.4},
+	},
+
+
+	
+})
+
 
 
 
@@ -438,6 +476,39 @@ minetest.register_node("zombies4test:shelving", {
 	
 })
 
+
+
+---- WORKBENCH :
+minetest.register_node("zombies4test:workbench", {
+	description = "Workbench",
+	drawtype = "mesh",
+	mesh = "Workbench.obj",
+	--visual_size = {x=1, y=1},
+	--inventory_image = "",
+	tiles = {"Workbench.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	--on_place = minetest.rotate_node,
+	sunlight_propagates = true,
+	walkable = true, 
+	floodable = false,
+	groups = {cracky = 3, oddly_breakable_by_hand = 1},
+	drop = "zombies4test:workbench",
+	--sounds = default.node_sound_metal_defaults(),
+	
+	selection_box = {
+		type = "fixed",
+		--    esqueda,altura,tras..,direita ,negativo aumenta para baixo, positivo aumenta para cima
+		fixed = {-1.4, -0.5, -0.4, 0.5, 0.5, 0.5},
+	},
+	
+	node_box = {
+		type = "fixed", 
+		fixed = {-1.4, -0.5, -0.4, 0.5, 0.5, 0.5},
+	},
+	
+	
+})
 
 
 

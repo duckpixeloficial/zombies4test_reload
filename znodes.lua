@@ -1,27 +1,60 @@
 
+minetest.register_tool("zombies4test:zpick", {
+    description = "Z Pick",
+    inventory_image = "zpick.png",
+    tool_capabilities = {
+        full_punch_interval = 1.0,
+        max_drop_level = 0,
+        groupcaps = {
+            unbreakable = {times = {[1] = 0.1}, uses = 1000, maxlevel = 1},
+        },
+        damage_groups = {fleshy = 1},
+    },
+})
+
+
+
 
 ---- HOSPITAL BLOCK :
 
 minetest.register_node("zombies4test:whiteblock", {
-	description = "White Block",
-	tiles = {"white_block.png"},
+    description = "White Block",
+    tiles = {"white_block.png"},
+    drop = "zombies4test:whiteblock",
+    groups = {unbreakable = 1},
+    sounds = {footstep = {name = "stone_step", gain = 0.5}},
+  
+        can_dig = function(pos, player)
+        local wielded_item = player:get_wielded_item()
+        return wielded_item:get_name() == "zombies4test:zpick"
+        end
+})
+
+
+
+
+minetest.register_node("zombies4test:whiteblock_dirty", {
+	description = "White Block dirty",
+	tiles = {"white_block_dirty.png"},
+	groups = {unbreakable = 1},
+	
 	paramtype2 = "facedir",
 	----groups = {cracky = 3},
-        drop = "zombies4test:whiteblock",
+        drop = "zombies4test:whiteblock_dirty",
        
+        sounds = {footstep = {name = "stone_step", gain = 0.5}},
         
-        sounds = {        
-        footstep = {name = "stone_step", gain = 0.5},
-        --dig = {name = "", gain = 0.5},
-        --dug = {name = "", gain = 1.0},
-        --place = {name = "", gain = 1.0},
-         }
+        can_dig = function(pos, player)
+        local wielded_item = player:get_wielded_item()
+        return wielded_item:get_name() == "zombies4test:zpick"
+        end
 	
 })
 
 minetest.register_node("zombies4test:greenblock", {
 	description = "Green Block",
 	tiles = {"green_node.png"},
+	groups = {unbreakable = 1},
 	paramtype2 = "facedir",
 	----groups = {cracky = 3},
         drop = "zombies4test:greenblock",
@@ -31,13 +64,19 @@ minetest.register_node("zombies4test:greenblock", {
 		--dig = {name = "", gain = 0.5},
 		--dug = {name = "", gain = 1.0},
 		--place = {name = "", gain = 1.0},
-         }
+         },
+         
+        can_dig = function(pos, player)
+          local wielded_item = player:get_wielded_item()
+          return wielded_item:get_name() == "zombies4test:zpick"
+        end
 	
 })
 
 minetest.register_node("zombies4test:redblock", {
 	description = "Red Block",
 	tiles = {"red_node.png"},
+	groups = {unbreakable = 1},
 	paramtype2 = "facedir",
 	----groups = {cracky = 3},
         drop = "zombies4test:redblock",
@@ -47,13 +86,19 @@ minetest.register_node("zombies4test:redblock", {
 		--dig = {name = "", gain = 0.5},
 		--dug = {name = "", gain = 1.0},
 		--place = {name = "", gain = 1.0},
-         }	
+         },
+         
+        can_dig = function(pos, player)
+          local wielded_item = player:get_wielded_item()
+          return wielded_item:get_name() == "zombies4test:zpick"
+        end	
 	
 })
 
 minetest.register_node("zombies4test:grayblock", {
 	description = "Gray Block",
 	tiles = {"gray_node.png"},
+	groups = {unbreakable = 1},
 	paramtype2 = "facedir",
 	----groups = {cracky = 3},
         drop = "zombies4test:grayblock",
@@ -63,8 +108,13 @@ minetest.register_node("zombies4test:grayblock", {
 		--dig = {name = "", gain = 0.5},
 		--dug = {name = "", gain = 1.0},
 		--place = {name = "", gain = 1.0},
-         }
+         },
 	
+	
+	can_dig = function(pos, player)
+          local wielded_item = player:get_wielded_item()
+          return wielded_item:get_name() == "zombies4test:zpick"
+        end
 })
 
 
@@ -244,6 +294,7 @@ minetest.register_node("zombies4test:medicaltentblock", {
 minetest.register_node("zombies4test:wood_cabin", {
 	description = "Wood Cabin",
 	tiles = {"wood_cabin.png"},
+	groups = {unbreakable = 1},
 	paramtype2 = "facedir",
 	--groups = {cracky = 3},
         drop = "zombies4test:wood_cabin",
@@ -253,13 +304,19 @@ minetest.register_node("zombies4test:wood_cabin", {
 		--dig = {name = "", gain = 0.5},
 		--dug = {name = "", gain = 1.0},
 		--place = {name = "", gain = 1.0},
-         }
+         },
+         
+         can_dig = function(pos, player)
+          local wielded_item = player:get_wielded_item()
+          return wielded_item:get_name() == "zombies4test:zpick"
+        end
 	
 })
 
 minetest.register_node("zombies4test:wood_cabin_2", {
 	description = "Wood Cabin 2",
 	tiles = {"wood_cabin_2.png"},
+	groups = {unbreakable = 1},
 	paramtype2 = "facedir",
 	--groups = {cracky = 3},
         drop = "zombies4test:wood_cabin",
@@ -269,7 +326,12 @@ minetest.register_node("zombies4test:wood_cabin_2", {
 		--dig = {name = "", gain = 0.5},
 		--dug = {name = "", gain = 1.0},
 		--place = {name = "", gain = 1.0},
-         }
+         },
+         
+         can_dig = function(pos, player)
+          local wielded_item = player:get_wielded_item()
+          return wielded_item:get_name() == "zombies4test:zpick"
+        end
 	
 })
 
