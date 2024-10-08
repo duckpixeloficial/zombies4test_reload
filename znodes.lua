@@ -119,84 +119,6 @@ minetest.register_node("zombies4test:grayblock", {
 
 
 
----- ROAD :
-
-minetest.register_node("zombies4test:road", {
-	description = "Road",
-	tiles = {"road.png"},
-	paramtype2 = "facedir",
-	groups = {cracky = 3},
-        drop = "zombies4test:road",
-        
-         sounds = {        
-		footstep = {name = "stone_step", gain = 0.5},
-		--dig = {name = "", gain = 0.5},
-		--dug = {name = "", gain = 1.0},
-		--place = {name = "", gain = 1.0},
-         }
-	
-})
-
-
-
----- ROAD 2 :
-
-minetest.register_node("zombies4test:road2", {
-	description = "Road 2",
-	tiles = {"road_y.png"},
-	paramtype2 = "facedir",
-	groups = {cracky = 3},
-        drop = "zombies4test:road2",
-        
-         sounds = {        
-		footstep = {name = "stone_step", gain = 0.5},
-		--dig = {name = "", gain = 0.5},
-		--dug = {name = "", gain = 1.0},
-		--place = {name = "", gain = 1.0},
-         }
-	
-})
-
-
-
----- ROAD 2 :
-minetest.register_node("zombies4test:road3", {
-	description = "Road 3",
-	tiles = {"curvedroad.png"},
-	paramtype2 = "facedir",
-	groups = {cracky = 3},
-        drop = "zombies4test:road3",
-        
-         sounds = {        
-		footstep = {name = "stone_step", gain = 0.5},
-		--dig = {name = "", gain = 0.5},
-		--dug = {name = "", gain = 1.0},
-		--place = {name = "", gain = 1.0},
-         }
-	
-})
-
-
-
----- Road Stop Line:
-minetest.register_node("zombies4test:roadstopline", {
-	description = "Road Stop Line",
-	tiles = {"road_stop_line.png"},
-	paramtype2 = "facedir",
-	groups = {cracky = 3},
-        drop = "zombies4test:roadstopline",
-       
-        sounds = {        
-		footstep = {name = "stone_step", gain = 0.5},
-		--dig = {name = "", gain = 0.5},
-		--dug = {name = "", gain = 1.0},
-		--place = {name = "", gain = 1.0},
-         }
-	
-})
-
-
-
 
 ---- SIDEWALK :
 minetest.register_node("zombies4test:sidewalk", {
@@ -547,38 +469,6 @@ minetest.register_node("zombies4test:sidewalk_stair", {
 })
 
 
-
----- ROAD BLOCK:
-minetest.register_node("zombies4test:trafficblock", {
-	description = "Traffic Block",
-	drawtype = "mesh",
-	mesh = "road_block.obj",
-	--visual_size = {x=1, y=1},
-	--inventory_image = "",
-	tiles = {"road_block.png"},
-	paramtype = "light",
-	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
-	sunlight_propagates = true,
-	walkable = true, 
-	floodable = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 1},
-	drop = "zombies4test:trafficblock",
-	
-	
-	selection_box = {
-		type = "fixed",
-		--    esqueda,altura,tras..,direita ,negativo aumenta para baixo, positivo aumenta para cima
-		fixed = {-0.5, -0.5, -0.3, 0.5, 0.3, 0.3},
-	},
-	
-	node_box = {
-		type = "fixed", 
-		fixed = {-0.5, -0.5, -0.3, 0.5, 0.3, 0.3},
-	},
-	
-	
-})
 
 
 

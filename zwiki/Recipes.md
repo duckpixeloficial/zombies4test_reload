@@ -16,37 +16,6 @@
 
 ## NODES :
 
-### -- Road
-
-[ Group Stone ] [ Group Stone ] [ Group Stone ]
-
-[ Group Stone ] [ Plastic ] [ Group Stone ]
-
-[ Group Stone ] [ Group Stone ] [ Group Stone ]
-
-### -- Road 2
-
-[ Road ] [ Road ] [ Road ]
-
-[ Road ] [ Road ] [ Road ]
-
-[ Road ] [ Road ] [ Road ]
-
-### -- Road 3
-
-[ Road 2 ] [ Road 2 ] [ Road 2 ]
-
-[ Road 2 ] [ Road 2 ] [ Road 2 ]
-
-[ Road 2 ] [ Road 2 ] [ Road 2 ]
-
-### -- Road Stop Line
-
-[ Road ] [ Plastic ] [ Road ]
-
-[ Road ] [ Plastic ] [ Road ]
-
-[ Road ] [ Plastic ] [ Road ]
 
 ### -- Sidewalk
 
@@ -110,21 +79,7 @@
 ## DECORATION :
 
 
-### -- Traffic Pole :
 
-[ ] [ Plastic ] [ ]
-
-[ ] [ Plastic ] [ ]
-
-[ ] [ Plastic ] [ ]
-
-### -- Traffic Cone
-
-[ ] [ ] [ ]
-
-[ ] [ Traffic Pole ] [ ]
-
-[ Traffic Pole ] [ Traffic Pole ] [ Traffic Pole ]
 
 
 ### -- Shelving
@@ -135,12 +90,7 @@
 
 [ Metal Can ] [ ] [ Metal Can ]
 
-### -- Stop sign
-[ ] [ Metal Wall ] [ ]
 
-[ ] [ Metal Can ] [ ]
-
-[ ] [ Metal Can ] [ ]
 
 ### -- Trashcan
 
@@ -176,7 +126,9 @@
 
 ### -- Armchair
 
-[ Traffic Cone ] [ Traffic Cone ] [ Traffic Cone ]
+[            ] [            ] [ Group Tree ]
+
+[ Group Tree ] [ Group Tree ] [ Group Tree ]
 
 [ Metal Can ] [ ] [ Metal Can ]
 
@@ -192,6 +144,6 @@
       
 ### Repixture Recipes 
 
-Crafting items in Repixture is different, so check out the [recipes tab](#) to craft them.
+Crafting items in Repixture is different, so check out the [recipes tab](https://codeberg.org/pixelzone/zombies4test_reload/raw/branch/main/zwiki/repixture_recipes.jpg) to craft them.
 
 

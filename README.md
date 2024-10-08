@@ -10,7 +10,7 @@
  - LICENSE : MIT
  - TEXTURE : CC-BY-4.0
  - depends = mobs
- - optional_depends = 
+ - optional_depends = visual_harm_1ndicators,rp_crafting
 
 ---
 

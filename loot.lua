@@ -129,12 +129,7 @@ local items = {
        	{name = "zombies4test:canned_beans", chance =1, count =1},
        	-- ITENS DECO
        	{name = "zombies4test:zlantern", chance =3, count =1},
-       	{name = "zombies4test:stopsign", chance =3, count =1},
-       	{name = "zombies4test:trafficcone", chance =3, count =1},
-       	{name = "zombies4test:trafficpole", chance =3, count =1},
-       	
-       	-- NODES
-       	{name = "zombies4test:trafficblock", chance =3, count =10},
+      	
              	
        	--- MEDIC
        	{name = "zombies4test:medicinebox", chance =1, count =1},

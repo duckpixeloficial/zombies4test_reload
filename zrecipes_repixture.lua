@@ -26,51 +26,7 @@ crafting.register_craft(
 
 ----- NODES : =========================================================================================
 
-  crafting.register_craft(
-  {
-  output = "zombies4test:road 9",
-  items = {
-  "zombies4test:plastic",
-  "group:stone 8"
-  
-  
-}
-  })
 
-  crafting.register_craft(
-  {
-  output = "zombies4test:road2 12",
-  items = {
-  "zombies4test:road 9",
-  
-  
-  
-}
-  })
-
-  crafting.register_craft(
-  {
-  output = "zombies4test:road3 12",
-  items = {
-  "zombies4test:road2 9",
-  
-  
-  
-}
-  })
-
-  crafting.register_craft(
-  {
-  output = "zombies4test:roadstopline 12",
-  items = {
-  "zombies4test:road 6",
-  "zombies4test:plastic 3"
-  
-  
-  
-  
-}
-  })
 
   crafting.register_craft(
   {
@@ -85,18 +41,8 @@ crafting.register_craft(
 }
   })
 
-crafting.register_craft(
-  {
-  output = "zombies4test:trafficblock 5",
-  items = {
-  "zombies4test:trafficcone 3",
-  "zombies4test:metal_can 2",
-  
-  
-  
-  
-}
-  })
+
+
 
   --- FORTIFICATION : ===================================================================================
 
@@ -177,21 +123,7 @@ crafting.register_craft(
   })
   ----- DECORAÇÃO : =====================================================================================
 
-crafting.register_craft(
-  {
-  output = "zombies4test:trafficpole 3",
-  items = {
-  "zombies4test:plastic 3",
-}
-  })
 
-crafting.register_craft(
-  {
-  output = "zombies4test:trafficcone 1",
-  items = {
-  "zombies4test:trafficpole 4",
-}
-  })
 
 crafting.register_craft(
   {
@@ -199,12 +131,12 @@ crafting.register_craft(
   items = {
   "zombies4test:metal_can 7",
   
-  
-  
-  
+ 
   
 }
   })
+  
+  
 
 crafting.register_craft(
   {
@@ -213,10 +145,7 @@ crafting.register_craft(
   "zombies4test:metal_can 2",
   "zombies4test:metal_wall",
   
-  
-  
-  
-  
+ 
 }
   })
 
@@ -225,11 +154,7 @@ crafting.register_craft(
   output = "zombies4test:trashcan",
   items = {
   "zombies4test:metal_can 7",
-  
-  
-  
-  
-  
+
   
 }
   })
@@ -241,9 +166,7 @@ crafting.register_craft(
   items = {
   "zombies4test:metal_can",
   "zombies4test:plastic",
-  
-  
-  
+ 
   
 }
   })
@@ -255,9 +178,7 @@ crafting.register_craft(
   items = {
   "group:wood 7",
   
-  
-  
-  
+ 
   
 }
   })
@@ -269,11 +190,7 @@ crafting.register_craft(
   items = {
   "group:glass 2",
   "zombies4test:metal_can 5",
-  
-  
-  
-  
-  
+
 }
   })
 
@@ -283,10 +200,7 @@ crafting.register_craft(
   items = {
   "group:tree 6",
   
-  
-  
-  
-  
+ 
   
 }
   })
@@ -298,10 +212,7 @@ crafting.register_craft(
   "group:leaves",
   "group:soil"
   
-  
-  
-  
-  
+ 
   
 }
   })

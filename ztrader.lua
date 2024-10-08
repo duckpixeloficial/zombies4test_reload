@@ -88,6 +88,7 @@ mobs:register_mob("zombies4test:ztrader", {
     run_velocity = 0,
     jump = false,
     fall_speed = -10,
+    knock_back = false,
     collisionbox = {-0.4, -1.0 ,-0.4, 0.4, 1.0, 0.4},
     visual = "mesh",
     mesh = "ztraders.b3d",

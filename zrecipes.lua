@@ -1,47 +1,3 @@
--- shaped
---[[
-
-minetest.register_craft({
-    type = "shaped",
-    output = " ",  -- item que será criado
-    recipe = {
-        {" ", " ", " "},
-        {" ", " ", " "},
-        {" ", " ", " "}
-    },
-})
-
-]]
-
-
--- shapeless
---[[
-
-minetest.register_craft({
-    type = "shapeless",
-    output = " ",  -- item que será criado
-    recipe = {
-        " ",
-        " ",
-        " "
-    },
-})
-
-
-]]
-
-
--- Groups
---[[
-
-"group:stone"
-"group:tree"
-"group:wood"
-
-]]
-
-
-
 
 ------- ITENS PADRÃO PARA CRAFTS : ====================================================================
 ---- Lata :
@@ -82,48 +38,7 @@ minetest.register_craft({
 
 
 
------ NODES : =========================================================================================
-minetest.register_craft({   
-    type = "shaped",
-    output = "zombies4test:road 9",
-    recipe = {
-        {"group:stone","group:stone","group:stone"},
-        {"group:stone","zombies4test:plastic","group:stone"},
-        {"group:stone","group:stone","group:stone"}
-    }
-})
 
-minetest.register_craft({   
-    type = "shaped",
-    output = "zombies4test:road2 12",
-    recipe = {
-        {"zombies4test:road","zombies4test:road","zombies4test:road"},
-        {"zombies4test:road","zombies4test:road","zombies4test:road"},
-        {"zombies4test:road","zombies4test:road","zombies4test:road"}
-    }
-})
-
-
-minetest.register_craft({   
-    type = "shaped",
-    output = "zombies4test:road3 12",
-    recipe = {
-        {"zombies4test:road2","zombies4test:road2","zombies4test:road2"},
-        {"zombies4test:road2","zombies4test:road2","zombies4test:road2"},
-        {"zombies4test:road2","zombies4test:road2","zombies4test:road2"}
-    }
-})
-
-
-minetest.register_craft({   
-    type = "shaped",
-    output = "zombies4test:roadstopline 12",
-    recipe = {
-        {"zombies4test:road","zombies4test:plastic","zombies4test:road"},
-        {"zombies4test:road","zombies4test:plastic","zombies4test:road"},
-        {"zombies4test:road","zombies4test:plastic","zombies4test:road"}
-    }
-})
 
 minetest.register_craft({   
     --type = "shaped",
@@ -137,14 +52,7 @@ minetest.register_craft({
 
 
 
-minetest.register_craft({   ------ CRaFT
-   -- type = "shaped",
-    output = "zombies4test:trafficblock 5",
-    recipe = {
-        {"zombies4test:trafficcone","zombies4test:trafficcone","zombies4test:trafficcone"},      
-        {"zombies4test:metal_can","","zombies4test:metal_can"}
-    }
- })
+
  
 
 --- FORTIFICATION : ===================================================================================
@@ -224,27 +132,7 @@ minetest.register_craft({   ------ CRaFT
 
 
 ----- DECORAÇÃO : =====================================================================================
-minetest.register_craft({   ------ CRaFT
-    type = "shaped",
-    output = "zombies4test:trafficpole 3",
-    recipe = {
-        {"","zombies4test:plastic",""},
-        {"","zombies4test:plastic",""},
-        {"","zombies4test:plastic",""}
-    }
- })
 
-
-
-minetest.register_craft({   ------ CRaFT
-    type = "shaped",
-    output = "zombies4test:trafficcone 1",
-    recipe = {
-        {"","",""},
-        {"","zombies4test:trafficpole",""},
-        {"zombies4test:trafficpole","zombies4test:trafficpole","zombies4test:trafficpole"}
-    }
- })
 
 
 minetest.register_craft({   ------ CRaFT
@@ -258,15 +146,6 @@ minetest.register_craft({   ------ CRaFT
 })
 
 
-minetest.register_craft({   ------ CRaFT
-    type = "shaped",
-    output = "zombies4test:stopsign",
-    recipe = {
-        {"","zombies4test:metal_wall",""},
-        {"","zombies4test:metal_can",""},
-        {"","zombies4test:metal_can",""}
-      }
-})
 
 
 minetest.register_craft({   ------ CRaFT

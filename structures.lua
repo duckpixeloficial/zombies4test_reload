@@ -26,8 +26,8 @@ local nodes_hotel = {
 }
 ]]
 
-local spawn_str = {"group:dirt","group:snowy","hades_core:ash" ,"group:oxidized_stone"}
-local spawn_stg_grav = {"group:dirt","group:stone" ,"group:snowy"}
+local spawn_str = {"group:dirt","group:soil","group:snowy","hades_core:ash" ,"group:oxidized_stone"}
+local spawn_stg_grav = {"group:dirt","group:soil","group:stone" ,"group:snowy"}
 
 
 -- DECO HOME 1 :

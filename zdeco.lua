@@ -27,39 +27,6 @@ minetest.register_node("zombies4test:zlantern", {
 
 
 
-minetest.register_node("zombies4test:stopsign", {
-	description = "stop sign",
-	drawtype = "mesh",
-	mesh = "stopsign.obj",
-	--visual_size = {x=1, y=1},
-	--inventory_image = "",
-	--wield_image = "stop_sign.png",
-	tiles = {"stop_sign.png"},
-	paramtype = "light",
-	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
-	sunlight_propagates = true,
-	walkable = true, 
-	floodable = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 1},
-	drop = "zombies4test:stopsign",
-	--sounds = default.node_sound_metal_defaults(),
-	
-	selection_box = {
-		type = "fixed",
-		fixed = {-0.2, -0.5, -0.2, 0.2, 0.5, 0.2},
-	},
-	
-	node_box = {
-		type = "fixed", 
-		fixed = {-0.2, -0.5, -0.2, 0.2, 0.5, 0.2},
-	},
-	
-	
-})
-
-
-
 ---- trashcan :
 minetest.register_node("zombies4test:trashcan", {
 	description = "Trashcan",
@@ -420,6 +387,7 @@ minetest.register_node("zombies4test:bedside_cabinet", {
 	paramtype2 = "facedir",
 	--on_place = minetest.rotate_node,
 	sunlight_propagates = true,
+	use_texture_alpha = "blend",
 	walkable = true, 
 	floodable = false,
 	groups = {cracky = 3, oddly_breakable_by_hand = 1},
@@ -505,75 +473,6 @@ minetest.register_node("zombies4test:workbench", {
 	node_box = {
 		type = "fixed", 
 		fixed = {-1.4, -0.5, -0.4, 0.5, 0.5, 0.5},
-	},
-	
-	
-})
-
-
-
----- TRAFFIC CONE:
-minetest.register_node("zombies4test:trafficcone", {
-	description = "Traffic Cone",
-	drawtype = "mesh",
-	mesh = "traffic_cone.obj",
-	--visual_size = {x=1, y=1},
-	--inventory_image = "",
-	tiles = {"traffic_cone.png"},
-	paramtype = "light",
-	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
-	sunlight_propagates = true,
-	walkable = true, 
-	floodable = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 1},
-	drop = "zombies4test:trafficcone",
-	
-	
-	selection_box = {
-		type = "fixed",
-		--    esqueda,altura,tras..,direita ,negativo aumenta para baixo, positivo aumenta para cima
-		fixed = {-0.2, -0.5, -0.2, 0.2, 0.3, 0.2},
-	},
-	
-	node_box = {
-		type = "fixed", 
-		fixed = {-0.2, -0.5, -0.2, 0.2, 0.3, 0.2},
-	},
-	
-	
-})
-
-
-
-
----- TRAFFIC POLE:
-minetest.register_node("zombies4test:trafficpole", {
-	description = "Traffic Pole",
-	drawtype = "mesh",
-	mesh = "traffic_pole.obj",
-	--visual_size = {x=1, y=1},
-	--inventory_image = "",
-	tiles = {"traffic_pole.png"},
-	paramtype = "light",
-	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
-	sunlight_propagates = true,
-	walkable = true, 
-	floodable = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 1},
-	drop = "zombies4test:trafficpole",
-	
-	
-	selection_box = {
-		type = "fixed",
-		--    esqueda,altura,tras..,direita ,negativo aumenta para baixo, positivo aumenta para cima
-		fixed = {-0.2, -0.5, -0.2, 0.2, 0.3, 0.2},
-	},
-	
-	node_box = {
-		type = "fixed", 
-		fixed = {-0.2, -0.5, -0.2, 0.2, 0.3, 0.2},
 	},
 	
 	

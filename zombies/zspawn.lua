@@ -14,7 +14,8 @@ local zombis_spawn_nodes = {
 "default:stone",
 "default:desert_stone",
 
-
+"group:soil",
+"group:snowy",
 
 -- Mineclone2
 "mcl_core:dirt_with_grass",
@@ -27,6 +28,8 @@ local zombis_spawn_nodes = {
 --Oters Mode
 "hades_core:ash",
 "group:oxidized_stone"
+
+
 
 
 }

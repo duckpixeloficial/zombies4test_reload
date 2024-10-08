@@ -113,7 +113,7 @@ end
 		        })
 		         
 		        self.object:set_animation({x=200, y=280},35, 1, false)        				
-			self.attack:set_pos({x=pp.x+5,y=pp.y+5,z=pp.z})				     
+			self.attack:set_pos({x=pp.x+3,y=pp.y+5,z=pp.z})				     
 			minetest.sound_play("missozzy", {pos = pos, gain = 0.5})
 				   
 		 end
