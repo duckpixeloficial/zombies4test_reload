@@ -8,7 +8,8 @@
  - BY : DuckGo / [PixelZone](https://codeberg.org/pixelzone)
  - CREDITS : [TenPlus1](https://content.minetest.net/users/TenPlus1/),[Darth_Tiktaalik](https://codeberg.org/Darth_Tiktaalik)
  - LICENSE : MIT
- - TEXTURE : CC-BY-4.0
+ - TEXTURE : CC BY-SA 4.0 
+ -
  - depends = mobs
  - optional_depends = visual_harm_1ndicators,rp_crafting
 
