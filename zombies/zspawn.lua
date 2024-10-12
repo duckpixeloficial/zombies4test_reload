@@ -144,6 +144,19 @@ mobs:spawn({
 
 
 mobs:spawn({
+	name = "zombies4test:clown_zombie",
+	nodes = zombis_spawn_nodes,
+	min_light = 0,
+	max_light = 7, -- 14
+	chance = 30000,
+	min_height = -20000,
+	max_height = 200,
+	--max_height = 200,
+	active_object_count = 1,
+})
+
+
+mobs:spawn({
 	name = "zombies4test:survivorzombie",
 	nodes = zombis_spawn_nodes,
 	min_light = 0,

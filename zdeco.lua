@@ -163,7 +163,7 @@ minetest.register_node("zombies4test:radio", {
 		fixed = {-0.3, -0.5, -0.3, 0.3, 0.2, 0.3},
 	},
 
-	 on_rightclick = function(pos, node, player, itemstack, pointed_thing)
+	 on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
         -- Play a sound to the player at the node position
         minetest.sound_play("radioo", {
             pos = pos,
@@ -575,6 +575,13 @@ minetest.register_node("zombies4test:ladder_fake", {
 		
 	},
 	groups = {cracky = 2},
+	
+	 sounds = {        
+		footstep = {name = "zladders", gain = 0.5},
+		--dig = {name = "", gain = 0.5},
+		--dug = {name = "", gain = 1.0},
+		--place = {name = "", gain = 1.0},
+         },
 	
 })
 

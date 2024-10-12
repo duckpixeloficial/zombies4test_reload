@@ -41,6 +41,7 @@ minetest.register_craftitem("zombies4test:medicalkit", {
 			user:set_hp(hp + 20)
 			itemstack:take_item()
 		end
+		
 		return itemstack
 	end
 })

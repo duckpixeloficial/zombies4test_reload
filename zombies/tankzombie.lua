@@ -25,7 +25,7 @@ mobs:register_mob("zombies4test:tankzombie", {
 	makes_footstep_sound = true,
 	sounds = {
 		random ="missozzy",
-		--attack = "zombie_hit",
+		--damage = "zombie_hit",
 		death = "roar ",
 	},
 	walk_velocity = 1,

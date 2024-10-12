@@ -21,6 +21,7 @@ dofile(path.."/zombies/spitterzombie.lua")
 dofile(path.."/zombies/survivorzombie.lua")
 dofile(path.."/zombies/tankzombie.lua")
 dofile(path.."/zombies/walkingzombie.lua")
+dofile(path.."/zombies/clown_zombie.lua")
 dofile(path.."/zombies/zspawn.lua")
 
 
@@ -43,10 +44,6 @@ dofile(path .. "/loot.lua")
 dofile(path .. "/events.lua")
 
 
--- MATERIALS :
--- dofile(path .. "/zrecipes.lua")
-
-
 -- Recipe support for Repixture, made by : Darth_Tiktaalik
 
 if minetest.get_modpath("rp_crafting") then 
@@ -59,7 +56,16 @@ else
 end
 
 
+--  Armor :
 
+if minetest.get_modpath("3d_armor") then 
+dofile(path .. "/zarmor_3d_armor.lua")
+end
+
+
+if minetest.get_modpath("mcl_armor") then 
+dofile(path .. "/zarmor_mcl_armor.lua")
+end
 
 
 --[[

@@ -1,4 +1,6 @@
 
+
+ ----- ACID =====================================================================
  function poison_part (pos)  --- PARTICULAS
 
    minetest.add_particlespawner({
@@ -20,68 +22,8 @@
 	
 end
 
------ ACID =====================================================================
-
---- Particules :
---[[
-
- function gas(pos)  --- PARTICULAS
-
-        minetest.add_particlespawner({
-        amount = 5, --- quantidade
-        time = 2, -- intervalo de tempo
-        minpos = {x = pos.x,z = pos.z,y =pos.y},
-        maxpos = {x = pos.x,z = pos.z,y =pos.y+1},
-        minvel = {x=0, y=0.1, z=-0},
-        maxvel = {x=-0, y=0.1, z=0},
-        minacc = {x=0, y=0.5, z=-0},
-        maxacc = {x=-0, y=0.5, z=0},
-        minexptime = 1,
-        maxexptime = 1,
-        minsize = 3,
-        maxsize = 3,
-        collisiondetection = false,
-        vertical = false,
-        texture = "gas.png",
-   	 })
-
-end
 
 
-minetest.register_node("spitterzombie:acid", {
-	description = "Acid",
-	drawtype = "glasslike",
-	visual_scale = 2.0,
-	tiles = {"acid.png"},
-	inventory_image = "acid.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	use_texture_alpha = "blend",
-	post_effect_color = {a = 100, r = 59, g = 144, b = 79},
-	pointable = false, -- apontavel
-	diggable = false, -- cavavel
-	liquid_viscosity = 11,
-	liquidtype = "source",
-	liquid_alternative_flowing = "spitterzombie:acid",
-	liquid_alternative_source = "spitterzombie:acid",
-	liquid_renewable = false,
-	liquid_range = 0,
-	walkable = false,
-	damage_per_second = 2, -- dano
-	groups = {snappy = 1, disable_jump = 1},
-	sounds = default.node_sound_leaves_defaults(),
-
-	on_construct = function (pos, node) -- conseguir tempo do node
-           minetest.get_node_timer(pos):start(5)
-           gas(pos)
-   	end,
-
-   	 on_timer = function(pos,node,elapsed) -- após o tempo, o no pode ser trocado por ar
-   	 minetest.swap_node(pos, {name = 'air'})
- 	 end,
-})
-
-]]
 
 ---- VOMITER ZOMBIE ============================================================
 
@@ -89,7 +31,7 @@ mobs:register_mob("zombies4test:spitterzombie", {
 	--nametag = "Spitter Zombie" ,
 	type = "monster",
 	passive = false,
-	attack_type = "dogshoot",
+	attack_type = "shoot",
 	attack_npcs = false,
 	--attack_animals = true,
 	--group_attack = true,
@@ -115,9 +57,10 @@ mobs:register_mob("zombies4test:spitterzombie", {
 	--blood_texture = " ",
 	makes_footstep_sound = true,
 	sounds = {
-	       -- random ="zombie_angry",
-		--attack = "zombie_hit",
+	        random ="zombie_angry",
+		--damage = "zombie_hit",
 		death = "zombie_death ",
+		shoot_attack = "vomitar",
 	},
 	walk_velocity = 1,
 	run_velocity = 3,

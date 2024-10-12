@@ -358,8 +358,8 @@ minetest.register_node("zombies4test:motel_glass", {
     --light_source = 0,
     
     sounds = {        
-		-- footstep = {name = "", gain = 0.5},
-		--dig = {name = "", gain = 0.5},
+		footstep = {name = "", gain = 0.5},
+		dig = {name = "", gain = 0.5},
 		--dug = {name = "", gain = 1.0},
 		--place = {name = "", gain = 1.0},
          }

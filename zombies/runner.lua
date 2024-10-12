@@ -26,7 +26,7 @@ mobs:register_mob("zombies4test:runner", {
 	makes_footstep_sound = true,
 	sounds = {
 	        random ="zombie_angry",
-		--attack = "zombie_hit",
+		--damage = "zombie_hit",
 		death = "zombie_death ",
 	},
 	walk_velocity = 2,

@@ -1,45 +1,79 @@
  
  
- 
- ## Zumbis :
 ---
-  ###- Walking zombie
+ ## 👾 Zombies : 👾
+---
+---
   
-  HP :10
+  <span style="color: green">
   
-  Damge :10
+  ### - Walking zombie
+  
+  </span>
+  
+  HP : 10
+  
+  Damge : 3
+  
+---
+   <span style="color: green">
+ 
+  ### - Crawler Zombie
+  
+   </span>
+  
+  HP : 10
+  
+  Damge : 3
+  
+---
+  <span style="color: green">
 
-  ###- crawler Zombie
+  ### - Survivor Zombie
+  
+  </span>
   
   HP : 10
   
   Damge : 3
 
-  ###- Survivor Zombie
+---
+  <span style="color: green">
+  
+  ### - Lumberjack Zombie
+  
+  </span>
   
   HP : 10
   
   Damge : 3
 
-  ###- Lumberjack Zombie
+---
+ <span style="color: green">
+ 
+  ### - Doctor Zombie
+  
+  </span>
   
   HP : 10
   
   Damge : 3
-
-  ###- Doctor Zombie
+---
+  <span style="color: green">
   
-  HP : 10
+  ### - Miner Zombie
   
-  Damge : 3
-
-  ###- Miner Zombie
+  </span>
   
   HP : 20
   
   Damge : 3
-
-  ###- Runner Zombie 
+---
+  <span style="color: green">
+ 
+  ### - Runner Zombie 
+  
+  </span>
   
   " Has higher speed than other zombies .."
   
@@ -47,8 +81,24 @@
   
   Damge : 3
   
-
-  ###- Spitter Zombie 
+---
+  <span style="color: green">
+ 
+  ### - Clown Zombie 
+  
+  </span>
+  
+  " This zombie disappears when it attacks, slowing the player for 6 seconds !."
+  
+  HP : 0
+  
+  Damge : 0
+---
+  <span style="color: green">
+  
+  ### - Spitter Zombie 
+  
+  </span>
   
   "A little more life, and spits acid..."
   
@@ -58,8 +108,12 @@
   
   Acid Damage: 1 for 5 seconds
   
-
-  ###- Tank (Boss)
+---
+  <span style="color: green">
+  
+  ### - Tank (Boss)
+  
+  </span>
   
   "Lots of health and lots of damage.."
   
@@ -67,9 +121,14 @@
   
   Damge : 12
 
-
+---
 ### NPC :
 
-   ###- Jhom Trader
+   ### - Jhom Trader
    
    " Sells some items such as food, medicine, and weapons."
+   
+   
+   
+   ---
+   ---

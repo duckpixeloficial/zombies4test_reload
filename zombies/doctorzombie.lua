@@ -24,8 +24,8 @@ mobs:register_mob("zombies4test:doctorzombie", {
 	--blood_texture = " ",
 	makes_footstep_sound = true,
 	sounds = {
-		--random ="zombie_angry",
-		--attack = "zombie_hit",
+		random ="zombie_angry",
+		--damage = "zombie_hit",
 		death = "zombie_death ",
 	},
 	walk_velocity = 1,

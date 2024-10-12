@@ -163,7 +163,51 @@ table.insert(items,{name = "mcl_bows:arrow", chance = 1, count = 10})
 end
 
 
+if minetest.get_modpath("3d_armor") then 
 
+table.insert(items,{name = "zombies4test:gas_mask", chance = 3, count = 1})
+table.insert(items,{name = "zombies4test:rabbit_mask", chance = 3, count = 1})
+
+table.insert(items,{name = "zombies4test:hat_head", chance = 2, count = 1})
+table.insert(items,{name = "zombies4test:Jacket_torso", chance = 2, count = 1})
+table.insert(items,{name = "zombies4test:jeanspants_legs", chance = 2, count = 1})
+table.insert(items,{name = "zombies4test:tennis_feet", chance = 2, count = 1})
+
+table.insert(items,{name = "zombies4test:helmet_military", chance = 1, count = 1})
+table.insert(items,{name = "zombies4test:chestplate_military", chance = 1, count = 1})
+table.insert(items,{name = "zombies4test:leggings_military", chance = 1, count = 1})
+table.insert(items,{name = "zombies4test:boots_military", chance = 1, count = 1})
+
+table.insert(items,{name = "zombies4test:helmet_Juggernaut", chance = 1, count = 1})
+table.insert(items,{name = "zombies4test:chestplate_Juggernaut", chance = 1, count = 1})
+table.insert(items,{name = "zombies4test:leggings_Juggernaut", chance = 1, count = 1})
+table.insert(items,{name = "zombies4test:boots_Juggernaut", chance = 1, count = 1})
+--table.insert(items,{name = "zombies4test:shield_Juggernaut", chance = 2, count = 1})
+
+
+end
+
+
+if minetest.get_modpath("mcl_armor") then 
+
+table.insert(items,{name = "zombies4test:helmet_survivor", chance = 1, count = 10})
+table.insert(items,{name = "zombies4test:chestplate_survivor", chance = 1, count = 10})
+table.insert(items,{name = "zombies4test:leggings_survivor", chance = 1, count = 10})
+table.insert(items,{name = "zombies4test:boots_survivor", chance = 1, count = 10})
+
+table.insert(items,{name = "zombies4test:helmet_military", chance = 1, count = 10})
+table.insert(items,{name = "zombies4test:chestplate_military", chance = 1, count = 10})
+table.insert(items,{name = "zombies4test:leggings_military", chance = 1, count = 10})
+table.insert(items,{name = "zombies4test:boots_military", chance = 1, count = 10})
+
+table.insert(items,{name = "zombies4test:helmet_juggernaut", chance = 1, count = 10})
+table.insert(items,{name = "zombies4test:chestplate_juggernaut", chance = 1, count = 10})
+table.insert(items,{name = "zombies4test:leggings_juggernaut", chance = 1, count = 10})
+table.insert(items,{name = "zombies4test:boots_juggernaut", chance = 1, count = 10})
+
+
+
+end
 
 
 
@@ -205,8 +249,18 @@ minetest.register_node("zombies4test:bedside_0", {
 	
 	
 	on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
+	
+	minetest.sound_play("key_normal", {
+		    pos = pos,
+		    gain = 1.0,
+		    max_hear_distance = 10,
+		})
+		
+		
         minetest.set_node(pos, {name = "zombies4test:bedside_1",param2=node.param2})
         end
+        
+          
 
 	
 	
@@ -293,7 +347,16 @@ minetest.register_node("zombies4test:bedside_1", {
 		    return
 		end
 		minetest.node_dig(pos, node, digger)
-	 end
+	 end,
+	 
+	  on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
+        
+		minetest.sound_play("bedsitetable", {
+		    pos = pos,
+		    gain = 1.0,
+		    max_hear_distance = 10,
+		})
+        end
 	
 })
 
@@ -362,7 +425,16 @@ minetest.register_node("zombies4test:bedside", {
 		    return
 		end
 		minetest.node_dig(pos, node, digger)
-	 end
+	 end,
+	 
+	   on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
+        
+		minetest.sound_play("bedsitetable", {
+		    pos = pos,
+		    gain = 1.0,
+		    max_hear_distance = 10,
+		})
+           end
 	
 
 	

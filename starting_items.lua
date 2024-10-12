@@ -9,8 +9,10 @@ local zbemvindo = [[
 -- Define o formspec
 local formspec_1 = "size[8,8]" ..       
                    " background[1,2;6,4;form_bg_z4t.png;true]" .. 
-                    "label[0,5;"..zbemvindo.."]" ..   
-                    "button[3,6;2,4;start;Start]"
+                    "label[0,5;"..zbemvindo.."]" ..                                             
+                    "image_button[3.1,7;2,1;zstart.png;start;]" 
+                    --"button[3,6;2,4;start;Start]"..
+                  
                  
 
 -- Função para mostrar o formspec para um jogador
@@ -59,5 +61,7 @@ end)
 minetest.register_on_joinplayer(function(player)
     znews_formspec(player)
 end)
+
 ]]
+
 

@@ -5,6 +5,7 @@ function zweapons.guns_register(name,def)
 minetest.register_tool(name.."_discharged", {
     description = def.description,--.." Discharged", 
     inventory_image = def.inventory_image, --"glock_17_discharged.png", 
+    wield_image = def.inventory_image, 
     color = "red",
     stack_max = 1,
     groups = {weapons = 1},
@@ -40,7 +41,8 @@ minetest.register_tool(name.."_discharged", {
 
 minetest.register_tool(name.."_recharged", {
     description = def.description,--.." Recharged",
-    inventory_image = def.inventory_image,  
+    inventory_image = def.inventory_image, 
+    wield_image = def.inventory_image, 
     stack_max = 1,
     groups = {not_in_creative_inventory = 1,weapons = 1},
 
