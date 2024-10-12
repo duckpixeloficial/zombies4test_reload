@@ -106,26 +106,6 @@ meta:set_int("zombie kills" ,0)
 end
 
 
--- CONQUISTA DE MATADOR DE ZUMBIS 
-
-local function zombie_killer (player)
-      
-		 --for _, player in ipairs(minetest.get_connected_players()) do
-			local meta = player:get_meta()
-			local n_zombies = meta:get_int("zombie_kills")  
-			
-			if n_zombies >= 100 then
-			--minetest.log("zombie ok")
-				if minetest.get_modpath("awards") then 
-				   awards.unlock(player:get_player_name(), "zombie_killer")
-				end
-		
-			end 
-		--end					
-    
-end
-
-
 ----- HUDS : =======================================================================================================
 local zhuds = {}
 
@@ -254,7 +234,6 @@ minetest.register_globalstep(function(dtime)
     
      for _, player in ipairs(minetest.get_connected_players()) do
           huds_pos_day_update (player)
-          zombie_killer (player)
     end
     
     
