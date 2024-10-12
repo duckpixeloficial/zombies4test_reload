@@ -67,15 +67,3 @@ if minetest.get_modpath("mcl_armor") then
 dofile(path .. "/zarmor_mcl_armor.lua")
 end
 
-
---[[
-
-if minetest.registered_nodes["nyancat:nyancat_rainbow"] then
-	dofile(path .. "/rainbow_staff.lua") ; print ("NYAN!!!!!")
-end
-
-if minetest.get_modpath("3d_armor") then
-	dofile(path .. "/nssm_armor.lua")
-end
-
-]]
