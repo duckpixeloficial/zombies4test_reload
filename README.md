@@ -1,8 +1,13 @@
 
 ![Zombies4test](https://codeberg.org/pixelzone/zombies4test_reload/raw/branch/main/zombies4test.jpg)
 
-### Zombies4Test Reload" is a rework of the Zombies4Test modpack, 
-### which adds zombies, items,tools, structures, and a new challenge to your world...
+##### Zombies4Test Reload" is a rework of the Zombies4Test modpack,
+
+##### which adds zombies, items,tools, structures, and a new challenge to your world...
+
+##### Some things are still being tested, and others need to be improved, we'll get there little by little.
+
+##### You can find some options in the settings, like enabling and disabling zombies, invasion, and structures. These options are still in testing, and I hope it works well!
 ---
 ---
 
