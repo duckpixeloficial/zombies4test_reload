@@ -28,12 +28,22 @@ mobs:register_mob("zombies4test:tankzombie", {
 		--damage = "zombie_hit",
 		death = "roar ",
 	},
+
+	-----------------------
+	pathfinding = 1,
+	fear_height = 6,
+	stepheight = 1.1,
 	walk_velocity = 1,
 	run_velocity = 3,
-	jump_height = 7,
-	stepheight = 1.7,
+	walk_chance = 50,
+	stand_chance = 50,
+	jump = true,
+	jump_height = 6,
 	floats = 0,
-	view_range = 35,
+	view_range = 25,
+	fall_damage = 0,
+	-------------------------
+	
 	drops = {
 		
 		{name = "zombies4test:chainsaw", chance = 2, min = 1, max = 1}, ------- remover da loja pra ser item especial do tank

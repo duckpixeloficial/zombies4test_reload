@@ -24,6 +24,8 @@
 
 4 - [Armor](https://codeberg.org/pixelzone/zombies4test_reload/src/branch/main/zwiki/Armor.md)
 
+5 - [Weapons](https://codeberg.org/pixelzone/zombies4test_reload/src/branch/main/zwiki/Armor.md)
+
 ---
 Thanks to all the testers, TenPlus1,and Darth_Tiktaalik for the help :)
 ---

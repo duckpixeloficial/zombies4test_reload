@@ -29,12 +29,22 @@ mobs:register_mob("zombies4test:runner", {
 		--damage = "zombie_hit",
 		death = "zombie_death ",
 	},
-	walk_velocity = 2,
-	run_velocity = 8,
-	jump_height = 2,
+
+	-----------------------
+	pathfinding = 1,
+	fear_height = 6,
 	stepheight = 1.1,
+	walk_velocity = 1,
+	run_velocity = 8,
+	walk_chance = 50,
+	stand_chance = 50,
+	jump = true,
+	jump_height = 1.1,
 	floats = 0,
-	view_range = 35,
+	view_range = 25,
+	fall_damage = 0,
+	-------------------------
+
 	drops = {
 	
 		{name = "zombies4test:canned_beans", chance = 4, min = 1, max = 1},

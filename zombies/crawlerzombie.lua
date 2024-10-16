@@ -28,12 +28,22 @@ mobs:register_mob("zombies4test:crawlerzombie", {
 		--damage = "zombie_hit",
 		death = "zombie_death ",
 	},
+
+	-----------------------
+	pathfinding = 1,
+	fear_height = 6,
+	stepheight = 1.1,
 	walk_velocity = 1,
 	run_velocity = 2,
-	jump_height = 2,
-	stepheight = 1.2,
+	walk_chance = 50,
+	stand_chance = 50,
+	jump = true,
+	jump_height = 1.1,
 	floats = 0,
-	view_range = 35,
+	view_range = 25,
+	fall_damage = 0,
+	-------------------------
+
 	drops = {
 		{name = "zombies4test:canned_tomato", chance = 4, min = 1, max = 1},
 		{name = "zombies4test:chips", chance = 6, min = 1, max = 1},

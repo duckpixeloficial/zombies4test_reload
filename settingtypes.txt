@@ -1,5 +1,21 @@
 
 #  Enable Invasion ,Alpha teste..
+zombies4test.event (Enable Invasion) bool true
 
-enable_invasion (enable invasion) bool true
+
+#  Enable Invasion ,Alpha teste..
+zombies4test.zombies (Enable Zombies) bool true
+
+
+#  Enable Invasion ,Alpha teste..
+zombies4test.structures (Enable Structures) bool true
+
+
+#  Enable Invasion ,Alpha teste..
+zombies4test.tank (Enable Tanks) bool false
+
+
+
+
+
 

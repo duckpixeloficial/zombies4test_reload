@@ -1,4 +1,6 @@
 
+zombies4test.event = minetest.settings:get_bool("zombies4test.event", true)
+
 
 -- ADICIONAR BOSS E MSG ======================================================================================
 local function add_boss()
@@ -228,9 +230,10 @@ end)
 minetest.register_globalstep(function(dtime)
       
       -- Opção de habilitar evento de  invasão..
-      if minetest.settings:get_bool("enable_invasion") then 
+      if zombies4test.event then 
          invasion_update() -- atualizando invasão
-      return end
+
+       end
     
      for _, player in ipairs(minetest.get_connected_players()) do
           huds_pos_day_update (player)

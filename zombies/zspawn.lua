@@ -30,8 +30,6 @@ local zombis_spawn_nodes = {
 "group:oxidized_stone"
 
 
-
-
 }
 
 
@@ -74,159 +72,136 @@ local minerspawn = {
 
 
 
---- SPAWNS : =============================================
+--- SPAWNS : ======================================================
 
------- COMUNS : ==========================================
---[[
-mobs:spawn({
-	name = "zombies4test:doctorzombie",
-	nodes = zombis_spawn_nodes,
-	min_light = 0,
-	max_light = 14,
-	chance = 7000,
-	min_height = 0,
-	max_height = 200,
-	--max_height = 200,
-	active_object_count = 1,
-})
-]]
-
-mobs:spawn({
-	name = "zombies4test:doctorzombie", -- somente em hospital
-	nodes = {"zombies4test:whiteblock","group:soil"},
-	min_light = 0,
-	max_light = 14,
-	chance = 7000,
-	min_height = 0,
-	max_height = 200,
-	--max_height = 200,
-	active_object_count = 1,
-})
+	mobs:spawn({
+		name = "zombies4test:doctorzombie", -- somente em hospital
+		nodes = {"zombies4test:whiteblock"},
+		min_light = 0,
+		max_light = 14,
+		chance = 7000,
+		min_height = 0,
+		max_height = 200,
+		--max_height = 200,
+		active_object_count = 3,
+	})
 
 
-mobs:spawn({
-	name = "zombies4test:crawlerzombie",
-	nodes = zombis_spawn_nodes,
-	min_light = 0,
-	max_light = 7,
-	chance = 7000,
-	min_height = -20000,
-	max_height = 200,
-	--max_height = 200,
-	active_object_count = 3,
-})
+	mobs:spawn({
+		name = "zombies4test:crawlerzombie",
+		nodes = zombis_spawn_nodes,
+		min_light = 0,
+		max_light = 7,
+		chance = 7000,
+		min_height = -20000,
+		max_height = 200,
+		--max_height = 200,
+		active_object_count = 3,
+	})
 
 
-mobs:spawn({
-	name = "zombies4test:walkingzombie",
-	nodes = zombis_spawn_nodes,
-	min_light = 0,
-	max_light = 7, -- 14
-	chance = 7000,
-	min_height = -20000,
-	max_height = 200,
-	--max_height = 200,
-	active_object_count = 6,
-})
+	mobs:spawn({
+		name = "zombies4test:walkingzombie",
+		nodes = zombis_spawn_nodes,
+		min_light = 0,
+		max_light = 7, -- 14
+		chance = 7000,
+		min_height = -20000,
+		max_height = 200,
+		--max_height = 200,
+		active_object_count = 6,
+	})
 
 
-mobs:spawn({
-	name = "zombies4test:runner",
-	nodes = zombis_spawn_nodes,
-	min_light = 0,
-	max_light = 7, -- 14
-	chance = 30000,
-	min_height = -20000,
-	max_height = 200,
-	--max_height = 200,
-	active_object_count = 1,
-})
+	mobs:spawn({
+		name = "zombies4test:survivorzombie",
+		nodes = zombis_spawn_nodes,
+		min_light = 0,
+		max_light = 14,
+		chance = 5000,
+		min_height = 0,
+		max_height = 200,
+		--max_height = 200,
+		active_object_count = 6,
+	})
 
 
-mobs:spawn({
-	name = "zombies4test:clown_zombie",
-	nodes = zombis_spawn_nodes,
-	min_light = 0,
-	max_light = 7, -- 14
-	chance = 30000,
-	min_height = -20000,
-	max_height = 200,
-	--max_height = 200,
-	active_object_count = 1,
-})
+	mobs:spawn({
+		name = "zombies4test:lumberjackzombie",
+		nodes = lumberspawn,
+		min_light = 0,
+		max_light = 14,
+		chance = 7000,
+		min_height = 0,
+		max_height = 200,
+		--max_height = 200,
+		active_object_count = 1,
+	})
 
 
-mobs:spawn({
-	name = "zombies4test:survivorzombie",
-	nodes = zombis_spawn_nodes,
-	min_light = 0,
-	max_light = 14,
-	chance = 5000,
-	min_height = 0,
-	max_height = 200,
-	--max_height = 200,
-	active_object_count = 6,
-})
+	mobs:spawn({
+		name = "zombies4test:minerzombie",
+		nodes = minerspawn,
+		min_light = 0,
+		max_light = 8,
+		chance = 7000,
+		--min_height = -29000,
+		max_height = -10,
+		--max_height = 200,
+		active_object_count = 3,
+	})
 
 
 
------ ESPECIAIS : ========================================
-mobs:spawn({
-	name = "zombies4test:lumberjackzombie",
-	nodes = lumberspawn,
-	min_light = 0,
-	max_light = 14,
-	chance = 7000,
-	min_height = 0,
-	max_height = 200,
-	--max_height = 200,
-	active_object_count = 1,
-})
+-----	 ESPECIALS : ===================================
 
 
-mobs:spawn({
-	name = "zombies4test:minerzombie",
-	nodes = minerspawn,
-	min_light = 0,
-	max_light = 8,
-	chance = 7000,
-	--min_height = -29000,
-	max_height = -10,
-	--max_height = 200,
-	active_object_count = 3,
-})
+
+	mobs:spawn({
+		name = "zombies4test:runner",
+		nodes = zombis_spawn_nodes,
+		min_light = 0,
+		max_light = 7, -- 14
+		chance = 30000,
+		min_height = -20000,
+		max_height = 200,
+		--max_height = 200,
+		active_object_count = 1,
+	})
+
+
+
+
+
+
+	mobs:spawn({
+		name = "zombies4test:clown_zombie",
+		nodes = zombis_spawn_nodes,
+		min_light = 0,
+		max_light = 7, -- 14
+		chance = 30000,
+		min_height = -20000,
+		max_height = 200,
+		--max_height = 200,
+		active_object_count = 1,
+	})
+
+
 
 
 ----- SEMI BOSSES : ====================================
-mobs:spawn({
-	name = "zombies4test:spitterzombie",
-	nodes = zombis_spawn_nodes,
-	min_light = 0,
-	max_light = 7, -- 14
-	chance = 7000,
-	min_height = -20000,
-	max_height = 200,
-	--max_height = 200,
-	active_object_count = 6,
-})
+
+	mobs:spawn({
+		name = "zombies4test:spitterzombie",
+		nodes = zombis_spawn_nodes,
+		min_light = 0,
+		max_light = 7, -- 14
+		chance = 7000,
+		min_height = -20000,
+		max_height = 200,
+		--max_height = 200,
+		active_object_count = 6,
+	})
 
 
-
------- BOSSES : =======================================
-
---[[
-
-mobs:spawn({
-	name = "zombies4test:tankzombie",
-	nodes = zombis_spawn_nodes,
-	min_light = 0,
-	max_light = 7, -- 14
-	chance = 16000,
-	min_height = 0,
-	max_height = 200,
-	--max_height = 200,
-	active_object_count =1,
-})
-
-]]
 

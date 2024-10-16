@@ -2,13 +2,24 @@ local path = minetest.get_modpath("zombies4test")
 
 
 zweapons = {}
+zombies4test = {}
+
+-- Referencia do dmobs :)
+zombies4test.zombies = minetest.settings:get_bool("zombies4test.zombies", true)
+zombies4test.tank = minetest.settings:get_bool("zombies4test.tank", true)
+zombies4test.structures = minetest.settings:get_bool("zombies4test.structures", true)
 
 -- INICIAL ITENS : ====================================
 dofile(path .. "/starting_items.lua")
 
 
--- STRUCTURES :
+-- STRUCTURES : =======================================
+
+if zombies4test.structures then 
+
 dofile(path .. "/structures.lua")
+
+end
 
 -- ZOMBIES ============================================
 dofile(path.."/zombies/functions.lua")
@@ -22,13 +33,25 @@ dofile(path.."/zombies/survivorzombie.lua")
 dofile(path.."/zombies/tankzombie.lua")
 dofile(path.."/zombies/walkingzombie.lua")
 dofile(path.."/zombies/clown_zombie.lua")
+
+if zombies4test.zombies then 
+
 dofile(path.."/zombies/zspawn.lua")
 
+end
+
+
+if zombies4test.tank then 
+
+dofile(path.."/zombies/ztankspawn.lua")
+
+end
+
+-- WEAPONS : ========================================
 
 dofile(path.."/weapons/guns.lua")
 dofile(path.."/weapons/projectile.lua")
 dofile(path.."/weapons/guns_registers_crafts.lua")
-
 
 -- NODES : ==========================================
 dofile(path .. "/znodes.lua")
