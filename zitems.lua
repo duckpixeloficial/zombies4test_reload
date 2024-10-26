@@ -87,7 +87,7 @@ core.register_craftitem("zombies4test:zcoin", {
 
 ---- ITENS PARA MATERIALS : ---------------------------------------------
 
---[[
+
 
 core.register_craftitem("zombies4test:metal_can", {
     description = "Metal Can",
@@ -100,7 +100,7 @@ core.register_craftitem("zombies4test:plastic", {
     inventory_image = "plastic.png",
 })
 
-]]
+
 
 
 
