@@ -1,6 +1,6 @@
 
 ---- METAL WALL :
-minetest.register_node("zombies4test:metal_wall", {
+core.register_node("zombies4test:metal_wall", {
 	description = "Metal Wall",
 	tiles = {"metal_wallpng.png"},
 	-- light_source = 4, -- somente para identificar o bloco
@@ -12,7 +12,7 @@ minetest.register_node("zombies4test:metal_wall", {
 
 -- BARBED WIRE :
 
-minetest.register_node("zombies4test:barbed_wire", {
+core.register_node("zombies4test:barbed_wire", {
  	drawtype = "plantlike",
 	description = "Barbed Wire",
 	tiles = {"barbed_wire.png"},
@@ -42,7 +42,7 @@ minetest.register_node("zombies4test:barbed_wire", {
 
 -- GRID :
 
-minetest.register_node("zombies4test:grid", {
+core.register_node("zombies4test:grid", {
  	drawtype = "nodebox",
 	description = "Grid",
 	tiles = {"grid.png"},
@@ -72,7 +72,7 @@ minetest.register_node("zombies4test:grid", {
 
 
 --- IRON PLATE 
-minetest.register_node("zombies4test:iron_plate", {
+core.register_node("zombies4test:iron_plate", {
  	drawtype = "nodebox",
 	description = "Iron Plate",
 	tiles = {"iron_plate.png"},
@@ -104,7 +104,7 @@ minetest.register_node("zombies4test:iron_plate", {
 
 ---- SAND BAG :
 
-minetest.register_node("zombies4test:sandbag", {
+core.register_node("zombies4test:sandbag", {
 	description = "Sand Bag",
 	tiles = {"sandbag.png"},
 	-- light_source = 4, -- somente para identificar o bloco
@@ -120,7 +120,7 @@ minetest.register_node("zombies4test:sandbag", {
 
 
 -- BADED WIRE : ---------------------------------------------------------------
-minetest.register_node("zombies4test:wirefence", {
+core.register_node("zombies4test:wirefence", {
 	description = "Wire fence",
 	drawtype = "mesh",
 	mesh = "wire.obj",
@@ -130,7 +130,7 @@ minetest.register_node("zombies4test:wirefence", {
 	tiles = {"barbed-wire.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -160,7 +160,7 @@ minetest.register_node("zombies4test:wirefence", {
 
 
 -- punji_sticks: --------------------------------------------------------------
-minetest.register_node("zombies4test:punji_sticks", {
+core.register_node("zombies4test:punji_sticks", {
 	description = "Punji Sticks",
 	drawtype = "mesh",
 	mesh = "punji_sticks.obj",
@@ -170,7 +170,7 @@ minetest.register_node("zombies4test:punji_sticks", {
 	tiles = {"punjisticks.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = false, 
 	floodable = false,

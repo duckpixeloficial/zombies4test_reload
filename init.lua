@@ -1,28 +1,28 @@
-local path = minetest.get_modpath("zombies4test")
+local path = core.get_modpath("zombies4test")
 
 
 zweapons = {}
 zombies4test = {}
 
 -- Referencia do dmobs :)
-zombies4test.zombies = minetest.settings:get_bool("zombies4test.zombies", true)
-zombies4test.tank = minetest.settings:get_bool("zombies4test.tank", true)
-zombies4test.structures = minetest.settings:get_bool("zombies4test.structures", true)
+zombies4test.zombies = core.settings:get_bool("zombies4test.zombies", true)
+zombies4test.tank = core.settings:get_bool("zombies4test.tank", true)
+zombies4test.structures = core.settings:get_bool("zombies4test.structures", true)
 
 -- INICIAL ITENS : ====================================
-dofile(path .. "/starting_items.lua")
+dofile(path .. "/zstarting_items.lua")
 
 
 -- STRUCTURES : =======================================
 
 if zombies4test.structures then 
 
-dofile(path .. "/structures.lua")
+dofile(path .. "/zstructures.lua")
 
 end
 
 -- ZOMBIES ============================================
-dofile(path.."/zombies/functions.lua")
+dofile(path.."/zombies/zfunctions.lua")
 dofile(path.."/zombies/crawlerzombie.lua")
 dofile(path.."/zombies/doctorzombie.lua")
 dofile(path.."/zombies/lumberjackzombie.lua")
@@ -61,15 +61,15 @@ dofile(path .. "/zitems.lua")
 dofile(path .. "/zdeco.lua")
 dofile(path .. "/zfortification.lua")
 dofile(path .. "/ztrader.lua")
-dofile(path .. "/loot.lua")
+dofile(path .. "/zloot.lua")
 
 --  EVENTO :
-dofile(path .. "/events.lua")
+dofile(path .. "/zevents.lua")
 
 
 -- Recipe support for Repixture, made by : Darth_Tiktaalik
 
-if minetest.get_modpath("rp_crafting") then 
+if core.get_modpath("rp_crafting") then 
    dofile(path .. "/zrecipes_repixture.lua")
 
 else
@@ -81,12 +81,12 @@ end
 
 --  Armor :
 
-if minetest.get_modpath("3d_armor") then 
+if core.get_modpath("3d_armor") then 
 dofile(path .. "/zarmor_3d_armor.lua")
 end
 
 
-if minetest.get_modpath("mcl_armor") then 
+if core.get_modpath("mcl_armor") then 
 dofile(path .. "/zarmor_mcl_armor.lua")
 end
 

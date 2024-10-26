@@ -32,16 +32,16 @@ function climb_ladders(self, dtime)
             z = rounded_pos.z + dir.z
         }
 
-        local node = minetest.get_node(check_pos)
+        local node = core.get_node(check_pos)
         local node_name = node.name  
 
        
-        if node_name and minetest.registered_nodes[node_name] then
-            local node_def = minetest.registered_nodes[node_name]  
+        if node_name and core.registered_nodes[node_name] then
+            local node_def = core.registered_nodes[node_name]  
 
             
             if node_def.climbable == true then
-                -- minetest.chat_send_all("Nó com 'climb' encontrado próximo na posição: " .. minetest.pos_to_string(check_pos))
+                -- core.chat_send_all("Nó com 'climb' encontrado próximo na posição: " .. core.pos_to_string(check_pos))
                
                 self.object:set_pos({x=pos.x, y=pos.y+0.1, z=pos.z}) 
 		self.object:set_velocity({x=0, y=-0.5, z=0})
@@ -62,15 +62,15 @@ end
   
           local pos = self.object:get_pos()
   
-	  for _,players in pairs(minetest.get_objects_inside_radius(pos,5)) do
+	  for _,players in pairs(core.get_objects_inside_radius(pos,5)) do
 	  
 	  	if players:is_player() then
 	  	
-	  	local nodes_glasses = minetest.find_node_near(pos,1, {"group:glass","default:glass"})
+	  	local nodes_glasses = core.find_node_near(pos,1, {"group:glass","default:glass"})
 	  		   if nodes_glasses ~= nil then
 					    		
-				  minetest.after(0.5, function() 
-				   minetest.remove_node(nodes_glasses)
+				  core.after(0.5, function() 
+				   core.remove_node(nodes_glasses)
 				    end)
 			  end
 	  	end
@@ -90,13 +90,13 @@ end
   -- insso poderia estar dentro de custom_attack = function(self, to_attack)
  function attack_boss(self, to_attack)
  
-	 local current_time = minetest.get_us_time() -- tempo atual mas emmicro segundos
+	 local current_time = core.get_us_time() -- tempo atual mas emmicro segundos
 	 
 	  if current_time - last_attack >= 5 * (10^6)  then 
 		last_attack = current_time 
 		
 	        
-	   	for _, player in ipairs(minetest.get_connected_players()) do
+	   	for _, player in ipairs(core.get_connected_players()) do
 				     
 				     
 			local attached = self.attack:get_attach()
@@ -114,7 +114,7 @@ end
 		         
 		        self.object:set_animation({x=200, y=280},35, 1, false)        				
 			self.attack:set_pos({x=pp.x+3,y=pp.y+5,z=pp.z})				     
-			minetest.sound_play("missozzy", {pos = pos, gain = 0.5})
+			core.sound_play("missozzy", {pos = pos, gain = 0.5})
 				   
 		 end
 	    end
@@ -130,7 +130,7 @@ end
  
  -- self.object:set_animation({x=260, y=380}, 20, 0)
    	
- for _,players in pairs(minetest.get_objects_inside_radius(pos,40)) do 
+ for _,players in pairs(core.get_objects_inside_radius(pos,40)) do 
 			if players:is_player() then 
 			
 			local meta = players:get_meta()

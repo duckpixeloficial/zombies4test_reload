@@ -1,4 +1,3 @@
-
 #### Some simple weapons are added in the Zombies4test mod, they are still in testing and beta, but they are functional..
 #### see the weapons below:
 
@@ -37,32 +36,32 @@ depends = zombies4test
 
 4 - Now inside the "init.lua" file, you create your weapons, see how simple it is:
 
-zweapons.guns_register ("your_mod_name:weapon_name", {
+    zweapons.guns_register ("your_mod_name:weapon_name", {
 
-   description = "My Weapon ",
+    description = "My Weapon ",
 
-   inventory_image = "my_weapon.png",
+    inventory_image = "my_weapon.png",
 
-   bullet_name = "your_mod_name:guns_bullet_name",
+    bullet_name = "your_mod_name:guns_bullet_name",
 
-   bullet_amount = 6,  
+     bullet_amount = 6,  
 
-   max_shot  = 7,
+    max_shot  = 7,
 
-   sound_guns = "shot"
+    sound_guns = "shot"
   
-})
+    })
 
 
 5 - You will need to create the projectiles, or bullets for your weapons, remembering that you need to add to your weapon, what type of bullet it will shoot.
 
-zweapons.bullet_register("your_mod_name:guns_bullet_name", {
+    zweapons.bullet_register("your_mod_name:guns_bullet_name", {
 
     description = "Bullet Name",
 
     inventory_image = "bullet.png",
 
     damage = 10, 
-})
+    })
 
 

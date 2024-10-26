@@ -1,5 +1,9 @@
-minetest.register_node("zombies4test:zlantern", {
-    description = "Z Lantern",
+
+local S = minetest.get_translator("zombies4test")
+
+
+core.register_node("zombies4test:zlantern", {
+    description = S("Z Lantern"),
     drawtype = "mesh",
     mesh = "lantern_normal.obj", 
     tiles = {"Lantern.png"}, 
@@ -10,7 +14,7 @@ minetest.register_node("zombies4test:zlantern", {
     groups = {cracky = 3},
     drop = "zombies4test:zlantern", 
     on_punch = function(pos, node, puncher)
-        minetest.node_dig(pos, node, puncher)
+        core.node_dig(pos, node, puncher)
     end,
     
      selection_box = {
@@ -26,10 +30,9 @@ minetest.register_node("zombies4test:zlantern", {
 
 
 
-
 ---- trashcan :
-minetest.register_node("zombies4test:trashcan", {
-	description = "Trashcan",
+core.register_node("zombies4test:trashcan", {
+	description = S("Trashcan"),
 	drawtype = "mesh",
 	mesh = "trashcan.obj",
 	--visual_size = {x=1, y=1},
@@ -38,7 +41,7 @@ minetest.register_node("zombies4test:trashcan", {
 	tiles = {"trashcan.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -66,8 +69,8 @@ minetest.register_node("zombies4test:trashcan", {
 
 
 ---- VENDING MACHINE : <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-minetest.register_node("zombies4test:vendingmachine", {
-	description = "Vending machine",
+core.register_node("zombies4test:vendingmachine", {
+	description = S("Vending machine"),
 	drawtype = "mesh",
 	mesh = "vending_machine.obj",
 	--visual_size = {x=1, y=1},
@@ -77,7 +80,7 @@ minetest.register_node("zombies4test:vendingmachine", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	-- light_source = 8,
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	use_texture_alpha = "blend",
 	walkable = true, 
@@ -100,7 +103,7 @@ minetest.register_node("zombies4test:vendingmachine", {
 	
 	on_construct = function(pos)
     	-- local pos = pos.x .. "," .. pos.y .. "," .. pos.z
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         meta:set_string("infotext", "\t\t\t\t\tVending Machine,\nInsert one zcoin to buy Soda !")   
         end,
     
@@ -113,14 +116,14 @@ minetest.register_node("zombies4test:vendingmachine", {
 		if item_name == "zombies4test:zcoin" then
 		
 		-- Sound : https://freesound.org/people/Kyodon/sounds/153422/
-		minetest.sound_play("v_machine", {pos = pos,gain = 1.0,max_hear_distance = 3,})
+		core.sound_play("v_machine", {pos = pos,gain = 1.0,max_hear_distance = 3,})
 
 		inv:add_item("main", "zombies4test:soda 1")
 		itemstack:take_item()
 	    
 		
 		else
-		minetest.chat_send_player(clicker:get_player_name()," Insert one zcoin to buy Soda !")
+		core.chat_send_player(clicker:get_player_name()," Insert one zcoin to buy Soda !")
 
 		end
 		
@@ -135,8 +138,8 @@ minetest.register_node("zombies4test:vendingmachine", {
 
 ---- RADIO :
 
-minetest.register_node("zombies4test:radio", {
-	description = "Radio",
+core.register_node("zombies4test:radio", {
+	description = S("Radio"),
 	drawtype = "mesh",
 	mesh = "radio.obj",
 	--visual_size = {x=1, y=1},
@@ -144,7 +147,7 @@ minetest.register_node("zombies4test:radio", {
 	tiles = {"radio.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -165,7 +168,7 @@ minetest.register_node("zombies4test:radio", {
 
 	 on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
         -- Play a sound to the player at the node position
-        minetest.sound_play("radioo", {
+        core.sound_play("radioo", {
             pos = pos,
             gain = 1.0,
             max_hear_distance = 10,
@@ -178,8 +181,8 @@ minetest.register_node("zombies4test:radio", {
 
 
 ---- TABLEs : ===================================================
-minetest.register_node("zombies4test:table", {
-	description = "Table",
+core.register_node("zombies4test:table", {
+	description = S("Table"),
 	drawtype = "mesh",
 	mesh = "table.obj",
 	--visual_size = {x=1, y=1},
@@ -187,7 +190,7 @@ minetest.register_node("zombies4test:table", {
 	tiles = {"table.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -210,8 +213,8 @@ minetest.register_node("zombies4test:table", {
 })
 
 
-minetest.register_node("zombies4test:office_desk", {
-	description = "Office Desk",
+core.register_node("zombies4test:office_desk", {
+	description = S("Office Desk"),
 	drawtype = "mesh",
 	mesh = "office_desk.obj",
 	tiles = {"office_desk.png"},
@@ -239,8 +242,8 @@ minetest.register_node("zombies4test:office_desk", {
 
 
 ---- COMPUTER :
-minetest.register_node("zombies4test:computer", {
-	description = "Computer",
+core.register_node("zombies4test:computer", {
+	description = S("Computer"),
 	drawtype = "mesh",
 	mesh = "computer.obj",
 	--visual_size = {x=1, y=1},
@@ -248,7 +251,7 @@ minetest.register_node("zombies4test:computer", {
 	tiles = {"computerr.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -269,7 +272,7 @@ minetest.register_node("zombies4test:computer", {
 	
 	 on_rightclick = function(pos, node, player, itemstack, pointed_thing)
         local formspec = "size[8,8;]image[-0.9,-0.35;12,11;pc.png]"
-        minetest.show_formspec(player:get_player_name(), "mymod:img_formspec", formspec) -- falta a imagem
+        core.show_formspec(player:get_player_name(), "mymod:img_formspec", formspec) -- falta a imagem
     end
 	
 })
@@ -277,8 +280,8 @@ minetest.register_node("zombies4test:computer", {
 
 
 ---- ARMCHAIR :
-minetest.register_node("zombies4test:armchair", {
-	description = "Armchair",
+core.register_node("zombies4test:armchair", {
+	description = S("Armchair"),
 	drawtype = "mesh",
 	mesh = "armchair.obj",
 	--visual_size = {x=1, y=1},
@@ -286,7 +289,7 @@ minetest.register_node("zombies4test:armchair", {
 	tiles = {"armchair.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -308,13 +311,13 @@ minetest.register_node("zombies4test:armchair", {
 
 	on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
         local player = clicker:get_player_name() 
-        local player_pos = minetest.get_player_by_name(player):get_pos() 
-        minetest.get_player_by_name(player):set_pos(pos) 
+        local player_pos = core.get_player_by_name(player):get_pos() 
+        core.get_player_by_name(player):set_pos(pos) 
 
         -- Animação
-        --minetest.get_player_by_name(player):set_animation({x = 81,  y = 160}, 30, 0)
-        minetest.after(0.2, function()
-        minetest.get_player_by_name(player):set_animation({x = 81,  y = 160}, 30, 0)
+        --core.get_player_by_name(player):set_animation({x = 81,  y = 160}, 30, 0)
+        core.after(0.2, function()
+        core.get_player_by_name(player):set_animation({x = 81,  y = 160}, 30, 0)
         end)
    		end,
 
@@ -327,8 +330,8 @@ minetest.register_node("zombies4test:armchair", {
 
 
 ---- hospital_gurney :
-minetest.register_node("zombies4test:hospital_gurney", {
-	description = "Hospital Gurney",
+core.register_node("zombies4test:hospital_gurney", {
+	description = S("Hospital Gurney"),
 	drawtype = "mesh",
 	mesh = "maca_hospital.obj",
 	--visual_size = {x=1, y=1},
@@ -336,7 +339,7 @@ minetest.register_node("zombies4test:hospital_gurney", {
 	tiles = {"hospital_gurney.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -359,13 +362,13 @@ minetest.register_node("zombies4test:hospital_gurney", {
 
 	on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
         local player = clicker:get_player_name() 
-        local player_pos = minetest.get_player_by_name(player):get_pos() 
-        minetest.get_player_by_name(player):set_pos({x=pos.x,y=pos.y+3,z=pos.z}) 
+        local player_pos = core.get_player_by_name(player):get_pos() 
+        core.get_player_by_name(player):set_pos({x=pos.x,y=pos.y+3,z=pos.z}) 
 
         -- Animação
-        --minetest.get_player_by_name(player):set_animation({x = 162,  y = 166}, 30, 0)
-        minetest.after(0.2, function()
-           minetest.get_player_by_name(player):set_animation({x = 162,  y = 166}, 30, 0)
+        --core.get_player_by_name(player):set_animation({x = 162,  y = 166}, 30, 0)
+        core.after(0.2, function()
+           core.get_player_by_name(player):set_animation({x = 162,  y = 166}, 30, 0)
            end)
    	end,
 		
@@ -376,8 +379,8 @@ minetest.register_node("zombies4test:hospital_gurney", {
 
 
 ---- bedside_cabinet :
-minetest.register_node("zombies4test:bedside_cabinet", {
-	description = "Bedside Cabinet",
+core.register_node("zombies4test:bedside_cabinet", {
+	description = S("Bedside Cabinet"),
 	drawtype = "mesh",
 	mesh = "bedside_cabinet.obj",
 	--visual_size = {x=1, y=1},
@@ -385,7 +388,7 @@ minetest.register_node("zombies4test:bedside_cabinet", {
 	tiles = {"bedside_cabinet.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	use_texture_alpha = "blend",
 	walkable = true, 
@@ -413,8 +416,8 @@ minetest.register_node("zombies4test:bedside_cabinet", {
 
 
 ---- SHELVING :
-minetest.register_node("zombies4test:shelving", {
-	description = "Shelving",
+core.register_node("zombies4test:shelving", {
+	description = S("Shelving"),
 	drawtype = "mesh",
 	mesh = "shelving.obj",
 	--visual_size = {x=1, y=1},
@@ -422,7 +425,7 @@ minetest.register_node("zombies4test:shelving", {
 	tiles = {"shalving.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -447,8 +450,8 @@ minetest.register_node("zombies4test:shelving", {
 
 
 ---- WORKBENCH :
-minetest.register_node("zombies4test:workbench", {
-	description = "Workbench",
+core.register_node("zombies4test:workbench", {
+	description = S("Workbench"),
 	drawtype = "mesh",
 	mesh = "Workbench.obj",
 	--visual_size = {x=1, y=1},
@@ -456,7 +459,7 @@ minetest.register_node("zombies4test:workbench", {
 	tiles = {"Workbench.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -482,8 +485,8 @@ minetest.register_node("zombies4test:workbench", {
 
 
 ---- BEDS :
-minetest.register_node("zombies4test:dirtybeds", {
-	description = "Dirty beds",
+core.register_node("zombies4test:dirtybeds", {
+	description = S("Dirty beds"),
 	drawtype = "mesh",
 	mesh = "bedx.obj",
 	--visual_size = {x=1, y=1},
@@ -491,7 +494,7 @@ minetest.register_node("zombies4test:dirtybeds", {
 	tiles = {"bedx.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -512,7 +515,7 @@ minetest.register_node("zombies4test:dirtybeds", {
 
     on_rightclick = function(pos, node, player, itemstack, pointed_thing)
        
-    	 minetest.chat_send_player(player:get_player_name(), "That bed is contaminated, you can't sleep in it!")
+    	 core.chat_send_player(player:get_player_name(), "That bed is contaminated, you can't sleep in it!")
        
     end,
     
@@ -522,8 +525,8 @@ minetest.register_node("zombies4test:dirtybeds", {
 
 
 ---- VASES :
-minetest.register_node("zombies4test:vases", {
-	description = "Vases",
+core.register_node("zombies4test:vases", {
+	description = S("Vases"),
 	drawtype = "mesh",
 	mesh = "vases.obj",
 	--visual_size = {x=1, y=1},
@@ -531,7 +534,7 @@ minetest.register_node("zombies4test:vases", {
 	tiles = {"vases.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	use_texture_alpha = "blend",
 	walkable = true, 
@@ -558,8 +561,8 @@ minetest.register_node("zombies4test:vases", {
 
 -- Ladder 
 
-minetest.register_node("zombies4test:ladder_fake", {
-	description = "Ladder",
+core.register_node("zombies4test:ladder_fake", {
+	description = S("Ladder"),
 	drawtype = "signlike",
 	tiles = {"ladder_fake.png"},
 	inventory_image = "ladder_fake.png",
@@ -588,8 +591,8 @@ minetest.register_node("zombies4test:ladder_fake", {
 
 ---- DOORS : 
 
-minetest.register_node("zombies4test:fake_door", {
-	description = "Fake Door",
+core.register_node("zombies4test:fake_door", {
+	description = S("Fake Door"),
 	drawtype = "mesh",
 	mesh = "fake_door.obj",
 	--visual_size = {x=1, y=1},
@@ -598,7 +601,7 @@ minetest.register_node("zombies4test:fake_door", {
 	tiles = {"fake_door.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -618,8 +621,8 @@ minetest.register_node("zombies4test:fake_door", {
 	
 	
 	on_rightclick = function(pos, node)
-			minetest.sound_play({name="door_open_duck",gain = 1.0,max_hear_distance = 2 })
-			minetest.set_node(pos,{name = "zombies4test:fake_door_open",param2=node.param2})
+			core.sound_play({name="door_open_duck",gain = 1.0,max_hear_distance = 2 })
+			core.set_node(pos,{name = "zombies4test:fake_door_open",param2=node.param2})
 			return 
 	end
 	
@@ -628,8 +631,8 @@ minetest.register_node("zombies4test:fake_door", {
 
 
 
-minetest.register_node("zombies4test:fake_door_open", {
-	description = "Fake Door Open",
+core.register_node("zombies4test:fake_door_open", {
+	--description = "Fake Door Open",
 	drawtype = "mesh",
 	mesh = "fake_door_b.obj",
 	--visual_size = {x=1, y=1},
@@ -638,7 +641,7 @@ minetest.register_node("zombies4test:fake_door_open", {
 	tiles = {"fake_door.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -657,8 +660,8 @@ minetest.register_node("zombies4test:fake_door_open", {
 	},
 	
 	on_rightclick = function(pos, node)
-			minetest.sound_play({name="door_closed_duck",gain = 1.0,max_hear_distance = 2 })
-			minetest.set_node(pos,{name = "zombies4test:fake_door",param2=node.param2})
+			core.sound_play({name="door_closed_duck",gain = 1.0,max_hear_distance = 2 })
+			core.set_node(pos,{name = "zombies4test:fake_door",param2=node.param2})
 			return 
 	end
 	
@@ -668,8 +671,8 @@ minetest.register_node("zombies4test:fake_door_open", {
 
 ---- DOORS GLASS FAKE: 
 
-minetest.register_node("zombies4test:fake_glass_door", {
-	description = "Fake Glass Door",
+core.register_node("zombies4test:fake_glass_door", {
+	description = S("Fake Glass Door"),
 	drawtype = "mesh",
 	mesh = "fake_door.obj",
 	--visual_size = {x=1, y=1},
@@ -679,7 +682,7 @@ minetest.register_node("zombies4test:fake_glass_door", {
 	use_texture_alpha = "blend",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -699,8 +702,8 @@ minetest.register_node("zombies4test:fake_glass_door", {
 	
 	
 	on_rightclick = function(pos, node)
-			--minetest.sound_play({name="door_open_duck",gain = 1.0,max_hear_distance = 2 })
-			minetest.set_node(pos,{name = "zombies4test:fake_glass_door_open",param2=node.param2})
+			--core.sound_play({name="door_open_duck",gain = 1.0,max_hear_distance = 2 })
+			core.set_node(pos,{name = "zombies4test:fake_glass_door_open",param2=node.param2})
 			return 
 	end
 	
@@ -709,8 +712,8 @@ minetest.register_node("zombies4test:fake_glass_door", {
 
 
 
-minetest.register_node("zombies4test:fake_glass_door_open", {
-	description = "Fake Glass Door Open",
+core.register_node("zombies4test:fake_glass_door_open", {
+	--description = "Fake Glass Door Open",
 	drawtype = "mesh",
 	mesh = "fake_door_b.obj",
 	--visual_size = {x=1, y=1},
@@ -720,7 +723,7 @@ minetest.register_node("zombies4test:fake_glass_door_open", {
 	use_texture_alpha = "blend",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -739,8 +742,8 @@ minetest.register_node("zombies4test:fake_glass_door_open", {
 	},
 	
 	on_rightclick = function(pos, node)
-			--minetest.sound_play({name="door_closed_duck",gain = 1.0,max_hear_distance = 2 })
-			minetest.set_node(pos,{name = "zombies4test:fake_glass_door",param2=node.param2})
+			--core.sound_play({name="door_closed_duck",gain = 1.0,max_hear_distance = 2 })
+			core.set_node(pos,{name = "zombies4test:fake_glass_door",param2=node.param2})
 			return 
 	end
 	

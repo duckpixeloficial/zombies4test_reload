@@ -1,5 +1,5 @@
 
-minetest.register_tool("zombies4test:zpick", {
+core.register_tool("zombies4test:zpick", {
     description = "Z Pick",
     inventory_image = "zpick.png",
     tool_capabilities = {
@@ -17,7 +17,7 @@ minetest.register_tool("zombies4test:zpick", {
 
 ---- HOSPITAL BLOCK :
 
-minetest.register_node("zombies4test:whiteblock", {
+core.register_node("zombies4test:whiteblock", {
     description = "White Block",
     tiles = {"white_block.png"},
     drop = "zombies4test:whiteblock",
@@ -33,7 +33,7 @@ minetest.register_node("zombies4test:whiteblock", {
 
 
 
-minetest.register_node("zombies4test:whiteblock_dirty", {
+core.register_node("zombies4test:whiteblock_dirty", {
 	description = "White Block dirty",
 	tiles = {"white_block_dirty.png"},
 	groups = {unbreakable = 1},
@@ -51,7 +51,7 @@ minetest.register_node("zombies4test:whiteblock_dirty", {
 	
 })
 
-minetest.register_node("zombies4test:greenblock", {
+core.register_node("zombies4test:greenblock", {
 	description = "Green Block",
 	tiles = {"green_node.png"},
 	groups = {unbreakable = 1},
@@ -73,7 +73,7 @@ minetest.register_node("zombies4test:greenblock", {
 	
 })
 
-minetest.register_node("zombies4test:redblock", {
+core.register_node("zombies4test:redblock", {
 	description = "Red Block",
 	tiles = {"red_node.png"},
 	groups = {unbreakable = 1},
@@ -95,7 +95,7 @@ minetest.register_node("zombies4test:redblock", {
 	
 })
 
-minetest.register_node("zombies4test:grayblock", {
+core.register_node("zombies4test:grayblock", {
 	description = "Gray Block",
 	tiles = {"gray_node.png"},
 	groups = {unbreakable = 1},
@@ -121,7 +121,7 @@ minetest.register_node("zombies4test:grayblock", {
 
 
 ---- SIDEWALK :
-minetest.register_node("zombies4test:sidewalk", {
+core.register_node("zombies4test:sidewalk", {
 	description = "Sidewalk",
 	tiles = {"sidewalk.png"},
 	paramtype2 = "facedir",
@@ -141,7 +141,7 @@ minetest.register_node("zombies4test:sidewalk", {
 
 
 ---- BRICK MOTEL :
-minetest.register_node("zombies4test:brick_motel", {
+core.register_node("zombies4test:brick_motel", {
 	description = "Brick Motel",
 	tiles = {"brick_motel.png"},
 	paramtype2 = "facedir",
@@ -159,7 +159,7 @@ minetest.register_node("zombies4test:brick_motel", {
 
 
 --- BRICK Home :
-minetest.register_node("zombies4test:brick_homes", {
+core.register_node("zombies4test:brick_homes", {
 	description = "Brick Homes",
 	tiles = {"brick_home.png"},
 	paramtype2 = "facedir",
@@ -178,7 +178,7 @@ minetest.register_node("zombies4test:brick_homes", {
 
 
 ---- FLOOR BLOCK :
-minetest.register_node("zombies4test:floor_block", {
+core.register_node("zombies4test:floor_block", {
 	description = "Floor Block",
 	tiles = {"floor_block.png"},
 	paramtype2 = "facedir",
@@ -195,7 +195,7 @@ minetest.register_node("zombies4test:floor_block", {
 })
 
 ---- MEDICAL TENT :
-minetest.register_node("zombies4test:medicaltentblock", {
+core.register_node("zombies4test:medicaltentblock", {
 	description = "Medical Tent Block",
 	tiles = {"medical_tent_block.png"},
 	paramtype2 = "facedir",
@@ -213,7 +213,7 @@ minetest.register_node("zombies4test:medicaltentblock", {
 
 
 ---- WOOD TENT :
-minetest.register_node("zombies4test:wood_cabin", {
+core.register_node("zombies4test:wood_cabin", {
 	description = "Wood Cabin",
 	tiles = {"wood_cabin.png"},
 	groups = {unbreakable = 1},
@@ -235,7 +235,7 @@ minetest.register_node("zombies4test:wood_cabin", {
 	
 })
 
-minetest.register_node("zombies4test:wood_cabin_2", {
+core.register_node("zombies4test:wood_cabin_2", {
 	description = "Wood Cabin 2",
 	tiles = {"wood_cabin_2.png"},
 	groups = {unbreakable = 1},
@@ -260,7 +260,7 @@ minetest.register_node("zombies4test:wood_cabin_2", {
 -- STRIS ============================================================
 
 --[[
-minetest.register_node("zombies4test:stair_coal", {
+core.register_node("zombies4test:stair_coal", {
     description = "Stair Coal",
     tiles = {"default_coal_block.png"},
     drawtype = "nodebox",
@@ -284,13 +284,13 @@ minetest.register_node("zombies4test:stair_coal", {
         },
     },
     
-       on_place = minetest.rotate_node,
+       on_place = core.rotate_node,
 })
 
 ]]
 
 
-minetest.register_node("zombies4test:stair_wood_cabin", {
+core.register_node("zombies4test:stair_wood_cabin", {
     description = "Stair Wood Cabin",
     tiles = {"wood_cabin.png"},
     drawtype = "nodebox",
@@ -314,11 +314,11 @@ minetest.register_node("zombies4test:stair_wood_cabin", {
         },
     },
     
-       on_place = minetest.rotate_node,
+       on_place = core.rotate_node,
 })
 
 
-minetest.register_node("zombies4test:stair_wood_cabin_2", {
+core.register_node("zombies4test:stair_wood_cabin_2", {
     description = "Stair Wood Cabin 2",
     tiles = {"wood_cabin_2.png"},
     drawtype = "nodebox",
@@ -342,11 +342,11 @@ minetest.register_node("zombies4test:stair_wood_cabin_2", {
         },
     },
     
-       on_place = minetest.rotate_node,
+       on_place = core.rotate_node,
 })
 
 
-minetest.register_node("zombies4test:motel_glass", {
+core.register_node("zombies4test:motel_glass", {
     description = "Motel Glass",
     tiles = {"motel_glass.png"}, 
     is_ground_content = true,
@@ -367,7 +367,7 @@ minetest.register_node("zombies4test:motel_glass", {
 })
 
 
-minetest.register_node("zombies4test:zgray_stair", {
+core.register_node("zombies4test:zgray_stair", {
     description = "z Gray Stair",
     tiles = {"gray_node.png"}, -- Certifique-se de ter a textura correspondente
     --groups = {choppy = 2, oddly_breakable_by_hand = 2},
@@ -388,11 +388,11 @@ minetest.register_node("zombies4test:zgray_stair", {
 				{-0.5, 0.0, 0.0, 0.5, 0.5, 0.5},
 			},
 		},
-    on_place = minetest.rotate_node,
+    on_place = core.rotate_node,
 })
 
 
-minetest.register_node("zombies4test:zgreen_stair", {
+core.register_node("zombies4test:zgreen_stair", {
     description = "Z Green Stair",
     tiles = {"medical_tent_block.png"}, -- Certifique-se de ter a textura correspondente
     --groups = {choppy = 2, oddly_breakable_by_hand = 2},
@@ -413,11 +413,11 @@ minetest.register_node("zombies4test:zgreen_stair", {
 				{-0.5, 0.0, 0.0, 0.5, 0.5, 0.5},
 			},
 		},
-    on_place = minetest.rotate_node,
+    on_place = core.rotate_node,
 })
 
 
-minetest.register_node("zombies4test:zred_stair", {
+core.register_node("zombies4test:zred_stair", {
     description = "Z Red Stair",
     tiles = {"red_node.png"}, -- Certifique-se de ter a textura correspondente
     --groups = {choppy = 2, oddly_breakable_by_hand = 2},
@@ -438,13 +438,13 @@ minetest.register_node("zombies4test:zred_stair", {
 				{-0.5, 0.0, 0.0, 0.5, 0.5, 0.5},
 			},
 		},
-   on_place = minetest.rotate_node,
+   on_place = core.rotate_node,
 })
 
 
 
 
-minetest.register_node("zombies4test:sidewalk_stair", {
+core.register_node("zombies4test:sidewalk_stair", {
     description = "Z sidewalk Stair",
     tiles = {"sidewalk.png"}, -- Certifique-se de ter a textura correspondente
     --groups = {choppy = 2, oddly_breakable_by_hand = 2},
@@ -465,7 +465,7 @@ minetest.register_node("zombies4test:sidewalk_stair", {
 				{-0.5, 0.0, 0.0, 0.5, 0.5, 0.5},
 			},
 		},
-    on_place = minetest.rotate_node,
+    on_place = core.rotate_node,
 })
 
 

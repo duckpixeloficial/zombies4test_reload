@@ -113,7 +113,6 @@ zweapons.bullet_register("zombies4test:remington870_bullet", {
 
 
 
-
 --- Sawedoffshotgun:
 zweapons.guns_register ("zombies4test:sawedoffshotgunt", {
    description = "Sawed Off Shotgun\n"..core.colorize("#ff0000", "Damage = 25"),

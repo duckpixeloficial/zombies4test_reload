@@ -1,4 +1,6 @@
 
+local S = minetest.get_translator("zombies4test")
+
 local color_dust = {
 "dust_blue.png",
 "dust_green.png",
@@ -82,12 +84,12 @@ mobs:register_mob("zombies4test:clown_zombie", {
 	
 	 custom_attack = function(self, to_attack)
 	 
-	   for _, player in ipairs(minetest.get_connected_players()) do
+	   for _, player in ipairs(core.get_connected_players()) do
 	   
-	     minetest.chat_send_player(player:get_player_name(), "The dust of laughter is causing slowness!")
+	     core.chat_send_player(player:get_player_name(), "The dust of laughter is causing slowness!")
 	     player:set_physics_override({speed = 0.3})
 	     
-	     minetest.after(6, function() 
+	     core.after(6, function() 
              player:set_physics_override({speed = 1.0}) 
              
            end)
@@ -98,7 +100,7 @@ mobs:register_mob("zombies4test:clown_zombie", {
 	    for _,dust in pairs(color_dust) do
 	  	local pos = self.object:get_pos()
 	  	
-	  	  minetest.add_particlespawner({
+	  	  core.add_particlespawner({
 		    amount = 3, 
 		    time = 1, 
 		    minpos = {x = pos.x - 1, y = pos.y, z = pos.z - 1},
@@ -146,5 +148,5 @@ mobs:register_mob("zombies4test:clown_zombie", {
 
 
 
-mobs:register_egg("zombies4test:clown_zombie", "Clown Zombie", "zombies_egg.png", 0)
+mobs:register_egg("zombies4test:clown_zombie", S("Clown Zombie"), "zombies_egg.png", 0)
 

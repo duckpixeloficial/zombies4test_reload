@@ -1,3 +1,7 @@
+
+
+local S = minetest.get_translator("zombies4test")
+
 mobs:register_mob("zombies4test:survivorzombie", {
 	--nametag = "Survivor Zombie" ,
 	type = "monster",
@@ -85,6 +89,6 @@ mobs:register_mob("zombies4test:survivorzombie", {
 
 
 
-mobs:register_egg("zombies4test:survivorzombie", "Survivor Zombie", "zombies_egg.png", 0)
+mobs:register_egg("zombies4test:survivorzombie", S("Survivor Zombie"), "zombies_egg.png", 0)
 
 

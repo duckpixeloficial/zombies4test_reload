@@ -1,9 +1,10 @@
 
+local S = minetest.get_translator("zombies4test")
 
  ----- ACID =====================================================================
  function poison_part (pos)  --- PARTICULAS
 
-   minetest.add_particlespawner({
+   core.add_particlespawner({
 		amount = 5,
 		time = 0.1,
 		minpos = pos,
@@ -104,7 +105,7 @@ mobs:register_mob("zombies4test:spitterzombie", {
 })
 
 
-
+local poisson_mg = S("You are poisoned!")
 
 mobs:register_arrow("zombies4test:spitter_arrow", {
 	visual = "sprite",
@@ -125,7 +126,7 @@ mobs:register_arrow("zombies4test:spitter_arrow", {
 					    local damage = 1
 					    local time_elapsed = 0
 					    
-					    minetest.chat_send_player(player:get_player_name(), "You are poisoned!")
+					    core.chat_send_player(player:get_player_name(),poisson_mg)
 
 					    local function do_damage()
 					        if time_elapsed >= duration or player:get_hp() <= 0 then
@@ -133,7 +134,7 @@ mobs:register_arrow("zombies4test:spitter_arrow", {
 					        end
 					        ---------------------------------------------------------------------------------
 							          local pos = player:get_pos()
-								       	minetest.add_particlespawner({
+								       	core.add_particlespawner({
 								        amount = 3, -- quantidade de particulas
 								        time = 2, -- quanto tempo geradas
 								        minpos = {x = pos.x - 1, y = pos.y, z = pos.z - 1},
@@ -158,7 +159,7 @@ mobs:register_arrow("zombies4test:spitter_arrow", {
 					        player:set_hp(player:get_hp() - damage)
 					        time_elapsed = time_elapsed + damage_interval
 		  
-					        minetest.after(damage_interval, do_damage)
+					        core.after(damage_interval, do_damage)
 
 					    end
 
@@ -169,21 +170,14 @@ mobs:register_arrow("zombies4test:spitter_arrow", {
 
 
 
---	hit_mob = function(self, player)
---		player:punch(self.object, 1.0, {
---			full_punch_interval = 1.0,
---			damage_groups = {fleshy = 2},
---		}, nil)
---	end,
+	hit_node = function(self, pos)
+		self.object:remove()
+	end
 
-hit_node = function(self, pos)
-	self.object:remove()
-end
-
-})
+	})
 
 
 
 
 
-mobs:register_egg("zombies4test:spitterzombie", "Spitter Zombie", "zombies_egg.png", 0)
+mobs:register_egg("zombies4test:spitterzombie", S("Spitter Zombie"), "zombies_egg.png", 0)

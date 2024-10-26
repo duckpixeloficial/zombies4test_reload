@@ -3,18 +3,18 @@
 ---
 
 ### -- Metal Can 
-[ Canned Tomato ] 
+	[ Canned Tomato ] 
 
 -- Metal Can 
 
-[ Canned Beans ]
+	[ Canned Beans ]
 
 ### -- Plastic :
-[ Group Tree ]
+	[ Group Tree ]
 
-[ Group Tree ]
+	[ Group Tree ]
 
-[ Group Tree ]
+	[ Group Tree ]
 
 
 ## NODES :
@@ -22,9 +22,9 @@
 
 ### -- Sidewalk
 
-[ Plastic ] [ Plastic ]
+	[ Plastic ] [ Plastic ]
 
-[ Group Stone ] [ Group Stone ]
+	[ Group Stone ] [ Group Stone ]
 
 
 
@@ -32,49 +32,49 @@
 
 ### -- Metal Wall
 
-[ Metal Can ] [ Metal Can ] [ Metal Can ]
+	[ Metal Can ] [ Metal Can ] [ Metal Can ]
 
-[ Metal Can ] [ Metal Can ] [ Metal Can ]
+	[ Metal Can ] [ Metal Can ] [ Metal Can ]
 
-[ Metal Can ] [ Metal Can ] [ Metal Can ]
+	[ Metal Can ] [ Metal Can ] [ Metal Can ]
 
 ### -- Barbed Wire
 
-[ ] [ Metal Can ] [ ]
+	[ ] [ Metal Can ] [ ]
 
-[ Metal Can ] [ ] [ Metal Can ]
+	[ Metal Can ] [ ] [ Metal Can ]
 
-[ ] [ Metal Can ] [ ]
+	[ ] [ Metal Can ] [ ]
 
 ### -- Grid
 
-[ Barbed Wire ] [ Barbed Wire ] [ ]
+	[ Barbed Wire ] [ Barbed Wire ] [ ]
 
-[ Barbed Wire ] [ Barbed Wire ] [ ]
+	[ Barbed Wire ] [ Barbed Wire ] [ ]
 
-[ ] [ ] [ ]
+	[ ] [ ] [ ]
 
 
 ### -- Sand Bag
 
-[ Group Sand ] [ Group Sand ] [ Group Sand ]
+	[ Group Sand ] [ Group Sand ] [ Group Sand ]
 
-[ Group Sand ] [ Group Sand ] [ Group Sand ]
+	[ Group Sand ] [ Group Sand ] [ Group Sand ]
 
-[ Group Sand ] [ Group Sand ] [ Group Sand ]
+	[ Group Sand ] [ Group Sand ] [ Group Sand ]
 
 
 ### -- Wire fence
 
-[ Metal Can ] [ Barbed Wire ] [ Metal Can ]
+	[ Metal Can ] [ Barbed Wire ] [ Metal Can ]
 
-[ Metal Can ] [ Barbed Wire ] [ Metal Can ]
+	[ Metal Can ] [ Barbed Wire ] [ Metal Can ]
 
-[ ] [ ] [ ]
+	[ ] [ ] [ ]
 
 ### -- Punji Sticks
 
-[ Group Tree ] [ Group Tree ] [ Group Tree ]
+	[ Group Tree ] [ Group Tree ] [ Group Tree ]
 
        
        
@@ -87,61 +87,61 @@
 
 ### -- Shelving
 
-[ Metal Can ] [ ] [ Metal Can ]
+	[ Metal Can ] [ ] [ Metal Can ]
 
-[ Metal Can ] [ Metal Can ] [ Metal Can ]
+	[ Metal Can ] [ Metal Can ] [ Metal Can ]
 
-[ Metal Can ] [ ] [ Metal Can ]
+	[ Metal Can ] [ ] [ Metal Can ]
 
 
 
 ### -- Trashcan
 
-[ Metal Can ] [ ] [ Metal Can ]
+	[ Metal Can ] [ ] [ Metal Can ]
 
-[ Metal Can ] [ ] [ Metal Can ]
+	[ Metal Can ] [ ] [ Metal Can ]
 
-[ Metal Can ] [ Metal Can ] [ Metal Can ]
+	[ Metal Can ] [ Metal Can ] [ Metal Can ]
 
 ### -- Radio
 
-[ ] [ ] [ ]
+	[ ] [ ] [ ]
 
-[ ] [ Metal Can ] [ ]
+	[ ] [ Metal Can ] [ ]
 
-[ ] [ Plastic ] [ ]
+	[ ] [ Plastic ] [ ]
 
 ### -- Table
 
-[ Group Tree ] [ Group Tree ] [ Group Tree ]
+	[ Group Tree ] [ Group Tree ] [ Group Tree ]
 
-[ Group Tree ] [ ] [ Group Tree ]
+	[ Group Tree ] [ ] [ Group Tree ]
 
-[ Group Tree ] [ ] [ Group Tree ]
+	[ Group Tree ] [ ] [ Group Tree ]
 
 ### -- Computer
 
-[ Metal Can ] [ Metal Can ] [ Metal Can ]
+	[ Metal Can ] [ Metal Can ] [ Metal Can ]
 
-[ Metal Can ] [ Glass ] [ Metal Can ]
+	[ Metal Can ] [ Glass ] [ Metal Can ]
 
-[ ] [ Group Glass ] [ ]
+	[ ] [ Group Glass ] [ ]
 
 ### -- Armchair
 
-[            ] [            ] [ Group Tree ]
+	[            ] [            ] [ Group Tree ]
 
-[ Group Tree ] [ Group Tree ] [ Group Tree ]
+	[ Group Tree ] [ Group Tree ] [ Group Tree ]
 
-[ Metal Can ] [ ] [ Metal Can ]
+	[ Metal Can ] [ ] [ Metal Can ]
 
 ### -- Vases
 
-[  ] [ Group Leaves ] [  ]
+	[  ] [ Group Leaves ] [  ]
 
-[  ] [ group:soil ] [  ]
+	[  ] [ group:soil ] [  ]
 
-[  ] [ ] [ ]
+	[  ] [ ] [ ]
      
         
       

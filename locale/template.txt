@@ -1,0 +1,60 @@
+# textdomain: zombies4test
+
+Welcome to Zombies4test,=
+explore,find loot,buy items with zcoins,and survive!=
+
+Hello survivor!=
+If you have any questions,=
+click the button below...=
+Walkie Talkie=
++ 2 of blood=
+Band aid=
++ 20 of blood=
+Cardboard Box=
+Gravestone=
+Medicine Box=
+Bedside Table=
+Z Lantern=
+Trashcan=
+Vending machine=
+Radio=
+Table=
+Office Desk=
+Computer=
+Armchair=
+
+Hospital Gurney=
+Bedside Cabinet=
+Shelving=
+Workbench=
+Dirty beds=
+Vases=
+Ladder=
+Fake Door=
+Fake Glass Door=
+
+Baseball bat=
+Claw Hammer=
+Crowbar=
+Knife=
+Machete=
+Fireaxe=
+Katana=
+Chainsaw=
+
+Clown Zombie=
+Crawler Zombie=
+Doctor Zombie=
+Lumberjack Zombie=
+Miner Zombie=
+Runner Zombie=
+You are poisoned!=
+Spitter Zombie=
+Survivor Zombie=
+Tank Zombie=
+Walking Zombie=
+
+
+
+
+

@@ -42,7 +42,8 @@ local function get_formspec(self, clicker)
     local formspec = {
         "size[7.5,8.5]".. --..
         --"listcolors[#000000BB;#000000BB]"
-        " background[1,2;6,4;form_bg_shop.png;true]"
+        " background[1,2;6,4;form_bg_shop.png;true]"..
+        "style_type[label;textcolor=#a18117]"
        
 
     }
@@ -101,7 +102,7 @@ mobs:register_mob("zombies4test:ztrader", {
     on_rightclick = function(self, clicker)
        
         local open =  get_formspec()
-                minetest.show_formspec(clicker:get_player_name(), "zombies4test:formspec",open)
+                core.show_formspec(clicker:get_player_name(), "zombies4test:formspec",open)
         
     end,
    
@@ -110,7 +111,7 @@ mobs:register_mob("zombies4test:ztrader", {
 
 
 -- - FIELDS, LOGIC BUTTONS =====================================================================================
-minetest.register_on_player_receive_fields(function(player, formname, fields )
+core.register_on_player_receive_fields(function(player, formname, fields )
 
     if formname == "zombies4test:formspec" then
     
@@ -129,11 +130,11 @@ minetest.register_on_player_receive_fields(function(player, formname, fields )
 	   	 if zcoins then
 				player:get_inventory():remove_item("main",zcoins_stack)
 			        player:get_inventory():add_item("main", item.sell)
-				 --minetest.chat_send_player(player:get_player_name(), item.sell)
-				minetest.sound_play("cash", {pos = pos, gain = 0.5})
+				 --core.chat_send_player(player:get_player_name(), item.sell)
+				core.sound_play("cash", {pos = pos, gain = 0.5})
 				 
 				else
-				minetest.chat_send_player(player:get_player_name(), "Insufficient Zcoins")
+				core.chat_send_player(player:get_player_name(), "Insufficient Zcoins")
 			end
 	    end 
     end
@@ -150,7 +151,7 @@ end)
 mobs:register_egg("zombies4test:ztrader", "Trader", "zombies_egg.png", 1)
 
 
-minetest.register_node("zombies4test:ztrader_spawn", {
+core.register_node("zombies4test:ztrader_spawn", {
     description = "Trader Spawn",
     tiles = {"spawn_trader.png"},
     groups = {cracky = 3},

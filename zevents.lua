@@ -1,30 +1,30 @@
 
-zombies4test.event = minetest.settings:get_bool("zombies4test.event", true)
+zombies4test.event = core.settings:get_bool("zombies4test.event", true)
 
 
 -- ADICIONAR BOSS E MSG ======================================================================================
 local function add_boss()
-    local time_of_day = minetest.get_timeofday()
+    local time_of_day = core.get_timeofday()
     -- Verifica se é noite
     if time_of_day >= 0.75 or time_of_day < 0.25 then
-        for _, player in ipairs(minetest.get_connected_players()) do
+        for _, player in ipairs(core.get_connected_players()) do
             local pos = player:get_pos()
             local min_pos = {x = pos.x - 50, y = pos.y, z = pos.z - 50}
             local max_pos = {x = pos.x + 50, y = pos.y, z = pos.z + 50}
             local spawn_pos = {x = pos.x + 10, y = pos.y + 3, z = pos.z + 10}
             
-	    local nodes = minetest.find_nodes_in_area(min_pos, max_pos, {"group:dirt","group:sand","group:stone"})  
+	    local nodes = core.find_nodes_in_area(min_pos, max_pos, {"group:dirt","group:sand","group:stone"})  
 	    
-            minetest.sound_play({name = "emergency_power", gain = 1.0, max_hear_distance = 2})
-            minetest.chat_send_all(core.colorize("#ff0000", "Attention: Invasion has started!"))
+            core.sound_play({name = "emergency_power", gain = 1.0, max_hear_distance = 2})
+            core.chat_send_all(core.colorize("#ff0000", "Attention: Invasion has started!"))
 
             if nodes then
-                minetest.add_entity(spawn_pos, "zombies4test:tankzombie")
+                core.add_entity(spawn_pos, "zombies4test:tankzombie")
                 for i = 1, 4 do
-                    minetest.add_entity(spawn_pos, "zombies4test:walkingzombie")
-                    minetest.add_entity(spawn_pos, "zombies4test:runner")
-                    minetest.add_entity(spawn_pos, "zombies4test:survivorzombie")
-                    minetest.add_entity(spawn_pos, "zombies4test:doctorzombie")
+                    core.add_entity(spawn_pos, "zombies4test:walkingzombie")
+                    core.add_entity(spawn_pos, "zombies4test:runner")
+                    core.add_entity(spawn_pos, "zombies4test:survivorzombie")
+                    core.add_entity(spawn_pos, "zombies4test:doctorzombie")
                 end
             end
         end
@@ -33,12 +33,12 @@ end
 
 -- INICIAR INVASÃO ======================================================================================
 local function invasion_event()
-    local time_of_day = minetest.get_timeofday()
+    local time_of_day = core.get_timeofday()
 
-    for _, player in ipairs(minetest.get_connected_players()) do
-        if not minetest.get_modpath("mcl_core") then
+    for _, player in ipairs(core.get_connected_players()) do
+        if not core.get_modpath("mcl_core") then
             if time_of_day >= 0.75 or time_of_day < 0.25 then
-                minetest.after(1, function()
+                core.after(1, function()
                     player:set_sky({
                         base_color = "#FF0000",
                         type = "skybox",
@@ -60,11 +60,11 @@ end
 
 -- RETORNAR AO PADRÃO ===================================================================================
 local function return_normal_day()
-    local time_of_day = minetest.get_timeofday()
+    local time_of_day = core.get_timeofday()
 
-    if not minetest.get_modpath("mcl_core") then
-        for _, player in ipairs(minetest.get_connected_players()) do
-            minetest.after(3, function()
+    if not core.get_modpath("mcl_core") then
+        for _, player in ipairs(core.get_connected_players()) do
+            core.after(3, function()
                 if time_of_day > 0.25 and time_of_day < 0.75 then
                     player:set_sky({
                         base_color = "#ffffff",
@@ -87,8 +87,8 @@ local day_interval = 7
 local msg_day = 0
 
 local function invasion_update()
-    local current_day = minetest.get_day_count()
-    local time_of_day = minetest.get_timeofday()
+    local current_day = core.get_day_count()
+    local time_of_day = core.get_timeofday()
 
     if current_day % day_interval == 0 and current_day ~= msg_day then
         msg_day = current_day
@@ -102,7 +102,7 @@ end
 
 
 --- ZOMBIES KILLS  DATA : ==========================================================================================
-for _, player in ipairs(minetest.get_connected_players()) do
+for _, player in ipairs(core.get_connected_players()) do
 local meta = player:get_player_name()
 meta:set_int("zombie kills" ,0)
 end
@@ -120,11 +120,9 @@ function huds_pos_days(player)
     local meta = player:get_meta()
     local zombies_kills_hud = meta:get_int("zombie_kills")
 
-    local p_days = "Days : "..math.floor(minetest.get_day_count())
+    local p_days = "Days : "..math.floor(core.get_day_count())
 
-    
-    
-    
+      
       zhuds[1] = player:hud_add({
         hud_elem_type = "image",
         alignment = {x=1, y=0},
@@ -170,7 +168,7 @@ function huds_pos_days(player)
 end
 
 function huds_pos_day_update(player)
-    local p_days = "Days : " .. math.floor(minetest.get_day_count())
+    local p_days = "Days : " .. math.floor(core.get_day_count())
 
     -- Corrigido para obter os metadados do jogador corretamente
     local meta = player:get_meta()
@@ -188,13 +186,13 @@ end
 
 
 --[[
-minetest.register_on_joinplayer(function(player)
+core.register_on_joinplayer(function(player)
     huds_pos_days(player)
 
 end)
 ]]
 
-minetest.register_on_joinplayer(function(player)
+core.register_on_joinplayer(function(player)
 
     huds_pos_days(player)
     
@@ -210,7 +208,7 @@ minetest.register_on_joinplayer(function(player)
             night_sky = "#FF0000"
         })
     else
-        local time_of_day = minetest.get_timeofday()
+        local time_of_day = core.get_timeofday()
         if time_of_day > 0.25 and time_of_day < 0.75 then
             player:set_sky({
                 base_color = "#ffffff",
@@ -227,7 +225,7 @@ end)
 
 -- GLOBAL STEP ATUALIZANDO TODOS OS EVENTOS ...=================================================
 
-minetest.register_globalstep(function(dtime)
+core.register_globalstep(function(dtime)
       
       -- Opção de habilitar evento de  invasão..
       if zombies4test.event then 
@@ -235,7 +233,7 @@ minetest.register_globalstep(function(dtime)
 
        end
     
-     for _, player in ipairs(minetest.get_connected_players()) do
+     for _, player in ipairs(core.get_connected_players()) do
           huds_pos_day_update (player)
     end
     

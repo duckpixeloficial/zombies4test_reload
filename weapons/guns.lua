@@ -2,7 +2,7 @@
 
 function zweapons.guns_register(name,def)
 
-minetest.register_tool(name.."_discharged", {
+core.register_tool(name.."_discharged", {
     description = def.description,--.." Discharged", 
     inventory_image = def.inventory_image, --"glock_17_discharged.png", 
     wield_image = def.inventory_image, 
@@ -19,12 +19,12 @@ minetest.register_tool(name.."_discharged", {
             
 
                 if bullets then -- conferir item
-                minetest.sound_play("reload", {pos, gain=1.0, max_hear_distance = 10})
+                core.sound_play("reload", {pos, gain=1.0, max_hear_distance = 10})
                 user:get_inventory():remove_item("main",bullets_stack)
                 user:set_wielded_item(ItemStack(name.."_recharged 1")) -- seta a nova arma carregada
                
                 else               
-                minetest.sound_play("click", {pos, gain=1.0, max_hear_distance = 10})
+                core.sound_play("click", {pos, gain=1.0, max_hear_distance = 10})
                 end
 
             
@@ -39,7 +39,7 @@ minetest.register_tool(name.."_discharged", {
 
 -- ARMA CARREGADA : ======================================================================================== 
 
-minetest.register_tool(name.."_recharged", {
+core.register_tool(name.."_recharged", {
     description = def.description,--.." Recharged",
     inventory_image = def.inventory_image, 
     wield_image = def.inventory_image, 
@@ -59,13 +59,13 @@ minetest.register_tool(name.."_recharged", {
 
         
         if itemstack:get_wear() <= 1571 then
-            minetest.sound_play("click", {pos = player_pos, gain = 1.0, max_hear_distance = 10})
+            core.sound_play("click", {pos = player_pos, gain = 1.0, max_hear_distance = 10})
             user:set_wielded_item(ItemStack(name.."_discharged 1"))
             return 
         else
-            minetest.sound_play(def.sound_guns, {pos = player_pos, gain = 1.0, max_hear_distance = 10})
+            core.sound_play(def.sound_guns, {pos = player_pos, gain = 1.0, max_hear_distance = 10})
 
-            minetest.add_particlespawner({
+            core.add_particlespawner({
                 amount = 1,
                 time = 0.1,
                 minpos = shot_pos,
@@ -83,7 +83,7 @@ minetest.register_tool(name.."_recharged", {
                 texture = "smoke_shot.png",
             })
 
-            local proj = minetest.add_entity({
+            local proj = core.add_entity({
                 x = player_pos.x + dir.x, 
                 y = player_pos.y + 1.5, 
                 z = player_pos.z + dir.z

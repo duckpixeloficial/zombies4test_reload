@@ -1,4 +1,5 @@
 
+local S = minetest.get_translator("zombies4test")
 
 mobs:register_mob("zombies4test:minerzombie", {
 	--nametag = "Miner Zombie" ,
@@ -69,20 +70,7 @@ mobs:register_mob("zombies4test:minerzombie", {
 		die_end = 300,
 	},
 	
-	--[[
-	-- causava crahs:
-	on_death = function(self, killer)
-		if killer and killer:is_player() then
-			
-			local meta = killer:get_meta()
-			local zombies_kills = meta:get_int("zombie_kills")  
-			zombies_kills = zombies_kills + 1
-			meta:set_int("zombie_kills", zombies_kills)  
-			
-		
-		end
-	end
-	]]
+	
 	
 	on_die = function(...) 
   	zombies_count(...)
@@ -95,7 +83,7 @@ mobs:register_mob("zombies4test:minerzombie", {
 
 
 
-mobs:register_egg("zombies4test:minerzombie", "Miner Zombie", "zombies_egg.png", 0)
+mobs:register_egg("zombies4test:minerzombie", S("Miner Zombie"), "zombies_egg.png", 0)
 
 
 

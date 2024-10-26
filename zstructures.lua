@@ -5,7 +5,7 @@ local spawn_stg_grav = {"group:dirt","group:soil","group:stone" ,"group:snowy"}
 
 -- DECO HOME 1 :
 
-    minetest.register_decoration({
+    core.register_decoration({
         deco_type = "schematic",
         place_on = spawn_str,
         sidelen = 80, -- 16
@@ -13,13 +13,13 @@ local spawn_stg_grav = {"group:dirt","group:soil","group:stone" ,"group:snowy"}
         flags = "place_center_x,place_center_z,force_placement,all_floors",
         y_max = 25,
         y_min = 0,
-        schematic = minetest.get_modpath("zombies4test").."/schematics/home1.mts",
+        schematic = core.get_modpath("zombies4test").."/schematics/home1.mts",
         rotation = "random",
     })
 
     -- TRADER  :
 
-    minetest.register_decoration({
+    core.register_decoration({
         deco_type = "schematic",
         place_on = spawn_str,
         sidelen = 80, -- 16
@@ -27,12 +27,12 @@ local spawn_stg_grav = {"group:dirt","group:soil","group:stone" ,"group:snowy"}
         flags = "place_center_x,place_center_z,force_placement,all_floors",
         y_max = 10,
         y_min = 0,
-        schematic = minetest.get_modpath("zombies4test").."/schematics/trader_home.mts",
+        schematic = core.get_modpath("zombies4test").."/schematics/trader_home.mts",
         rotation = "random",
     })
 
     -- HOTEL  :
-    minetest.register_decoration({
+    core.register_decoration({
         deco_type = "schematic",
         place_on = spawn_str,
         sidelen = 80, -- 16
@@ -40,14 +40,14 @@ local spawn_stg_grav = {"group:dirt","group:soil","group:stone" ,"group:snowy"}
         flags = "place_center_x,place_center_z,force_placement,all_floors",
         y_max = 15,
         y_min = 10,
-        schematic = minetest.get_modpath("zombies4test").."/schematics/hotel.mts",
+        schematic = core.get_modpath("zombies4test").."/schematics/hotel.mts",
         rotation = "random",
     })
 
 
     -- HOSPITAL :
 
-    minetest.register_decoration({
+    core.register_decoration({
         deco_type = "schematic",
         place_on = spawn_str,
         sidelen = 80, -- 16
@@ -55,14 +55,14 @@ local spawn_stg_grav = {"group:dirt","group:soil","group:stone" ,"group:snowy"}
         flags = "place_center_x,place_center_z,force_placement,all_floors",
         y_max = 7,
         y_min = 0,
-        schematic = minetest.get_modpath("zombies4test").."/schematics/hospital.mts",
+        schematic = core.get_modpath("zombies4test").."/schematics/hospital.mts",
         rotation = "random",
     })
 
 
 
 
-    minetest.register_decoration({
+    core.register_decoration({
         deco_type = "simple",
         place_on = spawn_stg_grav,
         sidelen = 80,

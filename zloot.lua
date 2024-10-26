@@ -1,6 +1,8 @@
+local S = minetest.get_translator("zombies4test")
+
 ---- Cardboard box: ==========================================================
-minetest.register_node("zombies4test:cardboardbox", {
-    description = "Cardboard Box",
+core.register_node("zombies4test:cardboardbox", {
+    description = S("Cardboard Box"),
     drawtype = "nodebox",
     tiles = {
         "cardboardbox_top.png", 
@@ -42,8 +44,8 @@ minetest.register_node("zombies4test:cardboardbox", {
 
 
 -------- GRAVESTONE : ================================================================================================
-minetest.register_node("zombies4test:gravestone", {
-    description = "Gravestone",
+core.register_node("zombies4test:gravestone", {
+    description = S("Gravestone"),
     drawtype = "mesh",
     mesh = "gravestone.obj",
     tiles = {"gravestone_dirt.png"},
@@ -79,8 +81,8 @@ minetest.register_node("zombies4test:gravestone", {
 
 
 ---- MEDICINE BOX : =======================================================================================
-minetest.register_node("zombies4test:medicinebox", {
-    description = "Medicine Box",
+core.register_node("zombies4test:medicinebox", {
+    description = S("Medicine Box"),
     drawtype = "mesh",
     mesh = "medicine_box.obj",
     tiles = {"medicine_box.png"},
@@ -138,7 +140,7 @@ local items = {
 
 
 --- default : =======================================================
-if minetest.get_modpath("default") then
+if core.get_modpath("default") then
 
 table.insert(items,{name = "default:torch", chance = 1, count = 3})
 table.insert(items,{name = "default:apple", chance =2, count = 5})
@@ -149,21 +151,21 @@ table.insert(items,{name = "farming:bread", chance =1, count =5})
 end
 
 --- mcl : ==============================================================
-if minetest.get_modpath("mcl_torches") then
+if core.get_modpath("mcl_torches") then
 table.insert(items,{name = "mcl_torches:torch", chance = 1, count = 3})
 end
 
-if minetest.get_modpath("mcl_tools") then
+if core.get_modpath("mcl_tools") then
 table.insert(items,{name = "mcl_tools:sword_gold", chance = 1, count = 3})
 end
 
-if minetest.get_modpath("mcl_bows") then
+if core.get_modpath("mcl_bows") then
 table.insert(items,{name = "mcl_bows:bow", chance = 1, count = 1})
 table.insert(items,{name = "mcl_bows:arrow", chance = 1, count = 10})
 end
 
 
-if minetest.get_modpath("3d_armor") then 
+if core.get_modpath("3d_armor") then 
 
 table.insert(items,{name = "zombies4test:gas_mask", chance = 3, count = 1})
 table.insert(items,{name = "zombies4test:rabbit_mask", chance = 3, count = 1})
@@ -188,7 +190,7 @@ table.insert(items,{name = "zombies4test:boots_Juggernaut", chance = 1, count = 
 end
 
 
-if minetest.get_modpath("mcl_armor") then 
+if core.get_modpath("mcl_armor") then 
 
 table.insert(items,{name = "zombies4test:helmet_survivor", chance = 1, count = 10})
 table.insert(items,{name = "zombies4test:chestplate_survivor", chance = 1, count = 10})
@@ -213,7 +215,7 @@ end
 
 
 
-minetest.register_node("zombies4test:bedside_0", {
+core.register_node("zombies4test:bedside_0", {
 	--description = "Bed Side 0",
 	drawtype = "mesh",
 	mesh = "bedside.obj",
@@ -222,7 +224,7 @@ minetest.register_node("zombies4test:bedside_0", {
 	tiles = {"bedside.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -250,14 +252,14 @@ minetest.register_node("zombies4test:bedside_0", {
 	
 	on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
 	
-	minetest.sound_play("key_normal", {
+	core.sound_play("key_normal", {
 		    pos = pos,
 		    gain = 1.0,
 		    max_hear_distance = 10,
 		})
 		
 		
-        minetest.set_node(pos, {name = "zombies4test:bedside_1",param2=node.param2})
+        core.set_node(pos, {name = "zombies4test:bedside_1",param2=node.param2})
         end
         
           
@@ -268,7 +270,7 @@ minetest.register_node("zombies4test:bedside_0", {
 
   
  
-minetest.register_node("zombies4test:bedside_1", {
+core.register_node("zombies4test:bedside_1", {
 	--description = "Bed Side",
 	drawtype = "mesh",
 	mesh = "bedside.obj",
@@ -277,7 +279,7 @@ minetest.register_node("zombies4test:bedside_1", {
 	tiles = {"bedside.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = minetest.rotate_node,
+	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -308,7 +310,7 @@ minetest.register_node("zombies4test:bedside_1", {
 	 on_construct = function(pos)
          
         
-	      local meta = minetest.get_meta(pos)      
+	      local meta = core.get_meta(pos)      
 	       meta:set_string("formspec", "size[8,8.5]" ..
               
               "listcolors[#000000BB;#000000BB]"..
@@ -335,23 +337,23 @@ minetest.register_node("zombies4test:bedside_1", {
 	  end,
 	  
 	    	after_place_node = function(pos, placer, itemstack, pointed_thing)
-        	local meta = minetest.get_meta(pos)  
+        	local meta = core.get_meta(pos)  
         	meta:set_string("infotext", "There is something inside the drawer, click")  
     		end,
 	
 	  on_dig = function(pos, node, digger)
-		local meta = minetest.get_meta(pos)
+		local meta = core.get_meta(pos)
 		local inv = meta:get_inventory()
 		if not inv:is_empty("main") then
-		    --minetest.chat_send_player(digger:get_player_name(), "")
+		    --core.chat_send_player(digger:get_player_name(), "")
 		    return
 		end
-		minetest.node_dig(pos, node, digger)
+		core.node_dig(pos, node, digger)
 	 end,
 	 
 	  on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
         
-		minetest.sound_play("bedsitetable", {
+		core.sound_play("bedsitetable", {
 		    pos = pos,
 		    gain = 1.0,
 		    max_hear_distance = 10,
@@ -361,8 +363,8 @@ minetest.register_node("zombies4test:bedside_1", {
 })
 
 
-minetest.register_node("zombies4test:bedside", {
-	description = "Bedside Table",
+core.register_node("zombies4test:bedside", {
+	description = S("Bedside Table"),
 	drawtype = "mesh",
 	mesh = "bedside.obj",
 	tiles = {"bedside.png"},
@@ -399,7 +401,7 @@ minetest.register_node("zombies4test:bedside", {
 	 on_construct = function(pos)
          
         
-	      local meta = minetest.get_meta(pos)
+	      local meta = core.get_meta(pos)
 	       meta:set_string("formspec", "size[8,8.5]" ..
               
               "listcolors[#000000BB;#000000BB]"..
@@ -418,18 +420,18 @@ minetest.register_node("zombies4test:bedside", {
 	  end,
 	  
 	   on_dig = function(pos, node, digger)
-		local meta = minetest.get_meta(pos)
+		local meta = core.get_meta(pos)
 		local inv = meta:get_inventory()
 		if not inv:is_empty("main") then
-		    --minetest.chat_send_player(digger:get_player_name(), "")
+		    --core.chat_send_player(digger:get_player_name(), "")
 		    return
 		end
-		minetest.node_dig(pos, node, digger)
+		core.node_dig(pos, node, digger)
 	 end,
 	 
 	   on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
         
-		minetest.sound_play("bedsitetable", {
+		core.sound_play("bedsitetable", {
 		    pos = pos,
 		    gain = 1.0,
 		    max_hear_distance = 10,

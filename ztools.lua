@@ -1,3 +1,6 @@
+
+local S = minetest.get_translator("zombies4test")
+
 --[[
 
 Balanceamento
@@ -14,8 +17,8 @@ chainsaw = 11
 ]]
 
 --- Cudgel 
-minetest.register_tool("zombies4test:baseball_bat", {
-	description = "Baseball bat\n"..core.colorize("#ff0000", "Damage = 5"),
+core.register_tool("zombies4test:baseball_bat", {
+	description = S("Baseball bat").."\n"..core.colorize("#ff0000", "Damage = 5"),
 	inventory_image = "Cudgel_stone.png",
 	tool_capabilities = {
 		full_punch_interval = 1.2,
@@ -36,8 +39,8 @@ minetest.register_tool("zombies4test:baseball_bat", {
 })
 
 -- Claw
-minetest.register_tool("zombies4test:claw_hammer", {
-	description = "Claw Hammer\n"..core.colorize("#ff0000", "Damage = 5"),
+core.register_tool("zombies4test:claw_hammer", {
+	description = S("Claw Hammer").."\n"..core.colorize("#ff0000", "Damage = 5"),
 	inventory_image = "claw_hammer.png",
 	tool_capabilities = {
 		full_punch_interval = 1.2,
@@ -59,8 +62,8 @@ minetest.register_tool("zombies4test:claw_hammer", {
 
 
 -- crowbar:
-minetest.register_tool("zombies4test:crowbar", {
-	description = "Crowbar\n"..core.colorize("#ff0000", "Damage = 6"),
+core.register_tool("zombies4test:crowbar", {
+	description = S("Crowbar").."\n"..core.colorize("#ff0000", "Damage = 6"),
 	inventory_image = "crowbar.png",
 	tool_capabilities = {
 		full_punch_interval = 0.8,
@@ -81,8 +84,8 @@ minetest.register_tool("zombies4test:crowbar", {
 })
 
 -- KNIFE:
-minetest.register_tool("zombies4test:knife", {
-	description = "Knife\n"..core.colorize("#ff0000", "Damage = 6"),
+core.register_tool("zombies4test:knife", {
+	description = S("Knife").."\n"..core.colorize("#ff0000", "Damage = 6"),
 	inventory_image = "knife.png",
 	tool_capabilities = {
 		full_punch_interval = 0.8,
@@ -106,8 +109,8 @@ minetest.register_tool("zombies4test:knife", {
 
 --- machete :
 
-minetest.register_tool("zombies4test:machete", {
-	description = "Machete\n"..core.colorize("#ff0000", "Damage = 7"),
+core.register_tool("zombies4test:machete", {
+	description = S("Machete").."\n"..core.colorize("#ff0000", "Damage = 7"),
 	inventory_image = "machete.png",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
@@ -130,8 +133,8 @@ minetest.register_tool("zombies4test:machete", {
 
 --- AXE :
 
-minetest.register_tool("zombies4test:fireaxe", {
-	description = "Fireaxe\n"..core.colorize("#ff0000", "Damage = 8"),
+core.register_tool("zombies4test:fireaxe", {
+	description = S("Fireaxe").."\n"..core.colorize("#ff0000", "Damage = 8"),
 	inventory_image = "axe_zombie.png",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
@@ -156,8 +159,8 @@ minetest.register_tool("zombies4test:fireaxe", {
 
 
 -- KATANA :
-minetest.register_tool("zombies4test:Katana", {
-	description = "Katana\n"..core.colorize("#ff0000", "Damage = 9"),
+core.register_tool("zombies4test:Katana", {
+	description = S("Katana").."\n"..core.colorize("#ff0000", "Damage = 9"),
 	range = 6,
 	--wield_scale = {x = 1.0, y = 1.0, z = 1.0},
 	inventory_image = "katana.png",
@@ -182,8 +185,8 @@ minetest.register_tool("zombies4test:Katana", {
 
 
 
-minetest.register_tool("zombies4test:chainsaw", {
-	description = "Chainsaw\n"..core.colorize("#ff0000", "Damage = 11"),
+core.register_tool("zombies4test:chainsaw", {
+	description = S("Chainsaw").."\n"..core.colorize("#ff0000", "Damage = 11"),
 	range = 3,
 	--wield_scale = {x = 1.0, y = 1.0, z = 1.0},
 	inventory_image = "Chainsaw.png",
