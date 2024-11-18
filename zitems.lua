@@ -82,9 +82,6 @@ core.register_craftitem("zombies4test:zcoin", {
 
 
 
-
-
-
 ---- ITENS PARA MATERIALS : ---------------------------------------------
 
 

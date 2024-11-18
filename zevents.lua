@@ -59,6 +59,7 @@ local function invasion_event()
 end
 
 -- RETORNAR AO PADRÃO ===================================================================================
+--[[
 local function return_normal_day()
     local time_of_day = core.get_timeofday()
 
@@ -81,6 +82,36 @@ local function return_normal_day()
         end
     end
 end
+
+]]
+
+local function return_normal_day()
+    local time_of_day = core.get_timeofday()
+
+    if not core.get_modpath("mcl_core") then
+        for _, player in ipairs(core.get_connected_players()) do
+            core.after(3, function()
+                if time_of_day > 0.25 and time_of_day < 0.75 then
+                    player:set_sky({
+                        base_color = "#ffffff",
+                        type = "regular",
+                        night_sky = "#006bff",
+                        day_sky = "#61b5f5"
+                    })
+
+                    -- ATUALIZAR META FALSE
+                    if player and player:is_player() then
+                        local meta = player:get_meta()
+                        if meta then
+                            meta:set_string("invasion_active", "false")
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end
+
 
 -- INVASÃO UPDATE ======================================================================================
 local day_interval = 7
