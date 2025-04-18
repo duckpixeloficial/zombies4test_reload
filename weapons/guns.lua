@@ -63,7 +63,32 @@ core.register_tool(name.."_recharged", {
             user:set_wielded_item(ItemStack(name.."_discharged 1"))
             return 
         else
-            core.sound_play(def.sound_guns, {pos = player_pos, gain = 1.0, max_hear_distance = 10})
+           
+           
+        local eye_height = user:get_properties().eye_height or 1.625
+	local shoot_pos = {
+		    x = player_pos.x,
+		    y = player_pos.y + eye_height,
+		    z = player_pos.z
+	       }
+
+	local proj = core.add_entity(
+		     vector.add(shoot_pos, vector.multiply(dir, 0.5)), 
+		     def.bullet_name.."_projectile")
+
+            proj:set_velocity({
+                x = dir.x * pspeed,
+                y = dir.y * pspeed, 
+                z = dir.z * pspeed
+            })
+
+            proj:set_acceleration({
+                x = dir.x * 0.1,
+                y = dir.y * 0.1,
+                z = dir.z * 0.1
+            })
+            
+           core.sound_play(def.sound_guns, {pos = player_pos, gain = 1.0, max_hear_distance = 10})
 
             core.add_particlespawner({
                 amount = 1,
@@ -82,24 +107,7 @@ core.register_tool(name.."_recharged", {
                 vertical = false,
                 texture = "smoke_shot.png",
             })
-
-            local proj = core.add_entity({
-                x = player_pos.x + dir.x, 
-                y = player_pos.y + 1.5, 
-                z = player_pos.z + dir.z
-            }, def.bullet_name.."_projectile")
-
-            proj:set_velocity({
-                x = dir.x * pspeed,
-                y = dir.y * pspeed, 
-                z = dir.z * pspeed
-            })
-
-            proj:set_acceleration({
-                x = dir.x * 0.1,
-                y = dir.y * 0.1,
-                z = dir.z * 0.1
-            })
+            
         end
 
         return itemstack

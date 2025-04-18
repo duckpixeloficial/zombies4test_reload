@@ -10,7 +10,6 @@ core.register_craft({
     },
 })
 
-
 core.register_craft({
     type = "shapeless",
     output = "zombies4test:metal_can",  -- item que será criado
@@ -19,8 +18,6 @@ core.register_craft({
        
     },
 })
-
-
 
 
 ---- Plastic :
@@ -36,12 +33,7 @@ core.register_craft({
 })
 
 
-
-
-
-
 core.register_craft({   
-    --type = "shaped",
     output = "zombies4test:sidewalk 6",
     recipe = {
         {"zombies4test:plastic","zombies4test:plastic"},
@@ -50,10 +42,6 @@ core.register_craft({
     }
 })
 
-
-
-
- 
 
 --- FORTIFICATION : ===================================================================================
 core.register_craft({   
@@ -94,7 +82,7 @@ core.register_craft({
 
 
 
-core.register_craft({   ------ CRaFT
+core.register_craft({ 
     type = "shaped",
     output = "zombies4test:sandbag",
     recipe = {
@@ -106,7 +94,7 @@ core.register_craft({   ------ CRaFT
 
 
 
-core.register_craft({   ------ CRaFT
+core.register_craft({  
     type = "shaped",
     output = "zombies4test:wirefence 8",
     recipe = {
@@ -116,25 +104,15 @@ core.register_craft({   ------ CRaFT
     }
 })
 
-core.register_craft({   ------ CRaFT
-    --type = "shaped",
+core.register_craft({   
     output = "zombies4test:punji_sticks",
     recipe = {
-       -- {"","",""},
-       -- {"","",""},
         {"group:stick","group:stick","group:stick"}
     }
 })
 
 
-
-
-
-
 ----- DECORAÇÃO : =====================================================================================
-
-
-
 core.register_craft({   ------ CRaFT
     type = "shaped",
     output = "zombies4test:shelving",

@@ -3,7 +3,6 @@
 core.register_node("zombies4test:metal_wall", {
 	description = "Metal Wall",
 	tiles = {"metal_wallpng.png"},
-	-- light_source = 4, -- somente para identificar o bloco
 	groups = {cracky = 3},
         drop = "zombies4test:metal_wall",
 
@@ -11,13 +10,11 @@ core.register_node("zombies4test:metal_wall", {
 })
 
 -- BARBED WIRE :
-
 core.register_node("zombies4test:barbed_wire", {
  	drawtype = "plantlike",
 	description = "Barbed Wire",
 	tiles = {"barbed_wire.png"},
 	use_texture_alpha = "blend",
-	-- light_source = 4, -- somente para identificar o bloco
 	groups = {cracky = 3},
 	paramtype = "light",
 	walkable = true,
@@ -27,7 +24,6 @@ core.register_node("zombies4test:barbed_wire", {
         
      selection_box = {
 		type = "fixed",
-		--    esqueda,altura,tras..,direita ,negativo aumenta para baixo, positivo aumenta para cima
 		fixed = {-0.3, -0.5, -0.3, 0.3, 0.2, 0.3},
 	},
 	
@@ -41,24 +37,20 @@ core.register_node("zombies4test:barbed_wire", {
 
 
 -- GRID :
-
 core.register_node("zombies4test:grid", {
  	drawtype = "nodebox",
 	description = "Grid",
 	tiles = {"grid.png"},
 	use_texture_alpha = "blend",
-	-- light_source = 4, -- somente para identificar o bloco
 	groups = {cracky = 3},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	walkable = true,
-	-- damage_per_second = 1,
-        drop = "zombies4test:wirefence",
+        drop = "zombies4test:grid",
 
         
      selection_box = {
 		type = "fixed",
-		--    esqueda,altura,tras..,direita ,negativo aumenta para baixo, positivo aumenta para cima
 		fixed = {-0.5, -0.5, 0.3, 0.5, 0.5, 0.5},
 	},
 	
@@ -77,18 +69,15 @@ core.register_node("zombies4test:iron_plate", {
 	description = "Iron Plate",
 	tiles = {"iron_plate.png"},
 	use_texture_alpha = "blend",
-	-- light_source = 4, -- somente para identificar o bloco
 	groups = {cracky = 3},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	walkable = true,
-	-- damage_per_second = 1,
         drop = "zombies4test:iron_plate",
 
         
      selection_box = {
 		type = "fixed",
-		--    esqueda,altura,tras..,direita ,negativo aumenta para baixo, positivo aumenta para cima
 		fixed = {-0.5, -0.5, 0.3, 0.5, 0.5, 0.5},
 	},
 	
@@ -103,20 +92,14 @@ core.register_node("zombies4test:iron_plate", {
 
 
 ---- SAND BAG :
-
 core.register_node("zombies4test:sandbag", {
 	description = "Sand Bag",
 	tiles = {"sandbag.png"},
-	-- light_source = 4, -- somente para identificar o bloco
 	groups = {cracky = 3},
         drop = "zombies4test:sandbag",
 
 	
 })
-
-
-
-
 
 
 -- BADED WIRE : ---------------------------------------------------------------
@@ -125,12 +108,9 @@ core.register_node("zombies4test:wirefence", {
 	drawtype = "mesh",
 	mesh = "wire.obj",
 	use_texture_alpha = "blend",
-	--inventory_image = "",
-	--wield_image = "barbed_wire.png",
 	tiles = {"barbed-wire.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
@@ -141,7 +121,6 @@ core.register_node("zombies4test:wirefence", {
 	
 	selection_box = {
 		type = "fixed",
-		--    esqueda,altura,tras..,direita ,negativo aumenta para baixo, positivo aumenta para cima
 		fixed = {-0.3, -0.4, -0.3, 0.3, 0.2, 0.3},
 	},
 	
@@ -157,20 +136,15 @@ core.register_node("zombies4test:wirefence", {
 })
 
 
-
-
 -- punji_sticks: --------------------------------------------------------------
 core.register_node("zombies4test:punji_sticks", {
 	description = "Punji Sticks",
 	drawtype = "mesh",
 	mesh = "punji_sticks.obj",
 	use_texture_alpha = "blend",
-	--inventory_image = "",
-	--wield_image = "punjisticks.png",
 	tiles = {"punjisticks.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	--on_place = core.rotate_node,
 	sunlight_propagates = true,
 	walkable = false, 
 	floodable = false,
@@ -180,7 +154,6 @@ core.register_node("zombies4test:punji_sticks", {
 	
 	selection_box = {
 		type = "fixed",
-		--    esqueda,altura,tras..,direita ,negativo aumenta para baixo, positivo aumenta para cima
 		fixed = {-0.3, -0.5, -0.3, 0.3, 0.2, 0.3},
 	},
 	
@@ -194,13 +167,6 @@ core.register_node("zombies4test:punji_sticks", {
 	
 	
 })
-
-
-
-
-
-
-
 
 
 

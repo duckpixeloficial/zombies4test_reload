@@ -4,18 +4,6 @@ local zmsg = S("Welcome to Zombies4test,")
 local zmsg2 = S("explore,find loot,buy items with zcoins,and survive!")
 
 
-
---[[
-
-core.register_on_joinplayer(function(player)
-
-  core.chat_send_player(player:get_player_name(), zmsg..zmsg2)
-  
-end)
-
-]]
-
-
 core.register_on_newplayer(function(player)
 
 	
