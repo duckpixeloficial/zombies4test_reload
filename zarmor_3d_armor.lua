@@ -1,3 +1,23 @@
+local goggles = {}
+
+local function add_hud_goggles(player)
+ local p_name = player:get_player_name()
+ 
+ goggles[p_name] = player:hud_add({
+  hud_elem_type = "image",
+  position =  {x = 0,y = 0.5},
+  offset = {x = 0,y = 0},
+  text = "goggler_glass.png",
+  scale = {x = 10,y = 10},
+  alignment = {x = 1,y = 0}
+ })
+
+end
+
+local function add_remove_goggles(player)
+ local p_name = player:get_player_name()
+ player:hud_remove(goggles[p_name])
+end
 
 -- SURVIVOR : ==================================================================
 armor:register_armor("zombies4test:hat_head", {
@@ -33,22 +53,56 @@ armor:register_armor("zombies4test:tennis_feet", {
     description = "Tennis",
     inventory_image = "inv_tennis.png",
     groups = {armor_feet=1, armor_heal=6, armor_use=300,
-        physics_speed=-0.02, physics_gravity=0.02},
+        physics_speed=0.5, physics_gravity=0.02},
     armor_groups = {fleshy=10},
     damage_groups = {cracky=1, snappy=2, choppy=2, crumbly=3, level=2},
 })
 
+-- POLICE : =====================================================================
+armor:register_armor("zombies4test:helmet_police", {
+        description = "Police Helmet",
+        inventory_image = "zombies4test_helmet_police_inv.png",
+        groups = {armor_head=1, armor_heal=6, armor_use=300,
+            physics_speed=-0.02, physics_gravity=0.02},
+        armor_groups = {fleshy=10},
+        damage_groups = {cracky=1, snappy=2, choppy=2, crumbly=3, level=2},
+    })
+
+armor:register_armor("zombies4test:chestplate_police", {
+        description = "Police Chestplate",
+        inventory_image = "zombies4test_chestplate_police_inv.png",
+        groups = {armor_torso=1, armor_heal=6, armor_use=300,
+            physics_speed=-0.05, physics_gravity=0.05},
+        armor_groups = {fleshy=15},
+        damage_groups = {cracky=1, snappy=2, choppy=2, crumbly=3, level=2},
+    })
+
+armor:register_armor("zombies4test:leggings_police", {
+        description = "Police Leggings",
+        inventory_image = "zombies4test_leggings_police_inv.png",
+        groups = {armor_legs=1, armor_heal=6, armor_use=300,
+            physics_speed=-0.04, physics_gravity=0.04},
+        armor_groups = {fleshy=15},
+        damage_groups = {cracky=1, snappy=2, choppy=2, crumbly=3, level=2},
+    })
 
 
-
+armor:register_armor("zombies4test:boots_police", {
+        description = "Police Boots",
+        inventory_image = "zombies4test_boots_police_inv.png",
+        groups = {armor_feet=1, armor_heal=6, armor_use=300,
+            physics_speed=0.4, physics_gravity=0.02},
+        armor_groups = {fleshy=10},
+        damage_groups = {cracky=1, snappy=2, choppy=2, crumbly=3, level=2},
+    })
+    
 -- MILITARY : =====================================================================
-
 armor:register_armor("zombies4test:helmet_military", {
         description = "Military Helmet",
         inventory_image = "zombies4test_helmet_military_inv.png",
         groups = {armor_head=1, armor_heal=6, armor_use=300,
             physics_speed=-0.02, physics_gravity=0.02},
-        armor_groups = {fleshy=10},
+        armor_groups = {fleshy=11},
         damage_groups = {cracky=1, snappy=2, choppy=2, crumbly=3, level=2},
     })
 
@@ -57,7 +111,7 @@ armor:register_armor("zombies4test:chestplate_military", {
         inventory_image = "zombies4test_chestplate_military_inv.png",
         groups = {armor_torso=1, armor_heal=6, armor_use=300,
             physics_speed=-0.05, physics_gravity=0.05},
-        armor_groups = {fleshy=15},
+        armor_groups = {fleshy=16},
         damage_groups = {cracky=1, snappy=2, choppy=2, crumbly=3, level=2},
     })
 
@@ -65,8 +119,8 @@ armor:register_armor("zombies4test:leggings_military", {
         description = "Military Leggings",
         inventory_image = "zombies4test_leggings_military_inv.png",
         groups = {armor_legs=1, armor_heal=6, armor_use=300,
-            physics_speed=-0.04, physics_gravity=0.04},
-        armor_groups = {fleshy=15},
+            physics_speed=0.2, physics_gravity=0.04},
+        armor_groups = {fleshy=16},
         damage_groups = {cracky=1, snappy=2, choppy=2, crumbly=3, level=2},
     })
 
@@ -76,61 +130,11 @@ armor:register_armor("zombies4test:boots_military", {
         inventory_image = "zombies4test_boots_military_inv.png",
         groups = {armor_feet=1, armor_heal=6, armor_use=300,
             physics_speed=0.3, physics_gravity=0.02},
-        armor_groups = {fleshy=10},
+        armor_groups = {fleshy=11},
         damage_groups = {cracky=1, snappy=2, choppy=2, crumbly=3, level=2},
     })
 
-
---[[
-
-   minetest.register_craft({
-    type = "shaped",
-    output = "zombies4test:helmet_military 1",
-    recipe = {
-        {"default:gold_ingot","dye:dark_green","default:gold_ingot"},
-        {"default:gold_ingot","","default:gold_ingot"},
-        {"","",""}
-    }
-})
-
-
-   minetest.register_craft({
-    type = "shaped",
-    output = "zombies4test:chestplate_military 1",
-    recipe = {
-        {"default:gold_ingot","","default:gold_ingot"},
-        {"default:gold_ingot","dye:dark_green","default:gold_ingot"},
-        {"default:gold_ingot","default:gold_ingot","default:gold_ingot"}
-    }
-})
-
-
-   minetest.register_craft({
-    type = "shaped",
-    output = "zombies4test:leggings_military 1",
-    recipe = {
-        {"default:gold_ingot","dye:dark_green","default:gold_ingot"},
-        {"default:gold_ingot","","default:gold_ingot"},
-        {"default:gold_ingot","","default:gold_ingot"}
-    }
-})
-
-
- minetest.register_craft({
-    type = "shaped",
-    output = "zombies4test:boots_military 1",
-    recipe = {
-        {"default:gold_ingot","","default:gold_ingot"},
-        {"dye:brown","","dye:brown"},
-        {"","",""}
-    }
-})
-
-
-]]
-
 -- JUGGERNAUT : =========================================================
-
 armor:register_armor("zombies4test:helmet_Juggernaut", {
         description = "Juggernaut Helmet",
         inventory_image = "inv_helmet_Juggernaut.png",
@@ -157,16 +161,13 @@ armor:register_armor("zombies4test:helmet_Juggernaut", {
         damage_groups = {cracky=2, snappy=1, level=3},
     })
 
-
     armor:register_armor("zombies4test:boots_Juggernaut", {
         description = "Juggernaut Boots",
         inventory_image = "inv_boots_Juggernaut.png",
-        groups = {armor_feet=1, armor_heal=13, armor_use=66},
+        groups = {armor_feet=1, armor_heal=13, armor_use=66,physics_speed=0.2},
         armor_groups = {fleshy=16},
         damage_groups = {cracky=2, snappy=1, level=3},
     })
-
-
 
     armor:register_armor("zombies4test:shield_Juggernaut", {
         description = "Juggernaut Shield",
@@ -178,69 +179,6 @@ armor:register_armor("zombies4test:helmet_Juggernaut", {
        
     })
 
-
-
- --[[
-
-   minetest.register_craft({
-    type = "shaped",
-    output = "zombies4test:helmet_Juggernaut 1",
-    recipe = {
-        {"default:diamond","dye:black","default:diamond"},
-        {"default:diamond","","default:diamond"},
-        {"","",""}
-    }
-})
-
-
-   minetest.register_craft({
-    type = "shaped",
-    output = "zombies4test:chestplate_Juggernaut 1",
-    recipe = {
-        {"default:diamond","","default:diamond"},
-        {"default:diamond","dye:black","default:diamond"},
-        {"default:diamond","default:diamond","default:diamond"}
-    }
-})
-
-
-   minetest.register_craft({
-    type = "shaped",
-    output = "zombies4test:leggings_Juggernaut 1",
-    recipe = {
-        {"default:diamond","dye:black","default:diamond"},
-        {"default:diamond","","default:diamond"},
-        {"default:diamond","","default:diamond"}
-    }
-})
-
-
- minetest.register_craft({
-    type = "shaped",
-    output = "zombies4test:boots_Juggernaut 1",
-    recipe = {
-        {"default:diamond","","default:diamond"},
-        {"dye:black","","dye:black"},
-        {"","",""}
-    }
-})
-
-
-
-  minetest.register_craft({
-    type = "shaped",
-    output = "zombies4test:shield_Juggernaut 1",
-    recipe = {
-        {"default:diamond","default:diamond","default:diamond"},
-        {"default:diamond","default:diamond","default:diamond"},
-        {"","dye:black",""}
-    }
-})
-
-
-]]
-
-
 -- GAS MASK : =================================================================
 armor:register_armor("zombies4test:gas_mask", {
         description = "Gas Mask",
@@ -251,7 +189,7 @@ armor:register_armor("zombies4test:gas_mask", {
         damage_groups = {cracky=2, snappy=3, choppy=2, crumbly=1, level=2},
     })
 
--- RABBIT MASK : ==================================================================
+-- RABBIT MASK : =============================================================
 armor:register_armor("zombies4test:rabbit_mask", {
         description = "Rabbit Mask",
         inventory_image = "rabbit_mask_inv.png",
@@ -260,8 +198,40 @@ armor:register_armor("zombies4test:rabbit_mask", {
         armor_groups = {fleshy=10},
         damage_groups = {cracky=2, snappy=3, choppy=2, crumbly=1, level=2},
     })
-
-
-
-
-
+    
+-- JASON MASK : ============================================================
+armor:register_armor("zombies4test:jason_mask", {
+        description = "jason Mask",
+        inventory_image = "jason_mask_inv.png",
+        groups = {armor_head=1, armor_heal=0, armor_use=800,
+            physics_speed=-0.03, physics_gravity=0.01},
+        armor_groups = {fleshy=11},
+        damage_groups = {cracky=2, snappy=3, choppy=2, crumbly=1, level=2},
+    })
+    
+-- Night Vision MASK : ==========================================================
+armor:register_armor("zombies4test:helmet_nvg", {
+        description = "Night Vision Goggles",
+        inventory_image = "helmet_nvg_inv.png",
+        groups = {armor_head=1, armor_heal=0, armor_use=800,
+            physics_speed=-0.03, physics_gravity=0.01},
+        armor_groups = {fleshy=11},
+        damage_groups = {cracky=2, snappy=3, choppy=2, crumbly=1, level=2},
+        
+        on_equip = function(player)
+         add_hud_goggles(player)
+         player:override_day_night_ratio(1)
+        end,
+        
+        on_unequip = function(player)
+         add_remove_goggles(player)
+         player:override_day_night_ratio(nil)
+        end,
+        
+        on_destroy = function(player)
+         add_remove_goggles(player)
+         player:override_day_night_ratio(nil)
+        end
+ })   
+    
+    

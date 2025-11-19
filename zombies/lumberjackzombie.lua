@@ -2,11 +2,9 @@
 local S = minetest.get_translator("zombies4test")
 
 mobs:register_mob("zombies4test:lumberjackzombie", {
-	--nametag = "Lumberjack Zombie" ,
 	type = "monster",
 	passive = false,
 	attack_type = "dogfight",
-	--attack_animals = true,
 	attack_npcs = false,
 	group_attack = true,
 	pathfinding = true,
@@ -18,19 +16,16 @@ mobs:register_mob("zombies4test:lumberjackzombie", {
 	collisionbox = {-0.4, 0, -0.4, 0.4, 1.8, 0.4},
 	visual = "mesh",
 	mesh = "walkingzombie.b3d",
-	--rotate = 180,
 	textures = {
 		{"lumberjackzombie.png"},
 	},
-	--glow = 4,
-	--blood_texture = " ",
+
 	makes_footstep_sound = true,
 	sounds = {
 		random ="zombie_angry",
 		--damage = "zombie_hit",
 		death = "zombie_death ",
 	},
-
 	-----------------------
 	pathfinding = 1,
 	fear_height = 6,
@@ -45,7 +40,6 @@ mobs:register_mob("zombies4test:lumberjackzombie", {
 	view_range = 25,
 	fall_damage = 0,
 	-------------------------
-
 	drops = {
 		
 		{name = "zombies4test:axe", chance = 5, min = 1, max = 1},
@@ -79,19 +73,6 @@ mobs:register_mob("zombies4test:lumberjackzombie", {
 	on_die = function(...) 
   	zombies_count(...)
 	end
-
-
 })
 
-
-
-
-
-
 mobs:register_egg("zombies4test:lumberjackzombie", S("Lumberjack Zombie"), "zombies_egg.png", 0)
-
-
-
-
-
-

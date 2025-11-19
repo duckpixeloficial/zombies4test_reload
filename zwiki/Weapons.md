@@ -3,20 +3,54 @@
 
 ---
 
-- Colt Python (Damage = 6)
+- #### Colt Python 
+      Damage = 10
+      Bullet = 6 (Colt Python Bullet)
 
-- Fnscar (Damage = 15)
+- #### Fnscar 
+      Damage = 15
+      Bullet = 1 (Fnscar Cartridge)
 
-- Model1887 (Damage = 20)
+- #### Model1887 
+      Damage = 20
+      Bullet = 6 (Model1887 Bullet)
 
-- Remington870 (Damage = 20)
+- #### Remington870
+      Damage = 20
+      Bullet = 4 (Remington870 Bullet)
 
-- Sawed Off Shotgun (Damage = 25)
+- #### Sawed Off Shotgun
+      Damage = 25
+      Bullet = 2 (Sawed Off Shotgun Bullet)
+
+- #### Chiappa Rhino 
+      Damage = 6
+      Bullet = 6 (Small Bullet)
+
+- #### Deagle 
+      Damage = 6
+      Bullet = 6 (Small Bullet)
+
+- #### Golden Deagle 
+      Damage = 6
+      Bullet = 10 (Small Bullet)
+
+- #### Glock 17 
+      Damage = 6
+      Bullet = 18 (Small Bullet)
+
+- #### UZI
+      Damage = 6
+      Bullet = 20 (Small Bullet)
 
 
 " The damage is from the bullet used by the weapon, not necessarily the weapon itself."
 
+
+
 ---
+---
+
 
 #### You can also create your spropias weapons easily, how to do it?
 

@@ -1,9 +1,6 @@
-
 local S = minetest.get_translator("zombies4test")
-
- ----- ACID =====================================================================
- function poison_part (pos)  --- PARTICULAS
-
+----- ACID =====================================================================
+ function poison_part (pos)
    core.add_particlespawner({
 		amount = 5,
 		time = 0.1,
@@ -18,24 +15,14 @@ local S = minetest.get_translator("zombies4test")
 		minsize = 1,
 		maxsize = 2,
 		texture = "stamina_poison_particle.png"
-	})
-
-	
+	})	
 end
-
-
-
-
 ---- VOMITER ZOMBIE ============================================================
-
 mobs:register_mob("zombies4test:spitterzombie", {
-	--nametag = "Spitter Zombie" ,
 	type = "monster",
 	passive = false,
 	attack_type = "shoot",
 	attack_npcs = false,
-	--attack_animals = true,
-	--group_attack = true,
 	shoot_interval = 4.5,
 	arrow = "zombies4test:spitter_arrow",
 	shoot_offset = 1,
@@ -48,14 +35,11 @@ mobs:register_mob("zombies4test:spitterzombie", {
 	collisionbox = {-0.4, 0, -0.4, 0.4, 1.8, 0.4},
 	visual = "mesh",
 	mesh = "fatzombie.b3d",
-	--rotate = 180,
 	textures = {
 		{"fatzombie.png"},
 		--{"walkingzombie.png"},
 
 	},
-	--glow = 4,
-	--blood_texture = " ",
 	makes_footstep_sound = true,
 	sounds = {
 	        random ="zombie_angry",
@@ -70,9 +54,10 @@ mobs:register_mob("zombies4test:spitterzombie", {
 	floats = 0,
 	view_range = 35,
 	drops = {
-		--{name = "", chance = 2, min = 1, max = 1},
-		{name = "zombies4test:canned_beans", chance = 2, min = 1, max = 1},
+		--{name = "", chance = 2, min = 1, max = 1},		
 		{name = "zombies4test:chocolate_bar", chance = 2, min = 1, max = 1},
+		{name = "zombies4test:pan", chance = 2, min = 1, max = 1},
+		{name = "zombies4test:cleaver", chance = 6, min = 1, max = 1},
 		{name = "zombies4test:zcoin", chance = 1, min = 3, max = 5},
 		
 
@@ -100,84 +85,69 @@ mobs:register_mob("zombies4test:spitterzombie", {
 	on_die = function(...) 
   	zombies_count(...)
 	end
-
-
 })
 
-
 local poisson_mg = S("You are poisoned!")
-
 mobs:register_arrow("zombies4test:spitter_arrow", {
-	visual = "sprite",
---	visual = "wielditem",
-	visual_size = {x = 0.5, y = 0.5},
-	textures = {"gas.png"},
-	collisionbox = {-0.5,-0.5,-0.5, 0.5,0.5,0.5},
-        selectionbox = {-0.5,-0.5,-0.5, 0.5,0.5,0.5},
+    visual = "sprite",
+    --  visual = "wielditem",
+    visual_size = {x = 0.5, y = 0.5},
+    textures = {"gas.png"},
+    collisionbox = {-0.5, -0.5, -0.5, 0.5, 0.5, 0.5},
+    selectionbox = {-0.5, -0.5, -0.5, 0.5, 0.5, 0.5},
+    velocity = 20,
 
-	velocity = 20,--6
+    hit_player = function(self, player)
 
+        local duration = 6
+        local damage_interval = 1
+        local damage = 1
+        local time_elapsed = 0
 
-	hit_player = function(self, player)
+        core.chat_send_player(player:get_player_name(), poisson_mg)
 
-	
-					    local duration = 6
-					    local damage_interval = 1
-					    local damage = 1
-					    local time_elapsed = 0
-					    
-					    core.chat_send_player(player:get_player_name(),poisson_mg)
+        local function do_damage()
+            if time_elapsed >= duration or player:get_hp() <= 0 then
+                return
+            end
 
-					    local function do_damage()
-					        if time_elapsed >= duration or player:get_hp() <= 0 then
-					            return
-					        end
-					        ---------------------------------------------------------------------------------
-							          local pos = player:get_pos()
-								       	core.add_particlespawner({
-								        amount = 3, -- quantidade de particulas
-								        time = 2, -- quanto tempo geradas
-								        minpos = {x = pos.x - 1, y = pos.y, z = pos.z - 1},
-								        maxpos =  {x = pos.x + 1, y = pos.y + 2, z = pos.z + 1},
-								        minvel = {x = -0.1, y = 0.1, z = -0.1}, -- velocidade das particulas
-								        maxvel = {x = 0.1, y = 0.3, z = 0.1},
-								        minacc = {x = 0, y = -0.1, z = 0}, -- acelaração das particulas , direção
-								        maxacc = {x = 0, y = -0.2, z = 0},
-								        minexptime = 0, -- tempo de vida da particula
-								        maxexptime = 0.5, -- tempo de vida da particula
-								        minsize = 1,
-								        maxsize = 2,
-								        collisiondetection = true,
-								        collision_removal = true,
-								        object_collision = false,
-								        vertical = false,
-								        texture = "poison_particle.png",
-								    })
+            ---------------------------------------------------------------------------------
+            local pos = player:get_pos()
+            core.add_particlespawner({
+                amount = 3, -- quantidade de particulas
+                time = 2, -- quanto tempo geradas
+                minpos = {x = pos.x - 1, y = pos.y, z = pos.z - 1},
+                maxpos = {x = pos.x + 1, y = pos.y + 2, z = pos.z + 1},
+                minvel = {x = -0.1, y = 0.1, z = -0.1}, -- velocidade das particulas
+                maxvel = {x = 0.1, y = 0.3, z = 0.1},
+                minacc = {x = 0, y = -0.1, z = 0}, -- acelaração das particulas , direção
+                maxacc = {x = 0, y = -0.2, z = 0},
+                minexptime = 0, -- tempo de vida da particula
+                maxexptime = 0.5, -- tempo de vida da particula
+                minsize = 1,
+                maxsize = 2,
+                collisiondetection = true,
+                collision_removal = true,
+                object_collision = false,
+                vertical = false,
+                texture = "poison_particle.png",
+            })
+            ------------------------------------------------------------------------------------------
 
-								------------------------------------------------------------------------------------------
+            player:set_hp(player:get_hp() - damage)
+            time_elapsed = time_elapsed + damage_interval
 
-					        player:set_hp(player:get_hp() - damage)
-					        time_elapsed = time_elapsed + damage_interval
-		  
-					        core.after(damage_interval, do_damage)
+            core.after(damage_interval, do_damage)
+        end
 
-					    end
+        do_damage()
 
-					    do_damage()
+    end,
 
+    hit_node = function(self, pos)
+        self.object:remove()
+    end
 
-	end,
-
-
-
-	hit_node = function(self, pos)
-		self.object:remove()
-	end
-
-	})
-
-
-
-
+})
 
 mobs:register_egg("zombies4test:spitterzombie", S("Spitter Zombie"), "zombies_egg.png", 0)

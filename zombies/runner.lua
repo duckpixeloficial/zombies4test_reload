@@ -1,13 +1,10 @@
 
 local S = minetest.get_translator("zombies4test")
 
-
 mobs:register_mob("zombies4test:runner", {
-	--nametag = "Runner Zombie" ,
 	type = "monster",
 	passive = false,
 	attack_type = "dogfight",
-	--attack_animals = true,
 	attack_npcs = false,
 	group_attack = true,
 	pathfinding = true,
@@ -19,21 +16,15 @@ mobs:register_mob("zombies4test:runner", {
 	collisionbox = {-0.4, 0, -0.4, 0.4, 1.8, 0.4},
 	visual = "mesh",
 	mesh = "runner.b3d",
-	--rotate = 180,
 	textures = {
-		{"runner.png"},
-		--{""},
-		
+		{"runner.png"},	
 	},
-	--glow = 4,
-	--blood_texture = " ",
 	makes_footstep_sound = true,
 	sounds = {
 	        random ="zombie_angry",
 		--damage = "zombie_hit",
 		death = "zombie_death ",
 	},
-
 	-----------------------
 	pathfinding = 1,
 	fear_height = 6,
@@ -48,11 +39,10 @@ mobs:register_mob("zombies4test:runner", {
 	view_range = 25,
 	fall_damage = 0,
 	-------------------------
-
 	drops = {
 	
 		{name = "zombies4test:canned_beans", chance = 4, min = 1, max = 1},
-		{name = "zombies4test:chips", chance = 6, min = 1, max = 1},
+		{name = "zombies4test:katana", chance = 6, min = 1, max = 1},
 		{name = "zombies4test:zcoin", chance = 4, min = 1, max = 1},
 		
 		
@@ -84,21 +74,6 @@ mobs:register_mob("zombies4test:runner", {
 	on_die = function(...) 
   	zombies_count(...)
 	end
-
-
 })
 
-
-
-
-
-
 mobs:register_egg("zombies4test:runner", S("Runner Zombie"), "zombies_egg.png", 0)
-
-
-
-
-
-
-
-

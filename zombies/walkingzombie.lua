@@ -2,7 +2,6 @@
 local S = minetest.get_translator("zombies4test")
 
 mobs:register_mob("zombies4test:walkingzombie", {
-	--nametag = "Walking Zombie" ,
 	type = "monster",
 	passive = false,
 	attack_type = "dogfight",
@@ -21,18 +20,18 @@ mobs:register_mob("zombies4test:walkingzombie", {
 	--rotate = 180,
 	textures = {
 		{"walkingzombie2.png"},
+		{"walkingzombie_3.png"},
+		{"walkingzombie_4.png"},
+		{"prisoner.png"},
 		{"walkingzombie.png"},
 		
 	},
-	--glow = 4,
-	--blood_texture = " ",
 	makes_footstep_sound = true,
 	sounds = {
 	        random ="zombie_angry",
 		--damage = "zombie_hit",
 		death = "zombie_death ",
 	},
-
 	-----------------------
 	pathfinding = 1,
 	fear_height = 6,
@@ -47,13 +46,9 @@ mobs:register_mob("zombies4test:walkingzombie", {
 	view_range = 25,
 	fall_damage = 0,
 	-------------------------
-
-	drops = {
-	
+	drops = {	
 		{name = "zombies4test:canned_tomato", chance = 4, min = 1, max = 1},
-		{name = "zombies4test:chips", chance = 6, min = 1, max = 1},
-		{name = "zombies4test:zcoin", chance = 5, min = 1, max = 1},
-		
+		{name = "zombies4test:zcoin", chance = 5, min = 1, max = 1},		
 	},
 	water_damage = 0,
 	lava_damage = 1,
@@ -73,6 +68,9 @@ mobs:register_mob("zombies4test:walkingzombie", {
 		die_end = 300,
 	},
 	
+	--after_activate = function(self, staticdata, def, dtime)
+	--end,
+	
 	do_custom = function(...)
 	climb_ladders (...)
 	remove_glass (...)
@@ -81,18 +79,6 @@ mobs:register_mob("zombies4test:walkingzombie", {
 	on_die = function(...) 
   	zombies_count(...)
 	end
-
-
 })
 
-
-
 mobs:register_egg("zombies4test:walkingzombie", S("Walking Zombie"), "zombies_egg.png", 0)
-
-
-
-
-
-
-
-

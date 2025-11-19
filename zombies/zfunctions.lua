@@ -1,7 +1,3 @@
-
-
-
-
 ---- SUBIR ESCADAS :
 function climb_ladders(self, dtime)
     local pos = self.object:get_pos()  
@@ -52,14 +48,9 @@ function climb_ladders(self, dtime)
         end
     end
 end
-
-
-  
-  
-  
+ 
  --  REMOVER VIDROS
-  function remove_glass (self, dtime)
-  
+ function remove_glass (self, dtime) 
           local pos = self.object:get_pos()
   
 	  for _,players in pairs(core.get_objects_inside_radius(pos,5)) do
@@ -74,62 +65,42 @@ end
 				    end)
 			  end
 	  	end
-	  end
-  
-  
-  end
-  
-  
-  
-  
-  
-  --- ATAQUE DO TANK :
-  
-  local last_attack = 0 -- tempo do ultimo ataque
-  
-  -- insso poderia estar dentro de custom_attack = function(self, to_attack)
+	  end  
+ end
+   
+---- ZOMBIE TANK ATTACK 
+ local last_attack = 0  
  function attack_boss(self, to_attack)
  
-	 local current_time = core.get_us_time() -- tempo atual mas emmicro segundos
+	 local current_time = core.get_us_time() 
 	 
 	  if current_time - last_attack >= 5 * (10^6)  then 
 		last_attack = current_time 
-		
-	        
+			        
 	   	for _, player in ipairs(core.get_connected_players()) do
-				     
-				     
+				     				     
 			local attached = self.attack:get_attach()
 			local pp = player:get_pos()
 
 			if attached then
-			self.attack = attached
-			end
-			
+			 self.attack = attached
+			end			
 
-			self.attack:punch(self.object, 5.0, {
-		        full_punch_interval=5.0,
-		        damage_groups={fleshy=10}, 
-		        })
-		         
+			 self.attack:punch(self.object, 1.0, {
+                         full_punch_interval = 1.0,
+                         damage_groups = {fleshy = self.damage}
+                         }, nil)
+					         
 		        self.object:set_animation({x=200, y=280},35, 1, false)        				
 			self.attack:set_pos({x=pp.x+3,y=pp.y+5,z=pp.z})				     
 			core.sound_play("missozzy", {pos = pos, gain = 0.5})
 				   
 		 end
 	    end
- 
- 
  end
  
- 
- 
- --- Count Zombies 
- 
+ --- COUNT ZOMBIES 
  function zombies_count(self, pos)
- 
- -- self.object:set_animation({x=260, y=380}, 20, 0)
-   	
  for _,players in pairs(core.get_objects_inside_radius(pos,40)) do 
 			if players:is_player() then 
 			
@@ -142,4 +113,4 @@ end
 		end
  
  end
-         
+     

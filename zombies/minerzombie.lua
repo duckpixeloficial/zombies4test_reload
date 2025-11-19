@@ -2,7 +2,6 @@
 local S = minetest.get_translator("zombies4test")
 
 mobs:register_mob("zombies4test:minerzombie", {
-	--nametag = "Miner Zombie" ,
 	type = "monster",
 	passive = false,
 	attack_type = "dogfight",
@@ -17,19 +16,15 @@ mobs:register_mob("zombies4test:minerzombie", {
 	collisionbox = {-0.4, 0, -0.4, 0.4, 1.8, 0.4},
 	visual = "mesh",
 	mesh = "walkingzombie.b3d",
-	--rotate = 180,
 	textures = {
 		{"minerzombie.png"},
 	},
-	--glow = 4,
-	--blood_texture = " ",
 	makes_footstep_sound = true,
 	sounds = {
 		random ="zombie_angry",
 		--damage = "zombie_hit",
 		death = "zombie_death ",
 	},
-
 	-----------------------
 	pathfinding = 1,
 	fear_height = 6,
@@ -44,13 +39,9 @@ mobs:register_mob("zombies4test:minerzombie", {
 	view_range = 25,
 	fall_damage = 0,
 	-------------------------
-
-	drops = {
-		
+	drops = {		
 		{name = "zombies4test:canned_tomato", chance = 4, min = 1, max = 1},
-		{name = "zombies4test:chips", chance = 6, min = 1, max = 1},
-		{name = "zombies4test:zcoin", chance = 5, min = 1, max = 1},
-		
+		{name = "zombies4test:zcoin", chance = 5, min = 1, max = 1},		
 	},
 	water_damage = 0,
 	lava_damage = 1,
@@ -69,26 +60,10 @@ mobs:register_mob("zombies4test:minerzombie", {
 		die_start = 280,
 		die_end = 300,
 	},
-	
-	
-	
+			
 	on_die = function(...) 
   	zombies_count(...)
 	end
-
-
-
 })
 
-
-
-
 mobs:register_egg("zombies4test:minerzombie", S("Miner Zombie"), "zombies_egg.png", 0)
-
-
-
-
-
-
-
-

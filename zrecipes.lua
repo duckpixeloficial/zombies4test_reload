@@ -111,7 +111,15 @@ core.register_craft({
     }
 })
 
-
+core.register_craft({   
+    type = "shaped",
+    output = "zombies4test:planks_barricade 4",
+    recipe = {
+        {"group:wood","","group:wood"},
+        {"","group:wood",""},
+        {"group:wood","","group:wood"}
+    }
+})
 ----- DECORAÇÃO : =====================================================================================
 core.register_craft({   ------ CRaFT
     type = "shaped",

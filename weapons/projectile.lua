@@ -9,21 +9,14 @@
 ]]
 -- zombies4test
 
-
 ---- REGISTER BULLETS =================================================
-
- function zweapons.bullet_register(name, def)
+function zweapons.bullet_register(name, def)
 
     minetest.register_craftitem(name, {
         description = def.description,
         inventory_image = def.inventory_image,  
     })
-
-
 ----- REGISTER, ENTITES : ==============================================
-
-
-
 minetest.register_entity(name.."_projectile", {
     initial_properties = {
         visual = "sprite",
@@ -35,28 +28,19 @@ minetest.register_entity(name.."_projectile", {
         collisionbox = {-0.5,-0.5,-0.5, 0.5,0.5,0.5},
         selectionbox = {0,0,0, 0,0,0},
     },
-    
-
-
-    -- CALLBACKS
-    on_step = function(self, dtime,player)
-        
-    	
+  
+    on_step = function(self, dtime,player)          	
         local pos = self.object:get_pos()
         local node = minetest.get_node_or_nil(pos) 
-
         -- SE ESTAR PROXIMA DO PROJETIL
-        local radius = 2.0
-        local objects = minetest.get_objects_inside_radius(pos, radius)
+        local objects = minetest.get_objects_inside_radius(pos,2)
 
         for _, obj in pairs(objects) do
             local obj_pos = obj:get_pos()
             local obj_props = obj:get_properties()
-
             -- PROPIEDADES DO OBJETO:
             if obj_props and obj_props.collisionbox then
                 local collisionbox = obj_props.collisionbox
-
                 -- SE COLIDIU:
                 if obj ~= self.object and
                    pos.x >= obj_pos.x + collisionbox[1] and
@@ -66,37 +50,20 @@ minetest.register_entity(name.."_projectile", {
                    pos.z >= obj_pos.z + collisionbox[3] and
                    pos.z <= obj_pos.z + collisionbox[6] then
                    
-                     obj:punch(self.object, 1.0, {
-                            full_punch_interval=1.0,
-                            damage_groups={fleshy=def.damage},
-                          
-                        })
-                        
-                        
-                    --minetest.sound_play("tum", {pos=self.object:get_pos(), gain=1.0, max_hear_distance = 10})
+                   if not obj:is_player() and obj:get_luaentity() ~= nil then                       
+                    obj:punch(obj, 1.0, {full_punch_interval = 1.0, damage_groups = {fleshy = def.damage}}, nil)
+                   end    
                     self.object:remove()
-
                     else
-                    -- SE FOR NODE?
-                    local node = minetest.get_node_or_nil(pos)
-                    if node and node.name ~= "air" then
-                      
-                   self.object:remove()
-
-                    end
-
+                      local node = minetest.get_node_or_nil(pos)
+                       if node and node.name ~= "air" then                     
+                         self.object:remove()
+                       end
                 end
-            end
-        end
-
-       
-                
-          
-    end,
-    
-    })
-    
-
+             end
+         end        
+    end,    
+    })    
 end
 
 

@@ -1,34 +1,43 @@
 
 zombies4test.event = core.settings:get_bool("zombies4test.event", true)
 
+function spawn_zombies_invasion(player)
+    local pos = player:get_pos()
 
--- ADICIONAR BOSS E MSG ======================================================================================
-local function add_boss()
-    local time_of_day = core.get_timeofday()
-    -- Verifica se é noite
-    if time_of_day >= 0.75 or time_of_day < 0.25 then
-        for _, player in ipairs(core.get_connected_players()) do
-            local pos = player:get_pos()
-            local min_pos = {x = pos.x - 50, y = pos.y, z = pos.z - 50}
-            local max_pos = {x = pos.x + 50, y = pos.y, z = pos.z + 50}
-            local spawn_pos = {x = pos.x + 10, y = pos.y + 3, z = pos.z + 10}
-            
-	    local nodes = core.find_nodes_in_area(min_pos, max_pos, {"group:dirt","group:sand","group:stone"})  
-	    
-            core.sound_play({name = "emergency_power", gain = 1.0, max_hear_distance = 2})
-            core.chat_send_all(core.colorize("#ff0000", "Attention: Invasion has started!"))
+    local min_dist = 10
+    local max_dist = 15
 
-            if nodes then
-                core.add_entity(spawn_pos, "zombies4test:tankzombie")
-                for i = 1, 4 do
-                    core.add_entity(spawn_pos, "zombies4test:walkingzombie")
-                    core.add_entity(spawn_pos, "zombies4test:runner")
-                    core.add_entity(spawn_pos, "zombies4test:survivorzombie")
-                    core.add_entity(spawn_pos, "zombies4test:doctorzombie")
-                end
-            end
+    -- posição aleatoria ao redor do jogador
+       local offset = {
+         x = math.random(min_dist, max_dist) * (math.random() < 0.5 and -1 or 1),
+         y = 0,
+         z = math.random(min_dist, max_dist) * (math.random() < 0.5 and -1 or 1),
+      }
+
+    local spawn_pos = vector.add(pos, offset)
+
+    -- acha o chão (procurar bloco para baixo)
+    for y = 10, -10, -1 do
+        local p = {x = spawn_pos.x, y = spawn_pos.y + y, z = spawn_pos.z}
+        local node = minetest.get_node(p).name
+        --if minetest.registered_nodes[node] and minetest.registered_nodes[node].walkable then
+        if minetest.get_item_group(node, "soil") > 0 or minetest.get_item_group(node, "stone") > 0 then
+            spawn_pos.y = p.y + 1
+            break
         end
     end
+    
+    -- Wave (Não se repete para não causar lags)
+    minetest.add_entity(spawn_pos, "zombies4test:survivorzombie")
+    minetest.add_entity(spawn_pos, "zombies4test:lumberjackzombie")
+    minetest.add_entity(spawn_pos, "zombies4test:clown_zombie")
+    minetest.add_entity(spawn_pos, "zombies4test:walkingzombie")
+    minetest.add_entity(spawn_pos, "zombies4test:crawlerzombie")
+    minetest.add_entity(spawn_pos, "zombies4test:runner")
+    minetest.add_entity(spawn_pos, "zombies4test:spitterzombie")
+    minetest.add_entity(spawn_pos, "zombies4test:boomer")
+    minetest.add_entity(spawn_pos, "zombies4test:tankzombie")
+    --core.log("sucesso")
 end
 
 -- INICIAR INVASÃO ======================================================================================
@@ -36,68 +45,49 @@ local function invasion_event()
     local time_of_day = core.get_timeofday()
 
     for _, player in ipairs(core.get_connected_players()) do
-        if not core.get_modpath("mcl_core") then
             if time_of_day >= 0.75 or time_of_day < 0.25 then
                 core.after(1, function()
+                
+                if not core.get_modpath("mcl_core") then
                     player:set_sky({
-                        base_color = "#FF0000",
+                        base_color = "#650404",
                         type = "skybox",
                         day_sky = "#61b5f5",
-                        night_sky = "#FF0000"
+                        night_sky = "#650404"
                     })
+                end
+                    
+                    core.sound_play({name = "emergency_power", gain = 1.0, max_hear_distance = 2})
+                    core.chat_send_all(core.colorize("#ff0000", "Attention: Invasion has started!"))
+	            
+	             spawn_zombies_invasion(player)            
 
                     -- ATIVAR META
-                    local meta = player:get_meta()
-                    meta:set_string("invasion_active", "true")
+                    if player and player:is_player() then
+                     local meta = player:get_meta()
+                     meta:set_string("invasion_active", "true")                                     
+                    end
+                                      	            
                 end)
             end
         end
-    end
-
-    -- ADICIONAR BOSS
-    add_boss()
 end
-
--- RETORNAR AO PADRÃO ===================================================================================
---[[
+-- FINALIZAR INVASÃO ======================================================================================
 local function return_normal_day()
     local time_of_day = core.get_timeofday()
-
-    if not core.get_modpath("mcl_core") then
+   
         for _, player in ipairs(core.get_connected_players()) do
             core.after(3, function()
                 if time_of_day > 0.25 and time_of_day < 0.75 then
+                
+                  if not core.get_modpath("mcl_core") then
                     player:set_sky({
                         base_color = "#ffffff",
                         type = "regular",
                         night_sky = "#006bff",
                         day_sky = "#61b5f5"
                     })
-
-                    -- ATUALIZAR META FALSE
-                    local meta = player:get_meta()
-                    meta:set_string("invasion_active", "false")
-                end
-            end)
-        end
-    end
-end
-
-]]
-
-local function return_normal_day()
-    local time_of_day = core.get_timeofday()
-
-    if not core.get_modpath("mcl_core") then
-        for _, player in ipairs(core.get_connected_players()) do
-            core.after(3, function()
-                if time_of_day > 0.25 and time_of_day < 0.75 then
-                    player:set_sky({
-                        base_color = "#ffffff",
-                        type = "regular",
-                        night_sky = "#006bff",
-                        day_sky = "#61b5f5"
-                    })
+                  end
 
                     -- ATUALIZAR META FALSE
                     if player and player:is_player() then
@@ -106,12 +96,11 @@ local function return_normal_day()
                             meta:set_string("invasion_active", "false")
                         end
                     end
-                end
+                   end
+                		 		 		 		 		 
             end)
         end
-    end
 end
-
 
 -- INVASÃO UPDATE ======================================================================================
 local day_interval = 7
@@ -123,21 +112,17 @@ local function invasion_update()
 
     if current_day % day_interval == 0 and current_day ~= msg_day then
         msg_day = current_day
-        invasion_event()
+        invasion_event()       
     elseif current_day % day_interval ~= 0 then
-        return_normal_day()
+        return_normal_day()       
     end
 end
-
-
-
 
 --- ZOMBIES KILLS  DATA : ==========================================================================================
 for _, player in ipairs(core.get_connected_players()) do
 local meta = player:get_player_name()
 meta:set_int("zombie kills" ,0)
 end
-
 
 ----- HUDS : =======================================================================================================
 local zhuds = {}
@@ -147,7 +132,6 @@ function huds_pos_days(player)
     local p_pos = player:get_pos()
     local pos_text = string.format("Pos: (%.2f, %.2f, %.2f)", p_pos.x, p_pos.y, p_pos.z)
 
-    -- Corrigido para obter os metadados do jogador corretamente
     local meta = player:get_meta()
     local zombies_kills_hud = meta:get_int("zombie_kills")
 
@@ -161,8 +145,7 @@ function huds_pos_days(player)
         scale = {x=3.5, y=3.5},
         text = "hud_bg.png"
     })
-    
-    
+        
     zhuds[2] = player:hud_add({
         hud_elem_type = "text",
         position = {x=1, y=0},
@@ -195,7 +178,6 @@ function huds_pos_days(player)
         text = pos_text
     })
     
- 
 end
 
 function huds_pos_day_update(player)
@@ -215,14 +197,6 @@ function huds_pos_day_update(player)
 end
 
 
-
---[[
-core.register_on_joinplayer(function(player)
-    huds_pos_days(player)
-
-end)
-]]
-
 core.register_on_joinplayer(function(player)
 
     huds_pos_days(player)
@@ -233,10 +207,10 @@ core.register_on_joinplayer(function(player)
 
     if invasion_active == "true" then
         player:set_sky({
-            base_color = "#FF0000",
+            base_color = "#650404",
             type = "skybox",
             day_sky = "#61b5f5",
-            night_sky = "#FF0000"
+            night_sky = "#650404"
         })
     else
         local time_of_day = core.get_timeofday()
@@ -251,26 +225,14 @@ core.register_on_joinplayer(function(player)
     end
 end)
 
-
-
-
 -- GLOBAL STEP ATUALIZANDO TODOS OS EVENTOS ...=================================================
-
-core.register_globalstep(function(dtime)
-      
+core.register_globalstep(function(dtime)    
       -- Opção de habilitar evento de  invasão..
       if zombies4test.event then 
-         invasion_update() -- atualizando invasão
-
-       end
+         invasion_update() 
+      end
     
      for _, player in ipairs(core.get_connected_players()) do
           huds_pos_day_update (player)
-    end
-    
-    
-    
+     end    
 end)
-
-
---return zhuds

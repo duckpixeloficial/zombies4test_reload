@@ -1,10 +1,8 @@
 -- ARMA DESCARREGADA : ======================================================================================
-
 function zweapons.guns_register(name,def)
-
 core.register_tool(name.."_discharged", {
-    description = def.description,--.." Discharged", 
-    inventory_image = def.inventory_image, --"glock_17_discharged.png", 
+    description = def.description,
+    inventory_image = def.inventory_image,
     wield_image = def.inventory_image, 
     color = "red",
     stack_max = 1,
@@ -12,35 +10,24 @@ core.register_tool(name.."_discharged", {
     
     on_use = function(itemstack, user, pointed_thing)
 
-
             -- ITEM NECESSARIO : 
-            local bullets_stack = ItemStack(def.bullet_name .. " " .. def.bullet_amount) -- api
+            local bullets_stack = ItemStack(def.bullet_name .. " " .. def.bullet_amount) 
             local bullets = user:get_inventory():contains_item("main", bullets_stack)
             
 
-                if bullets then -- conferir item
+                if bullets then 
                 core.sound_play("reload", {pos, gain=1.0, max_hear_distance = 10})
                 user:get_inventory():remove_item("main",bullets_stack)
-                user:set_wielded_item(ItemStack(name.."_recharged 1")) -- seta a nova arma carregada
+                user:set_wielded_item(ItemStack(name.."_recharged 1")) 
                
                 else               
                 core.sound_play("click", {pos, gain=1.0, max_hear_distance = 10})
-                end
-
-            
+                end           
     end,
-
-
-     
-
 })
-
-
-
 -- ARMA CARREGADA : ======================================================================================== 
-
 core.register_tool(name.."_recharged", {
-    description = def.description,--.." Recharged",
+    description = def.description,
     inventory_image = def.inventory_image, 
     wield_image = def.inventory_image, 
     stack_max = 1,
@@ -53,18 +40,15 @@ core.register_tool(name.."_recharged", {
         local player_pos = user:get_pos()
         local dir = user:get_look_dir()
         local pspeed = 30
-
-        
+     
         local shot_pos = vector.add(player_pos, {x = dir.x, y = dir.y + 1.5, z = dir.z})
-
-        
+      
         if itemstack:get_wear() <= 1571 then
             core.sound_play("click", {pos = player_pos, gain = 1.0, max_hear_distance = 10})
             user:set_wielded_item(ItemStack(name.."_discharged 1"))
             return 
         else
-           
-           
+                   
         local eye_height = user:get_properties().eye_height or 1.625
 	local shoot_pos = {
 		    x = player_pos.x,
@@ -116,8 +100,5 @@ core.register_tool(name.."_recharged", {
 
 })
 
-
 end
-
-
 

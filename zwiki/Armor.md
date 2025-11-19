@@ -14,6 +14,16 @@
 
 ---
 
+- Police Helmet
+
+- Police Chestplate
+
+- Police Leggings
+
+- Police Boots
+
+---
+
 - Military Helmet
 
 - Military Chestplate
@@ -37,6 +47,10 @@
 - Gas mask Helmet
 
 - Rabbit mask Helmet
+
+- Jason Mask
+
+- Night Vision Goggles (The night vision and HUD effect only works with 3D Armor)
 
 
 ---

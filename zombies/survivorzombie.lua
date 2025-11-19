@@ -1,13 +1,9 @@
-
-
 local S = minetest.get_translator("zombies4test")
 
 mobs:register_mob("zombies4test:survivorzombie", {
-	--nametag = "Survivor Zombie" ,
 	type = "monster",
 	passive = false,
 	attack_type = "dogfight",
-	--attack_animals = true,
 	attack_npcs = false,
 	group_attack = true,
 	pathfinding = true,
@@ -19,25 +15,24 @@ mobs:register_mob("zombies4test:survivorzombie", {
 	collisionbox = {-0.4, 0, -0.4, 0.4, 1.8, 0.4},
 	visual = "mesh",
 	mesh = "walkingzombie.b3d",
-	--rotate = 180,
 	textures = {
+		{"survivorzombie3.png"},
 		{"survivorzombie.png"},
+		{"survivorzombie2.png"}
 	},
-	--glow = 4,
-	--blood_texture = " ",
+
 	makes_footstep_sound = true,
 	sounds = {
 		random ="zombie_angry",
 		--damage = "zombie_hit",
 		death = "zombie_death ",
 	},
-
 	-----------------------
 	pathfinding = 1,
 	fear_height = 6,
 	stepheight = 1.1,
 	walk_velocity = 1,
-	run_velocity = 3,
+	run_velocity = 2,
 	walk_chance = 50,
 	stand_chance = 50,
 	jump = true,
@@ -46,12 +41,10 @@ mobs:register_mob("zombies4test:survivorzombie", {
 	view_range = 25,
 	fall_damage = 0,
 	-------------------------
-
 	drops = {
 	
 		{name = "zombies4test:canned_tomato", chance = 4, min = 1, max = 1},
-		{name = "zombies4test:chips", chance = 6, min = 1, max = 1},
-		{name = "zombies4test:zcoin", chance = 5, min = 1, max = 1},
+		{name = "zombies4test:zcoin", chance = 5, min = 1, max = 2},
 		
 	},
 	water_damage = 0,
@@ -77,18 +70,9 @@ mobs:register_mob("zombies4test:survivorzombie", {
 	remove_glass (...)
 	end,
 	
-	on_die = function(...) -- POSIÇÃO
-  	
-	zombies_count(...)
-	
+	on_die = function(...)	
+	zombies_count(...)	
 	end
-
 })
 
-
-
-
-
 mobs:register_egg("zombies4test:survivorzombie", S("Survivor Zombie"), "zombies_egg.png", 0)
-
-

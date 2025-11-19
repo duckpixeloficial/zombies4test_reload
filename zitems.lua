@@ -18,9 +18,7 @@ core.register_craftitem("zombies4test:walkietalkie", {
 			gain = 1.0,
 			max_hear_distance = 5,
 		})
-		
-		    
-        
+				          
         local formspec_walkietalkie_wiki = "size[7,3]"..
             "background[-0.5,-0.5;7.7,4;walkietalkie_msg.png;false]"..
 	    "style_type[label;textcolor=#0d1523]".. 
@@ -35,27 +33,22 @@ core.register_craftitem("zombies4test:walkietalkie", {
 	
 })
 
-
-
 ---- MEDIC : ( Não tem craft )
-
-local bandaid_desc = S("+ 2 of blood")
+local bandaid_desc = S("+ 10 of blood")
 core.register_craftitem("zombies4test:bandaid", {
     description = S("Band aid").."\n".. core.colorize("#ff0000",bandaid_desc),
     inventory_image = "band_aid.png",
     on_use = function(itemstack, user, pointed_thing) 
 		local hp = user:get_hp()
 		if hp ~= 20 then
-			user:set_hp(hp + 2)
+			user:set_hp(hp + 10)
 			itemstack:take_item()
 		end
 		return itemstack
 	end
 })
 
-
 local MedicalKit_desc = S("+ 20 of blood")
-
 core.register_craftitem("zombies4test:medicalkit", {
     description = S("Medical Kit").."\n".. core.colorize("#ff0000", MedicalKit_desc),
     inventory_image = "medic_kit.png",
@@ -69,23 +62,13 @@ core.register_craftitem("zombies4test:medicalkit", {
 		return itemstack
 	end
 })
-
-
-
 ---- ZCOIN --------------------------------------------------------------
-
 core.register_craftitem("zombies4test:zcoin", {
 	description = "Zcoin",
 	inventory_image = "zcoin.png",
 
 })
-
-
-
 ---- ITENS PARA MATERIALS : ---------------------------------------------
-
-
-
 core.register_craftitem("zombies4test:metal_can", {
     description = "Metal Can",
     inventory_image = "metal_can.png",
@@ -96,27 +79,4 @@ core.register_craftitem("zombies4test:plastic", {
     description = "Plastic",
     inventory_image = "plastic.png",
 })
-
-
-
-
-
---[[
-
-core.register_craftitem("zombies4test:screw", {
-    description = "Screw",
-    inventory_image = "screw.png",
-})
-
-
-core.register_craftitem("zombies4test:discarded_battery", {
-    description = "Discarded Battery",
-    inventory_image = "",
-})
-
-]]
-
-
-
-
 

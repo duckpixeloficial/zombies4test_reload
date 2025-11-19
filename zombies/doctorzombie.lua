@@ -1,11 +1,9 @@
 local S = minetest.get_translator("zombies4test")
 
 mobs:register_mob("zombies4test:doctorzombie", {
-	--nametag = "Doctor Zombie" ,
 	type = "monster",
 	passive = false,
 	attack_type = "dogfight",
-	--attack_animals = true,
 	attack_npcs = false,
 	group_attack = true,
 	pathfinding = true,
@@ -17,19 +15,15 @@ mobs:register_mob("zombies4test:doctorzombie", {
 	collisionbox = {-0.4, 0, -0.4, 0.4, 1.8, 0.4},
 	visual = "mesh",
 	mesh = "walkingzombie.b3d",
-	--rotate = 180,
 	textures = {
 		{"doctorzombie.png"},
 	},
-	--glow = 4,
-	--blood_texture = " ",
 	makes_footstep_sound = true,
 	sounds = {
 		random ="zombie_angry",
 		--damage = "zombie_hit",
 		death = "zombie_death ",
 	},
-
 	-----------------------
 	pathfinding = 1,
 	fear_height = 6,
@@ -44,15 +38,11 @@ mobs:register_mob("zombies4test:doctorzombie", {
 	view_range = 25,
 	fall_damage = 0,
 	-------------------------
-
 	drops = {
-
 		  {name = "zombies4test:candy", chance = 2, min = 1, max = 1},
 		  {name = "zombies4test:bandaid", chance = 4, min = 1, max = 1},
 		  {name = "zombies4test:medicalkit", chance = 6, min = 1, max = 1},
 		  {name = "zombies4test:zcoin", chance = 5, min = 1, max = 1},
-
-
 	},
 	water_damage = 0,
 	lava_damage = 1,
@@ -80,16 +70,7 @@ mobs:register_mob("zombies4test:doctorzombie", {
 	
 	on_die = function(...) -- POSIÇÃO
   	zombies_count(...)
-	end
-
-
-
-	
-	
-	
+	end	
 })
 
-
-
 mobs:register_egg("zombies4test:doctorzombie", S("Doctor Zombie"), "zombies_egg.png", 0)
-
