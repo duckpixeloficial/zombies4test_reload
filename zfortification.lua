@@ -24,10 +24,9 @@ core.register_node("zombies4test:barbed_wire", {
 	walkable = false,
 	move_resistance = 7,
 	damage_per_second = 3,
-        drop = "zombies4test:barbed_wire",
-
-        
-     selection_box = {
+    drop = "zombies4test:barbed_wire",
+     
+    selection_box = {
 		type = "fixed",
 		fixed = {-0.3, -0.5, -0.3, 0.3, 0.2, 0.3},
 	},
@@ -48,9 +47,9 @@ core.register_node("zombies4test:grid", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	walkable = true,
-        drop = "zombies4test:grid",
+    drop = "zombies4test:grid",
        
-        selection_box = {
+    selection_box = {
 		type = "fixed",
 		fixed = {-0.5, -0.5, 0.3, 0.5, 0.5, 0.5},
 	},
@@ -72,10 +71,10 @@ core.register_node("zombies4test:iron_plate", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	walkable = true,
-        drop = "zombies4test:iron_plate",
+    drop = "zombies4test:iron_plate",
 
         
-     selection_box = {
+    selection_box = {
 		type = "fixed",
 		fixed = {-0.5, -0.5, 0.3, 0.5, 0.5, 0.5},
 	},
@@ -91,7 +90,7 @@ core.register_node("zombies4test:sandbag", {
 	tiles = {"sandbag.png"},
 	groups = {crumbly = 3},
 	_mcl_hardness = 0.5,
-        drop = "zombies4test:sandbag",	
+    drop = "zombies4test:sandbag",	
 })
 -- BADED WIRE : ---------------------------------------------------------------
 core.register_node("zombies4test:wirefence", {
