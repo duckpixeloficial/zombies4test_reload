@@ -2,6 +2,7 @@ local path = core.get_modpath("zombies4test")
 
 zweapons = {}
 zombies4test = {}
+huds_create = {}
 
 zombies4test.zombies = core.settings:get_bool("zombies4test.zombies", true)
 zombies4test.structures = core.settings:get_bool("zombies4test.structures", true)
@@ -52,6 +53,7 @@ dofile(path .. "/zfortification.lua")
 dofile(path .. "/ztrader.lua")
 dofile(path .. "/zloot.lua")
 dofile(path .. "/zbackpack.lua")
+
 --  EVENTO :
 dofile(path .. "/zevents.lua")
 

@@ -105,7 +105,7 @@ local spawn_stg_grav = {"group:dirt","group:soil","group:stone" ,"group:snowy"}
         flags = "place_center_x,place_center_z,force_placement,all_floors",
         y_max = 10,
         y_min = 5,
-        place_offset_y = -10,
+        place_offset_y = -6,
         schematic = core.get_modpath("zombies4test").."/schematics/school.mts",
         rotation = "random",
     })

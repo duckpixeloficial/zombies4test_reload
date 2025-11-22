@@ -110,20 +110,19 @@ mobs:register_arrow("zombies4test:spitter_arrow", {
             if time_elapsed >= duration or player:get_hp() <= 0 then
                 return
             end
-
             ---------------------------------------------------------------------------------
             local pos = player:get_pos()
             core.add_particlespawner({
-                amount = 3, -- quantidade de particulas
-                time = 2, -- quanto tempo geradas
+                amount = 3, 
+                time = 2, 
                 minpos = {x = pos.x - 1, y = pos.y, z = pos.z - 1},
                 maxpos = {x = pos.x + 1, y = pos.y + 2, z = pos.z + 1},
-                minvel = {x = -0.1, y = 0.1, z = -0.1}, -- velocidade das particulas
+                minvel = {x = -0.1, y = 0.1, z = -0.1},
                 maxvel = {x = 0.1, y = 0.3, z = 0.1},
-                minacc = {x = 0, y = -0.1, z = 0}, -- acelaração das particulas , direção
+                minacc = {x = 0, y = -0.1, z = 0}, 
                 maxacc = {x = 0, y = -0.2, z = 0},
-                minexptime = 0, -- tempo de vida da particula
-                maxexptime = 0.5, -- tempo de vida da particula
+                minexptime = 0, 
+                maxexptime = 0.5, 
                 minsize = 1,
                 maxsize = 2,
                 collisiondetection = true,
@@ -133,21 +132,16 @@ mobs:register_arrow("zombies4test:spitter_arrow", {
                 texture = "poison_particle.png",
             })
             ------------------------------------------------------------------------------------------
-
             player:set_hp(player:get_hp() - damage)
             time_elapsed = time_elapsed + damage_interval
-
             core.after(damage_interval, do_damage)
         end
-
         do_damage()
-
     end,
 
     hit_node = function(self, pos)
         self.object:remove()
     end
-
 })
 
 mobs:register_egg("zombies4test:spitterzombie", S("Spitter Zombie"), "zombies_egg.png", 0)
