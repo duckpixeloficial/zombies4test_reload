@@ -44,7 +44,7 @@ mobs:register_mob("zombies4test:survivorzombie", {
 	drops = {
 	
 		{name = "zombies4test:canned_tomato", chance = 4, min = 1, max = 1},
-		{name = "zombies4test:zcoin", chance = 5, min = 1, max = 2},
+		{name = "zombies4test:zcoin", chance = 3, min = 1, max = 2},
 		
 	},
 	water_damage = 0,

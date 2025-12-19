@@ -54,7 +54,8 @@ Survivor Zombie=
 Tank Zombie=
 Walking Zombie=
 
-
+Your inventory is full=
+Insufficient Zcoins=
 
 
 

@@ -33,7 +33,7 @@ mobs:register_mob("zombies4test:boomer", {
 	view_range = 35,
 	drops = {	
 		{name = "zombies4test:fire_extintor", chance = 6, min = 1, max = 1},
-		{name = "zombies4test:zcoin", chance = 4, min = 1, max = 5},		
+		{name = "zombies4test:zcoin", chance = 2, min = 1, max = 5},		
 	},
 	water_damage = 0,
 	lava_damage = 0,

@@ -3,7 +3,7 @@ local ztrader_itens = {
     {icon = "canned_tomato.png", count = "zombies4test:zcoin 5" , desc ="Canned Tomato \n COST = 5", sell = "zombies4test:canned_tomato 5"},
     {icon = "beans_canned.png",  count = "zombies4test:zcoin 5", desc ="Canned Beans \n COST = 5",sell= "zombies4test:canned_beans 5"},     
     {icon = "medic_kit.png",  count = "zombies4test:zcoin 10", desc ="Medic Kit \n COST = 10", sell = "zombies4test:medicalkit 1"},
-    {icon = "axe_zombie.png",  count = "zombies4test:zcoin 30", desc ="Fire Axe \n COST = 15", sell = "zombies4test:fireaxe 1"},        
+    {icon = "axe_zombie.png",  count = "zombies4test:zcoin 15", desc ="Fire Axe \n COST = 15", sell = "zombies4test:fireaxe 1"},        
     --- GUNS E BULLETS :   
     {icon = "cody_python.png",  count = "zombies4test:zcoin 70", desc ="Colt Python \n COST = 70", sell = "zombies4test:colt_python_discharged 1"},
     {icon = "cody_python_bullet.png", count = "zombies4test:zcoin 5", desc ="Python Bullet \n COST = 5", sell = "zombies4test:colt_python_bullet 10"},
@@ -78,19 +78,25 @@ core.register_on_player_receive_fields(function(player, formname, fields )
         
     local zcoins_stack = ItemStack(item.count)
     local zcoins = player:get_inventory():contains_item("main",zcoins_stack)
+    local inv = player:get_inventory()
     
     local button_name = "btn_"..tostring(i)
      
     if fields[button_name]  then
 	   if i == i then
-	   	 if zcoins then
-				player:get_inventory():remove_item("main",zcoins_stack)
-			        player:get_inventory():add_item("main", item.sell)
-				--core.chat_send_player(player:get_player_name(), item.sell)
-				core.sound_play("cash", {pos = pos, gain = 0.5}) 
-				else
-				core.chat_send_player(player:get_player_name(), "Insufficient Zcoins")
-			end
+	   	  if zcoins then
+                       local v_inv = inv:add_item("main", item.sell)
+                       if v_inv:get_count() > 0 then
+			  core.chat_send_player(player:get_player_name(), "Your inventory is full")
+			  else
+			  inv:remove_item("main",zcoins_stack)
+		          --inv:add_item("main", item.sell)
+			   --core.chat_send_player(player:get_player_name(), item.sell)
+		          core.sound_play("cash", {pos = pos, gain = 0.5})
+		       end                                
+			else
+		     core.chat_send_player(player:get_player_name(), "Insufficient Zcoins")
+		 end -- if coins
 	    end 
          end   
      end 
@@ -111,6 +117,10 @@ mobs:spawn({
 
 
 -- ===== SUPORTE ; ===========================================================================================
+if core.get_modpath("bucket") then
+table.insert(ztrader_itens,{icon = "bucket.png",  count = "zombies4test:zcoin 5", desc ="Bucket \n COST = 5", sell = "bucket:bucket_empty"})
+end
+
 if core.get_modpath("automobiles_motorcycle") then
 table.insert(ztrader_itens,{icon = "automobiles_motorcycle.png",  count = "zombies4test:zcoin 100", desc ="Motorcycle \n COST = 100", sell = "automobiles_motorcycle:motorcycle 1"})
 table.insert(ztrader_itens,{icon = "automobiles_trans_am.png",  count = "zombies4test:zcoin 150", desc ="Trans Am \n COST = 150", sell = "automobiles_trans_am:trans_am 1"})
