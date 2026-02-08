@@ -42,10 +42,8 @@ mobs:register_mob("zombies4test:runner", {
 	drops = {
 	
 		{name = "zombies4test:canned_beans", chance = 4, min = 1, max = 1},
-		{name = "zombies4test:katana", chance = 6, min = 1, max = 1},
-		{name = "zombies4test:zcoin", chance = 2, min = 1, max = 1},
-		
-		
+		{name = "zombies4test:machete", chance = 5, min = 1, max = 1},
+		{name = "zombies4test:zcoin", chance = 2, min = 1, max = 1},	
 	},
 	water_damage = 0,
 	lava_damage = 1,

@@ -1,5 +1,11 @@
 local goggles = {}
 
+-- correção, erro em nome da armadura jugg
+core.register_alias("zombies4test:helmet_Juggernaut","zombies4test:helmet_juggernaut")
+core.register_alias("zombies4test:chestplate_Juggernaut","zombies4test:chestplate_juggernaut")
+core.register_alias("zombies4test:leggings_Juggernaut","zombies4test:leggings_juggernaut")
+core.register_alias("zombies4test:boots_Juggernaut","zombies4test:boots_juggernaut")
+
 local function add_hud_goggles(player)
  local p_name = player:get_player_name()
  
@@ -135,7 +141,7 @@ armor:register_armor("zombies4test:boots_military", {
     })
 
 -- JUGGERNAUT : =========================================================
-armor:register_armor("zombies4test:helmet_Juggernaut", {
+armor:register_armor("zombies4test:helmet_juggernaut", {
         description = "Juggernaut Helmet",
         inventory_image = "inv_helmet_Juggernaut.png",
         groups = {armor_head=1, armor_heal=13, armor_use=66},
@@ -144,7 +150,7 @@ armor:register_armor("zombies4test:helmet_Juggernaut", {
     })
 
 
-    armor:register_armor("zombies4test:chestplate_Juggernaut", {
+    armor:register_armor("zombies4test:chestplate_juggernaut", {
         description = "Juggernaut Chestplate",
         inventory_image = "inv_chestplate_Juggernaut.png",
         groups = {armor_torso=1, armor_heal=13, armor_use=66},
@@ -153,7 +159,7 @@ armor:register_armor("zombies4test:helmet_Juggernaut", {
     })
 
 
-    armor:register_armor("zombies4test:leggings_Juggernaut", {
+    armor:register_armor("zombies4test:leggings_juggernaut", {
         description = "Juggernaut Leggings",
         inventory_image = "inv_leggings_Juggernaut.png",
         groups = {armor_legs=1, armor_heal=13, armor_use=66},
@@ -161,15 +167,16 @@ armor:register_armor("zombies4test:helmet_Juggernaut", {
         damage_groups = {cracky=2, snappy=1, level=3},
     })
 
-    armor:register_armor("zombies4test:boots_Juggernaut", {
+    armor:register_armor("zombies4test:boots_juggernaut", {
         description = "Juggernaut Boots",
         inventory_image = "inv_boots_Juggernaut.png",
         groups = {armor_feet=1, armor_heal=13, armor_use=66,physics_speed=0.2},
         armor_groups = {fleshy=16},
         damage_groups = {cracky=2, snappy=1, level=3},
     })
-
-    armor:register_armor("zombies4test:shield_Juggernaut", {
+    
+--[[
+    armor:register_armor("zombies4test:shield_juggernaut", {
         description = "Juggernaut Shield",
         inventory_image = "inv_shield_Juggernaut.png",
         groups = {armor_shield=1, armor_heal=13, armor_use=66},
@@ -178,6 +185,7 @@ armor:register_armor("zombies4test:helmet_Juggernaut", {
         reciprocate_damage = true,
        
     })
+ ]]
 
 -- GAS MASK : =================================================================
 armor:register_armor("zombies4test:gas_mask", {
@@ -208,7 +216,33 @@ armor:register_armor("zombies4test:jason_mask", {
         armor_groups = {fleshy=11},
         damage_groups = {cracky=2, snappy=3, choppy=2, crumbly=1, level=2},
     })
+
+-- NEW ARMORS 0.55
+ armor:register_armor("zombies4test:chestplate_dressshirt", {
+        description = "Dressshirt Chestplate",
+        inventory_image = "zombies4test_inv_chestplate_dressshirt.png",
+        groups = {armor_torso=1, armor_heal=13, armor_use=66},
+        armor_groups = {fleshy=10},
+        damage_groups = {cracky=2, snappy=1, level=3},
+    })
     
+     armor:register_armor("zombies4test:chestplate_jacketpink", {
+        description = "Jacketpink Chestplate",
+        inventory_image = "zombies4test_inv_chestplate_jacketpink.png",
+        groups = {armor_torso=1, armor_heal=13, armor_use=200},
+        armor_groups = {fleshy=15},
+        damage_groups = {cracky=2, snappy=1, level=3},
+    })
+    
+    armor:register_armor("zombies4test:chicken_hat", {
+        description = "Chicken Hat",
+        inventory_image = "zombies4test_inv_helmet_chicken_hat.png",
+        groups = {armor_head=1, armor_heal=0, armor_use=800,
+            physics_speed=-0.03, physics_gravity=0.01},
+        armor_groups = {fleshy=12},
+        damage_groups = {cracky=2, snappy=3, choppy=2, crumbly=1, level=2},
+    })
+        
 -- Night Vision MASK : ==========================================================
 armor:register_armor("zombies4test:helmet_nvg", {
         description = "Night Vision Goggles",

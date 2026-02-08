@@ -1,4 +1,4 @@
-local S = minetest.get_translator("zombies4test")
+local S = core.get_translator("zombies4test")
 
 local function zsimples_deconodes(node_name,node_desc,node_texture)
 core.register_node(node_name, {
@@ -68,8 +68,8 @@ core.register_node("zombies4test:trashcan", {
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
-	groups = {oddly_breakable_by_hand=3},
-	_mcl_hardness = 2,
+	groups = {handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = "zombies4test:trashcan",
 	
 	selection_box = {
@@ -86,7 +86,7 @@ core.register_node("zombies4test:trashcan", {
 	local player_name = clicker:get_player_name()
 	local inv_name = "trashs_" .. player_name
 	core.sound_play("trash_can_open", {pos = pos,gain = 1.0,max_hear_distance = 10})
-	local inv = minetest.create_detached_inventory(inv_name,{
+	local inv = core.create_detached_inventory(inv_name,{
 	on_put = function(inv, listname, index, stack, player) 
 	  inv:set_stack("trashs", 1, ItemStack(""))	    
 	  return 0 
@@ -106,7 +106,7 @@ core.register_node("zombies4test:trashcan", {
         "listring[current_player;input]"
        }
         
-       minetest.show_formspec(player_name, "zombies4test:" .. tostring(name_form), table.concat(name_form, ""))           
+       core.show_formspec(player_name, "zombies4test:" .. tostring(name_form), table.concat(name_form, ""))           
        end,   	
 })
 
@@ -208,8 +208,8 @@ core.register_node("zombies4test:table", {
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = "zombies4test:table",
 	--sounds = default.node_sound_wood_defaults(),
 	
@@ -234,8 +234,8 @@ core.register_node("zombies4test:office_desk", {
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = "zombies4test:table",
 	
 	selection_box = {
@@ -292,8 +292,8 @@ core.register_node("zombies4test:armchair", {
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = "zombies4test:armchair",
 	
 	selection_box = {
@@ -330,8 +330,8 @@ core.register_node("zombies4test:chair", {
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = "zombies4test:chair",
 	
 	selection_box = {
@@ -403,8 +403,8 @@ core.register_node("zombies4test:bedside_cabinet", {
 	use_texture_alpha = "blend",
 	walkable = true, 
 	floodable = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = "zombies4test:bedside_cabinet",
 	
 	selection_box = {
@@ -429,8 +429,8 @@ core.register_node("zombies4test:shelving", {
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 2},
-	_mcl_hardness = 2,
+	groups = {handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = "zombies4test:shelving",
 	
 	selection_box = {
@@ -455,8 +455,8 @@ core.register_node("zombies4test:workbench", {
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 2},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = "zombies4test:workbench",
 	
 	selection_box = {
@@ -481,8 +481,8 @@ core.register_node("zombies4test:dirtybeds", {
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = "zombies4test:dirtybeds",
 	selection_box = {
 		type = "fixed",
@@ -537,13 +537,13 @@ core.register_node("zombies4test:ladder_fake", {
 	walkable = false,
 	climbable = true,
 	is_ground_content = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	selection_box = {
 		type = "wallmounted",
 		
 	},
-	groups = {cracky = 2},
+	groups = {choppy = 2},
 	
 	 sounds = {        
 		footstep = {name = "zladders", gain = 0.5,max_hear_distance = 2},
@@ -564,8 +564,8 @@ core.register_node("zombies4test:fake_door", {
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 1},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = "zombies4test:fake_door",
 	    
 	selection_box = {
@@ -596,8 +596,8 @@ core.register_node("zombies4test:fake_door_open", {
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 1,not_in_creative_inventory=1},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = "zombies4test:fake_door",
 	--sounds = 	
 	selection_box = {
@@ -629,8 +629,8 @@ core.register_node("zombies4test:fake_glass_door", {
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 1},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = "zombies4test:fake_door",
 	selection_box = {
 		type = "fixed",
@@ -659,8 +659,8 @@ core.register_node("zombies4test:fake_glass_door_open", {
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 1,not_in_creative_inventory=1},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = "zombies4test:fake_door",
 	--sounds =	
 	selection_box = {
@@ -916,7 +916,7 @@ core.register_node("zombies4test:trash_bag", {
 	},	
 })
 
-minetest.register_node("zombies4test:papers", {
+core.register_node("zombies4test:papers", {
 	description = S("Papers"), 
 	drawtype = "mesh",
 	mesh = "papers.obj",
@@ -937,7 +937,7 @@ minetest.register_node("zombies4test:papers", {
 	},
 })
 
-minetest.register_node("zombies4test:toilet_paper", {
+core.register_node("zombies4test:toilet_paper", {
 	description = S("Toilet Paper"), 
 	drawtype = "mesh",
 	mesh = "toilet_paper.obj",
@@ -968,8 +968,8 @@ core.register_node("zombies4test:bedside", {
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = "zombies4test:bedside",
 	
 	sounds = {        

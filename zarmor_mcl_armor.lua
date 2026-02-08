@@ -151,4 +151,51 @@ mcl_armor.register_set({
         },              
 })
 
+-- NEW ARMORS 0.55
+mcl_armor.register_set({
+	name = "chicken_hat",
+	descriptions = {
+		head = "Chicken Hat",
+		
+	},
+	durability = 240,
+	points = {
+		head = 3,
+		
+	},
+	sound_equip = "mcl_armor_equip_iron",
+	sound_unequip = "mcl_armor_unequip_iron",
+	groups = {--nada = 1,
+        },
+})
+
+mcl_armor.register_set({
+	name = "dressshirt",
+	descriptions = {
+		torso = "Dressshirt Chestplate",
+	},
+	durability = 112,
+	points = {
+		torso = 3,
+	},
+	sound_equip = "mcl_armor_equip_iron",
+	sound_unequip = "mcl_armor_unequip_iron",
+	groups = {--nada = 1,
+        },
+})
+
+mcl_armor.register_set({
+	name = "jacketpink",
+	descriptions = {
+		torso = "Jacketpink Chestplate",
+	},
+	durability = 112,
+	points = {
+		torso = 5,
+	},
+	sound_equip = "mcl_armor_equip_iron",
+	sound_unequip = "mcl_armor_unequip_iron",
+	groups = {--nada = 1,
+        },
+})
 

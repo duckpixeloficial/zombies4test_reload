@@ -6,7 +6,6 @@ function climb_ladders(self, dtime)
         return  
     end
 
-   
     local rounded_pos = {
         x = math.floor(pos.x + 0.5),
         y = math.floor(pos.y + 0.5),
@@ -48,9 +47,33 @@ function climb_ladders(self, dtime)
         end
     end
 end
- 
- --  REMOVER VIDROS
- function remove_glass (self, dtime) 
+
+-- JUMPER :
+function jump_jumper(self, dtime)
+    local pos = self.object:get_pos() 
+    local yaw =  self.object:get_yaw() 
+
+    if not pos then
+        return  
+    end
+
+        local node = core.get_node(vector.add(pos, core.yaw_to_dir(yaw)))
+        local node_name = node.name  
+
+        if node_name and core.registered_nodes[node_name] then
+            local node_def = core.registered_nodes[node_name]
+             
+            if (node_name ~= "air") and node_def.drawtype ~= "plantlike" then
+                self.object:set_pos({x=pos.x, y=pos.y+0.1, z=pos.z}) 
+		self.object:set_velocity({x=0, y=10, z=0})
+		else					        
+                return
+            end
+        end
+end
+
+-- REMOVER VIDROS
+function remove_glass (self, dtime) 
           local pos = self.object:get_pos()
   
 	  for _,players in pairs(core.get_objects_inside_radius(pos,5)) do
@@ -66,51 +89,18 @@ end
 			  end
 	  	end
 	  end  
- end
+end
    
----- ZOMBIE TANK ATTACK 
- local last_attack = 0  
- function attack_boss(self, to_attack)
- 
-	 local current_time = core.get_us_time() 
-	 
-	  if current_time - last_attack >= 5 * (10^6)  then 
-		last_attack = current_time 
-			        
-	   	for _, player in ipairs(core.get_connected_players()) do
-				     				     
-			local attached = self.attack:get_attach()
-			local pp = player:get_pos()
-
-			if attached then
-			 self.attack = attached
-			end			
-
-			 self.attack:punch(self.object, 1.0, {
-                         full_punch_interval = 1.0,
-                         damage_groups = {fleshy = self.damage}
-                         }, nil)
-					         
-		        self.object:set_animation({x=200, y=280},35, 1, false)        				
-			self.attack:set_pos({x=pp.x+3,y=pp.y+5,z=pp.z})				     
-			core.sound_play("missozzy", {pos = pos, gain = 0.5})
-				   
-		 end
-	    end
- end
- 
- --- COUNT ZOMBIES 
- function zombies_count(self, pos)
+--- COUNT ZOMBIES :
+function zombies_count(self, pos)
  for _,players in pairs(core.get_objects_inside_radius(pos,40)) do 
-			if players:is_player() then 
+       if players:is_player() then 
 			
-			local meta = players:get_meta()
-			local zombies_kills = meta:get_int("zombie_kills")  
-			zombies_kills = zombies_kills + 1
-			meta:set_int("zombie_kills", zombies_kills)  
-				
-			end
-		end
+	local meta = players:get_meta()
+	local zombies_kills = meta:get_int("zombie_kills")  
+	 zombies_kills = zombies_kills + 1
+	 meta:set_int("zombie_kills", zombies_kills)  				
+	 end
+	end
+end
  
- end
-     

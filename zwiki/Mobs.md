@@ -82,7 +82,7 @@
   
   Damge : 2
   
-  Drop : candy,machete,zcoin
+  Drop : candy,zcoin
 
 ---
   <span style="color: green"> 
@@ -95,7 +95,7 @@
   
   Damge : 3
   
-  Drop : canned beans,katana,zcoin
+  Drop : canned beans,machete,zcoin
 
 ---
   <span style="color: green">  
@@ -139,6 +139,30 @@
   Drop : claws,pan,zcoin
 
 ---
+  <span style="color: green">  
+  Police (Special)  
+  </span>
+  
+  
+  HP : 20
+  
+  Damge : 3 
+  
+  Drop : police armor,zcoin
+
+---
+  <span style="color: green">  
+  Military (Special)  
+  </span>
+  
+  
+  HP : 40
+  
+  Damge : 3 
+  
+  Drop : military armor,zcoin
+  
+---
 
   <span style="color: green">
   Juggernaut (Semi-Boss) 
@@ -152,6 +176,20 @@
   
   Drop : juggernaut armor
 
+---
+
+  <span style="color: green">
+  Jumper (Boss)
+  </span>
+  
+  "This boss isn't as strong as the tank, but it jumps very high.."
+  
+  HP : 350
+
+  Damge : 4
+  
+  Drop : katana,zcoin
+  
 ---
 
   <span style="color: green">

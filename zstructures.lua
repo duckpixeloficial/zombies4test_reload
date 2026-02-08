@@ -110,7 +110,7 @@ local spawn_stg_grav = {"group:dirt","group:soil","group:stone" ,"group:snowy"}
         rotation = "random",
     })
     
-     core.register_decoration({
+    core.register_decoration({
         deco_type = "schematic",
         place_on = {"mcl_core:dirt_with_grass","default:dirt_with_coniferous_litter"},
         sidelen = 80, -- 16

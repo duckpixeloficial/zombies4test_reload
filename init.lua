@@ -38,6 +38,7 @@ dofile(path.."/zombies/clown_zombie.lua")
 dofile(path.."/zombies/bride.lua")
 dofile(path.."/zombies/boomer.lua")
 dofile(path.."/zombies/jurgernaut.lua")
+dofile(path.."/zombies/jumper_zombie.lua")
 -- WEAPONS : ========================================
 dofile(path.."/weapons/guns.lua")
 dofile(path.."/weapons/projectile.lua")
@@ -67,7 +68,7 @@ else
    dofile(path .. "/zrecipes.lua")
 end
 
-minetest.register_on_joinplayer(function(player)
+core.register_on_joinplayer(function(player)
 	local inv = player:get_inventory()	
 	inv:set_size("zbackpack",32)		
 end)

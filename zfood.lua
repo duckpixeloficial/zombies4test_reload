@@ -66,7 +66,7 @@ core.register_craftitem("zombies4test:soda", {
 })
 
 --- SUPORTE A HUNGER NG : ===============================================
-if minetest.get_modpath("hunger_ng") ~= nil then
+if core.get_modpath("hunger_ng") ~= nil then
 hunger_ng.add_hunger_data('zombies4test:canned_tomato', {
  satiates = 5.0,
 })

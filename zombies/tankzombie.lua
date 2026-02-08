@@ -1,6 +1,27 @@
 
 local S = minetest.get_translator("zombies4test")
 
+local function punch_tank (pos) 
+core.add_particlespawner({
+    amount = 50,
+    time = 0.5,
+    minpos = {x=pos.x + 3, y=pos.y + -1, z=pos.z + 3},
+    maxpos = {x=pos.x - 2, y=pos.y + 0.3, z=pos.z - 2},
+    minvel = {x=0, y=-0.2, z=0},
+    maxvel = {x=0, y=-0.2, z=0},
+    minacc = {x=0, y=0, z=0},
+    maxacc = {x=0, y=0, z=0},
+    minexptime = 1.5,
+    maxexptime = 1.5,
+    minsize = 2,
+    maxsize = 1,
+    collisiondetection = true,
+    vertical = false,
+    texture = "default_dirt.png",   
+    --glow = 14,
+})  
+end
+
 mobs:register_mob("zombies4test:tankzombie", {
 	type = "monster",
 	passive = false,
@@ -13,10 +34,10 @@ mobs:register_mob("zombies4test:tankzombie", {
 	armor = 60,
 	collisionbox = {-0.4, 0, -0.4, 0.4, 3.0, 0.4},
 	visual = "mesh",
-	mesh = "ztank.b3d",
-	visual_size = {x=12, y=12},
+	mesh = "zombie_tank.b3d",
+	visual_size = {x=14, y=14},
 	textures = {
-		{"tankzombiex.png"},		
+		{"zombie_tank.png"},		
 	},
 	makes_footstep_sound = true,
 	sounds = {
@@ -24,7 +45,6 @@ mobs:register_mob("zombies4test:tankzombie", {
 		--damage = "zombie_hit",
 		death = "roar ",
 	},
-
 	-----------------------
 	pathfinding = 1,
 	fear_height = 6,
@@ -50,32 +70,51 @@ mobs:register_mob("zombies4test:tankzombie", {
 	{"fortification:wirefence",  -10} ,
 	{"fortification:barbed_wire",  -10} ,
 	{"fortification:punji_sticks",  -10} ,
-	
 	},
 	animation = {
 		speed_normal = 15,
-		stand_start = 0,
-		stand_end = 80,
-		walk_start = 100,
-		walk_end = 180,
-		run_speed = 45,
-		run_start = 100,
-		run_end = 180,
-		punch_speed = 25,
-		punch_start = 200,
-		punch_end = 280,
-		die_speed = 15,
-		die_start = 430,
-		die_end = 600,
-				
-	},	
-	custom_attack = function(...)
-        attack_boss(...) 
-  	end,
+		stand_start = 1,
+		stand_end = 20,
+		walk_start = 25,
+		walk_end = 55,
+		run_speed = 25,
+		run_start = 25,
+		run_end = 55,
+		punch_speed = 5,
+		punch_start = 60,
+		punch_end = 85,
+		die_speed = 25,
+		die_start = 90,
+		die_end = 130,		
+	},
+		
+	custom_attack = function(self, to_attack)
+        local pp =  self.attack:get_pos()
+	self.attack_count = (self.attack_count or 0) + 1
+	 if self.attack_count < 3 then return end
+	    self.attack_count = 0
+
+	    self:set_animation("punch", true)
+	  	  
+	  core.after(0.5,function()
+	    punch_tank (pp) 
+	    core.sound_play("missozzy", {pos = pos, gain = 0.5})
+	    self.attack:set_pos({x=pp.x+3,y=pp.y+5,z=pp.z})
+	  end)	
+
+	 return true 
+	 
+	end,
   	   	    	   	  
   	on_die = function(...) 
   	zombies_count(...)
 	end
+	
+	--[[
+	on_death = function(self, killer)
+           zombies_count(self, killer, self.object:get_pos())
+	end
+	]]
 })
 
 mobs:register_egg("zombies4test:tankzombie", S("Tank Zombie"), "zombies_egg.png", 0)

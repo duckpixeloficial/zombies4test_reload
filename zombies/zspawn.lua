@@ -52,51 +52,6 @@ local minerspawn = {
 "group:oxidized_stone"
 } 
 
---- NODE SPAWN : =================================================
---[[
-function zombies_node_spawn (node_name,node_desc,node_tiles)
-minetest.register_node(node_name, {
-	description = desc,
-	paramtype = "light",
-	tiles = {node_tiles},
-	is_ground_content = false,	
-	groups = {cracky=1,level=1},
-	drop = "",
-
-})
-end
-
---local spawner_states = {}
-
-function zombies_spawn_monsters (node,zombie_1,zombie_2)
-minetest.register_abm({
-    nodenames = {node},
-    interval = 120,
-    chance = 1,
-    action = function(pos, node, active_object_count, active_object_count_wider)
-       local spawn_pos = minetest.find_node_near(pos, 5, {"air"})
-
-        for _, obj in ipairs(minetest.get_objects_inside_radius(pos, 20)) do
-            if obj:is_player() then           
-              if spawn_pos then                                            
-                    minetest.add_entity(spawn_pos, zombie_1)
-                    minetest.add_entity(spawn_pos, zombie_2)
-                    minetest.add_entity(spawn_pos, zombie_2)
-                    minetest.add_entity(spawn_pos, zombie_2)  
-                    minetest.add_entity(spawn_pos, zombie_2)                                   
-             end           
-            end
-        end
-
-    end
-})
-
-end
-
-zombies_node_spawn ("zombies4test:doctorzombie_spawner","Doctor spawner","white_block.png^zspaners.png")
-zombies_spawn_monsters ("zombies4test:doctorzombie_spawner","zombies4test:doctorzombie","zombies4test:walkingzombie")
-]]
-
 --- SPAWNS : ======================================================
 	mobs:spawn({
 		name = "zombies4test:doctorzombie",
@@ -119,7 +74,7 @@ zombies_spawn_monsters ("zombies4test:doctorzombie_spawner","zombies4test:doctor
 		max_height = 200,
 		active_object_count = 3,
 	})
-    
+       
 	mobs:spawn({
 		name = "zombies4test:walkingzombie",
 		nodes = zombis_spawn_nodes,
@@ -130,7 +85,7 @@ zombies_spawn_monsters ("zombies4test:doctorzombie_spawner","zombies4test:doctor
 		max_height = 200,
 		active_object_count = 6,
 	})
-
+	
 	mobs:spawn({
 		name = "zombies4test:survivorzombie",
 		nodes = zombis_spawn_nodes,
@@ -202,10 +157,32 @@ zombies_spawn_monsters ("zombies4test:doctorzombie_spawner","zombies4test:doctor
 		nodes = {"zombies4test:floor_block"},
 		min_light = 0,
 		max_light = 14,
-		chance = 1000,
+		chance = 2000,
 		min_height = 0,
 		max_height = 200,
 		active_object_count = 3,
+	})
+	
+	mobs:spawn({
+		name = "zombies4test:policezombie",
+		nodes = zombis_spawn_nodes,
+		min_light = 0,
+		max_light = 7, 
+		chance = 5000,
+		min_height = -20000,
+		max_height = 200,
+		active_object_count = 1,
+	})
+	
+	mobs:spawn({
+		name = "zombies4test:militaryzombie",
+		nodes = zombis_spawn_nodes,
+		min_light = 0,
+		max_light = 7, 
+		chance = 20000,
+		min_height = -20000,
+		max_height = 200,
+		active_object_count = 1,
 	})
 	
 ----- SEMI BOSSES : ====================================
@@ -214,7 +191,7 @@ zombies_spawn_monsters ("zombies4test:doctorzombie_spawner","zombies4test:doctor
 		nodes = zombis_spawn_nodes,
 		min_light = 0,
 		max_light = 7, 
-		chance = 5000,
+		chance = 10000,
 		min_height = -20000,
 		max_height = 200,
 		--max_height = 200,
@@ -226,14 +203,28 @@ zombies_spawn_monsters ("zombies4test:doctorzombie_spawner","zombies4test:doctor
 		nodes = zombis_spawn_nodes,
 		min_light = 0,
 		max_light = 7, 
-		chance = 5000,
+		chance = 15000,
 		min_height = -20000,
 		max_height = 200,
 		--max_height = 200,
 		active_object_count = 6,
 	})
+	
+	mobs:spawn({
+		name = "zombies4test:jumperzombie",
+		nodes = zombis_spawn_nodes,
+		min_light = 0,
+		max_light = 7,
+		chance = 20000,
+		min_height = 0,
+		max_height = 200,
+		--max_height = 200,
+		active_object_count =1,
+	})
+	
 
 -- Boss
+--[[
 	mobs:spawn({
 		name = "zombies4test:tankzombie",
 		nodes = zombis_spawn_nodes,
@@ -245,3 +236,4 @@ zombies_spawn_monsters ("zombies4test:doctorzombie_spawner","zombies4test:doctor
 		--max_height = 200,
 		active_object_count =1,
 	})	
+]]

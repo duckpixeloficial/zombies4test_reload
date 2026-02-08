@@ -15,10 +15,11 @@ mobs:register_mob("zombies4test:boomer", {
 	armor = 100,
 	collisionbox = {-0.3, -0, -0.3, 0.3, 1.7, 0.3},
 	visual = "mesh",
-	mesh = "walkingzombie.b3d",
+	mesh = "boomer.b3d",
 	textures = {
 		{"boomer.png"},
 	},
+	visual_size = {x=10, y=10},
 	blood_texture = "tnt_smoke.png",
 	makes_footstep_sound = true,
 	sounds = {
@@ -33,7 +34,8 @@ mobs:register_mob("zombies4test:boomer", {
 	view_range = 35,
 	drops = {	
 		{name = "zombies4test:fire_extintor", chance = 6, min = 1, max = 1},
-		{name = "zombies4test:zcoin", chance = 2, min = 1, max = 5},		
+		{name = "zombies4test:zcoin", chance = 2, min = 1, max = 5},
+		{name = "zombies4test:chocolate_bar", chance = 2, min = 1, max = 1},		
 	},
 	water_damage = 0,
 	lava_damage = 0,
@@ -41,27 +43,25 @@ mobs:register_mob("zombies4test:boomer", {
 		animation = {
 		speed_normal = 15,
 		speed_run = 15,
-		stand_start = 0,
-		stand_end = 80,
-		walk_start = 100,
-		walk_end = 180,
-		run_start = 200,
-		run_end = 240,
-		punch_start = 200,
-		punch_end = 240,
-		die_start = 280,
-		die_end = 300,
+		stand_start = 1,
+		stand_end = 40,
+		walk_start = 45,
+		walk_end = 85,
+		run_start = 45,
+		run_end = 85,
+		punch_start = 45,
+		punch_end = 85,
+		die_start = 90,
+		die_end = 150,
 	},
 	
-	do_custom = function(...)
-	climb_ladders (...)
-	remove_glass (...)
-	end,
+	--do_custom = function(...)
+	--climb_ladders (...)
+	--remove_glass (...)
+	--end,
 	
 	on_die = function(...) -- POSIÇÃO
-  	
-	zombies_count(...)
-	
+	 zombies_count(...)
 	end
 })
 

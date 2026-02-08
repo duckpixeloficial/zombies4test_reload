@@ -40,8 +40,7 @@ mobs:register_mob("zombies4test:clown_zombie", {
 	fall_damage = 0,
 	-------------------------
 	drops = {
-	     {name = "zombies4test:candy", chance = 2, min = 1, max = 1},
-	     {name = "zombies4test:machete", chance = 5, min = 1, max = 1},
+	     {name = "zombies4test:candy", chance = 2, min = 1, max = 1},	
 	     {name = "zombies4test:zcoin", chance = 2, min = 1, max = 1},
 	},
 	water_damage = 0,

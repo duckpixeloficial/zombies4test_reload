@@ -8,8 +8,8 @@ zombies4test.zombies (Enable Zombies) bool true
 #  Enable Structures 
 zombies4test.structures (Enable Structures) bool true
 
-
-
+#  Equip Backpack (Experimental) 
+zombies4test.backpack (Equip Backpack Experimental) bool false
 
 
 

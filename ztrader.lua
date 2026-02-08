@@ -3,25 +3,13 @@ local ztrader_itens = {
     {icon = "canned_tomato.png", count = "zombies4test:zcoin 5" , desc ="Canned Tomato \n COST = 5", sell = "zombies4test:canned_tomato 5"},
     {icon = "beans_canned.png",  count = "zombies4test:zcoin 5", desc ="Canned Beans \n COST = 5",sell= "zombies4test:canned_beans 5"},     
     {icon = "medic_kit.png",  count = "zombies4test:zcoin 10", desc ="Medic Kit \n COST = 10", sell = "zombies4test:medicalkit 1"},
-    {icon = "axe_zombie.png",  count = "zombies4test:zcoin 15", desc ="Fire Axe \n COST = 15", sell = "zombies4test:fireaxe 1"},        
-    --- GUNS E BULLETS :   
-    {icon = "cody_python.png",  count = "zombies4test:zcoin 70", desc ="Colt Python \n COST = 70", sell = "zombies4test:colt_python_discharged 1"},
-    {icon = "cody_python_bullet.png", count = "zombies4test:zcoin 5", desc ="Python Bullet \n COST = 5", sell = "zombies4test:colt_python_bullet 10"},
-    {icon = "FNSCAR.png", count = "zombies4test:zcoin 90" , desc ="Fnscar \n COST = 90", sell = "zombies4test:fnscar_discharged 1"},
-    {icon = "FNSCAR_cartridge.png",  count = "zombies4test:zcoin 5", desc ="Fnscar Cartridge \n COST = 5",sell= "zombies4test:fnscar_cartridge 1"},  
-    {icon = "M1887.png",  count = "zombies4test:zcoin 110", desc ="Model1887 \n COST = 110", sell = "zombies4test:model1887_discharged 1"},
-    {icon = "m1887_bullet.png",  count = "zombies4test:zcoin 10", desc ="M1887 Bullet \n COST = 10", sell = "zombies4test:model1887_bullet 10"},   
-    {icon = "Remington870.png",  count = "zombies4test:zcoin 160", desc ="Remington870 \n COST = 160", sell = "zombies4test:remington870_discharged 1"},
-    {icon = "Remington870_bullet.png",  count = "zombies4test:zcoin 10", desc ="R870 Bullet \n COST = 10", sell = "zombies4test:remington870_bullet 10"},  
-    {icon = "sawed_off_shotgun.png",  count = "zombies4test:zcoin 150", desc ="Shotgun \n COST = 140", sell = "zombies4test:sawedoffshotgunt_discharged 1"},
-    {icon = "Sawedoffshotgun_bullet.png", count = "zombies4test:zcoin 10", desc ="Shotgun Bullet \n COST = 10", sell = "zombies4test:sawedoffshotgun_bullet 10"},   
-    {icon = "uzi.png",  count = "zombies4test:zcoin 130", desc ="UZI \n COST = 130", sell = "zombies4test:uzi_discharged 1"},
-    {icon = "bullet_small_guns.png", count = "zombies4test:zcoin 10", desc ="Small Bullet \n COST = 10", sell = "zombies4test:small_calibe_bullet 10"},
-    --- Deco :
+    {icon = "axe_zombie.png",  count = "zombies4test:zcoin 15", desc ="Fire Axe \n COST = 15", sell = "zombies4test:fireaxe 1"},  
+    
+      --- Deco :
     {icon = "backpack__inv.png",  count = "zombies4test:zcoin 20", desc ="Backpack \n COST = 20", sell = "zombies4test:backpack 1"},
     {icon = "stopsign_icon.png",  count = "zombies4test:zcoin 10", desc ="Stop Sign \n COST = 10", sell = "zombies4test:stop_sign 1"},
     {icon = "traffic_cone_icon.png",  count = "zombies4test:zcoin 10", desc ="Traffic Cone \n COST = 10", sell = "zombies4test:traffic_cone 1"},
-    {icon = "road_block_inv.png",  count = "zombies4test:zcoin 10", desc ="Traffic Cone \n COST = 10", sell = "zombies4test:road_block 1"},    
+    {icon = "road_block_inv.png",  count = "zombies4test:zcoin 10", desc ="Traffic Cone \n COST = 10", sell = "zombies4test:road_block 1"},            
 }
 
 local function get_formspec(self, clicker)
@@ -114,9 +102,22 @@ mobs:spawn({
 	min_height = 0,
 	active_object_count = 1,
 })
-
-
 -- ===== SUPORTE ; ===========================================================================================
+if not core.get_modpath("rangedweapons") and not core.get_modpath("ctf_core") and not core.get_modpath("rifles") and not core.get_modpath("guns4d_pack_1") then
+table.insert(ztrader_itens,{icon="cody_python.png",count="zombies4test:zcoin 70",desc="Colt Python \n COST = 70",sell="zombies4test:colt_python_discharged 1"})
+table.insert(ztrader_itens,{icon="cody_python_bullet.png",count="zombies4test:zcoin 5",desc="Python Bullet \n COST = 5",sell="zombies4test:colt_python_bullet 10"})
+table.insert(ztrader_itens,{icon="FNSCAR.png",count="zombies4test:zcoin 90",desc="Fnscar \n COST = 90",sell="zombies4test:fnscar_discharged 1"})
+table.insert(ztrader_itens,{icon="FNSCAR_cartridge.png",count="zombies4test:zcoin 5",desc="Fnscar Cartridge \n COST = 5",sell="zombies4test:fnscar_cartridge 1"})
+table.insert(ztrader_itens,{icon="M1887.png",count="zombies4test:zcoin 110",desc="Model1887 \n COST = 110",sell="zombies4test:model1887_discharged 1"})
+table.insert(ztrader_itens,{icon="m1887_bullet.png",count="zombies4test:zcoin 10",desc="M1887 Bullet \n COST = 10",sell="zombies4test:model1887_bullet 10"})
+table.insert(ztrader_itens,{icon="Remington870.png",count="zombies4test:zcoin 160",desc="Remington870 \n COST = 160",sell="zombies4test:remington870_discharged 1"})
+table.insert(ztrader_itens,{icon="Remington870_bullet.png",count="zombies4test:zcoin 10",desc="R870 Bullet \n COST = 10",sell="zombies4test:remington870_bullet 10"})
+table.insert(ztrader_itens,{icon="sawed_off_shotgun.png",count="zombies4test:zcoin 150",desc="Shotgun \n COST = 140",sell="zombies4test:sawedoffshotgunt_discharged 1"})
+table.insert(ztrader_itens,{icon="Sawedoffshotgun_bullet.png",count="zombies4test:zcoin 10",desc="Shotgun Bullet \n COST = 10",sell="zombies4test:sawedoffshotgun_bullet 10"})
+table.insert(ztrader_itens,{icon="uzi.png",count="zombies4test:zcoin 130",desc="UZI \n COST = 130",sell="zombies4test:uzi_discharged 1"})
+table.insert(ztrader_itens,{icon="bullet_small_guns.png",count="zombies4test:zcoin 10",desc="Small Bullet \n COST = 10",sell="zombies4test:small_calibe_bullet 10"})
+end 
+
 if core.get_modpath("bucket") then
 table.insert(ztrader_itens,{icon = "bucket.png",  count = "zombies4test:zcoin 5", desc ="Bucket \n COST = 5", sell = "bucket:bucket_empty"})
 end

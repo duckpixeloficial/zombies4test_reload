@@ -1,4 +1,3 @@
-
 local S = minetest.get_translator("zombies4test")
 
 mobs:register_mob("zombies4test:walkingzombie", {
@@ -67,9 +66,6 @@ mobs:register_mob("zombies4test:walkingzombie", {
 		die_start = 280,
 		die_end = 300,
 	},
-	
-	--after_activate = function(self, staticdata, def, dtime)
-	--end,
 	
 	do_custom = function(...)
 	climb_ladders (...)

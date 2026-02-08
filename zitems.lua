@@ -1,4 +1,4 @@
-local S = minetest.get_translator("zombies4test")
+local S = core.get_translator("zombies4test")
 
 local zmsg = S("Hello survivor!")
 local zmsg2 = S("If you have any questions,")
@@ -7,7 +7,8 @@ local zmsg3 = S("click the button below...")
 core.register_craftitem("zombies4test:walkietalkie", {
     description = S("Walkie Talkie"),
     inventory_image = "walkietalkie.png",
-    droppable = false,	
+    droppable = false,
+    _mcl_toollike_wield = true,	
     
     on_use = function(itemstack, user, pointed_thing, pos)
 
@@ -27,7 +28,7 @@ core.register_craftitem("zombies4test:walkietalkie", {
             "button_url[2.5,2;2,2;wiki;Wiki;https://codeberg.org/pixelzone/zombies4test_reload/src/branch/main/README.md]"
       
         
-        minetest.show_formspec(player_name, "zombies4test:walkietalkie_wiki", formspec_walkietalkie_wiki)
+        core.show_formspec(player_name, "zombies4test:walkietalkie_wiki", formspec_walkietalkie_wiki)
         return itemstack
     end,
 	
@@ -66,6 +67,7 @@ core.register_craftitem("zombies4test:medicalkit", {
 core.register_craftitem("zombies4test:zcoin", {
 	description = "Zcoin",
 	inventory_image = "zcoin.png",
+	_mcl_toollike_wield = true,
 
 })
 ---- ITENS PARA MATERIALS : ---------------------------------------------

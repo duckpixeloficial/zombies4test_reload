@@ -1,4 +1,4 @@
-local S = minetest.get_translator("zombies4test")
+local S = core.get_translator("zombies4test")
 
 local items = {    
         -- TOOLS
@@ -48,8 +48,8 @@ core.register_node(zloot_name, {
 	sunlight_propagates = true,
 	walkable = true, 
 	floodable = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 3,not_in_creative_inventory=1},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
 	drop = def.drop,	
 	sounds = {        
          footstep = {name = "wood_steep", gain = 0.5,max_hear_distance = 10}
@@ -72,13 +72,13 @@ core.register_node(zloot_name, {
 	      local lpos = pos.x .. "," .. pos.y .. "," .. pos.z
 	      local nsloots = def.slots
 	      
-	      minetest.sound_play(def.sound, {pos = pos,gain = 1.0,max_hear_distance = 5,})
+	      core.sound_play(def.sound, {pos = pos,gain = 1.0,max_hear_distance = 5,})
 
              if meta:get_string("opened") ~= "true"  then
                 inv:set_size("main", 8 * nsloots)
 	     
 	      	if inv:is_empty("main") then	      	   	   	       
-	          for i = 1,4 do 
+	          for i = 1,8 do 
 		    local item = def.list[math.random(1, #def.list)]
 		    local stack =math.random(1, 8) 
                     inv:set_stack("main", stack, item)
@@ -95,11 +95,11 @@ core.register_node(zloot_name, {
                      "list[current_player;main;0,5;8,4;]" ..
                      "listring[nodemeta:" .. lpos .. ";main]" ..
 		      "listring[current_player;main]"
-                     minetest.show_formspec(p_name, zloot_name, formspec)         
+                     core.show_formspec(p_name, zloot_name, formspec)         
           end,
           
         can_dig = function(pos,player)
-         local meta = minetest.get_meta(pos)
+         local meta = core.get_meta(pos)
          local inv = meta:get_inventory()
           return inv:is_empty("main")
         end,	
@@ -174,7 +174,7 @@ core.register_node("zombies4test:cardboardbox", {
     },
 })
 
--------- GRAVESTONE : ================================================================================================
+-------- GRAVESTONE : ==========================================================
 core.register_node("zombies4test:gravestone", {
     description = S("Gravestone"),
     drawtype = "mesh",
@@ -239,6 +239,13 @@ core.register_node("zombies4test:medicinebox", {
 
 ---- SUPORTES : =======================================================
 --- default : =========================================================
+if not core.get_modpath("rangedweapons") and not core.get_modpath("ctf_core") and not core.get_modpath("rifles") and not core.get_modpath("guns4d_pack_1") then
+table.insert(items,{name = "zombies4test:colt_python_bullet", chance = 3, count = 5})
+table.insert(items,{name = "zombies4test:chiappa_rhino_discharged", chance = 3, count = 1})
+table.insert(items,{name = "zombies4test:colt_python_discharged", chance = 3, count = 1})
+table.insert(items,{name = "zombies4test:small_calibe_bullet", chance = 3, count = 5})
+end
+
 if core.get_modpath("default") then
 table.insert(items,{name = "default:torch", chance = 1, count = 3})
 table.insert(items,{name = "default:apple", chance =2, count = 5})
@@ -271,18 +278,11 @@ table.insert(items,{name = "zombies4test:hat_head", chance = 2, count = 1})
 table.insert(items,{name = "zombies4test:Jacket_torso", chance = 2, count = 1})
 table.insert(items,{name = "zombies4test:jeanspants_legs", chance = 2, count = 1})
 table.insert(items,{name = "zombies4test:tennis_feet", chance = 2, count = 1})
+table.insert(items,{name = "zombies4test:chestplate_jacketpink", chance = 3, count = 1})
+table.insert(items,{name = "zombies4test:chestplate_dressshirt", chance = 2, count = 1})
+table.insert(items,{name = "zombies4test:chicken_hat", chance = 5, count = 1})
 
 table.insert(items,{name = "zombies4test:helmet_nvg", chance = 3, count = 1})
-
-table.insert(items,{name = "zombies4test:helmet_military", chance = 1, count = 1})
-table.insert(items,{name = "zombies4test:chestplate_military", chance = 1, count = 1})
-table.insert(items,{name = "zombies4test:leggings_military", chance = 1, count = 1})
-table.insert(items,{name = "zombies4test:boots_military", chance = 1, count = 1})
-
-table.insert(items,{name = "zombies4test:helmet_police", chance = 1, count = 1})
-table.insert(items,{name = "zombies4test:chestplate_police", chance = 1, count = 1})
-table.insert(items,{name = "zombies4test:leggings_police", chance = 1, count = 1})
-table.insert(items,{name = "zombies4test:boots_police", chance = 1, count = 1})
 end
 
 if core.get_modpath("mcl_armor") then
@@ -295,13 +295,8 @@ table.insert(items,{name = "zombies4test:chestplate_survivor", chance = 1, count
 table.insert(items,{name = "zombies4test:leggings_survivor", chance = 1, count = 10})
 table.insert(items,{name = "zombies4test:boots_survivor", chance = 1, count = 10})
 
-table.insert(items,{name = "zombies4test:helmet_military", chance = 1, count = 10})
-table.insert(items,{name = "zombies4test:chestplate_military", chance = 1, count = 10})
-table.insert(items,{name = "zombies4test:leggings_military", chance = 1, count = 10})
-table.insert(items,{name = "zombies4test:boots_military", chance = 1, count = 10})
+table.insert(items,{name = "zombies4test:chestplate_jacketpink", chance = 1, count = 10})
+table.insert(items,{name = "zombies4test:chestplate_dressshirt", chance = 1, count = 10})
+table.insert(items,{name = "zombies4test:helmet_chicken_hat", chance = 1, count = 10})
 
-table.insert(items,{name = "zombies4test:helmet_police", chance = 1, count = 10})
-table.insert(items,{name = "zombies4test:chestplate_police", chance = 1, count = 10})
-table.insert(items,{name = "zombies4test:leggings_police", chance = 1, count = 10})
-table.insert(items,{name = "zombies4test:boots_police", chance = 1, count = 10})
 end

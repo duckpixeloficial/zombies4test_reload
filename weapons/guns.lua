@@ -6,6 +6,7 @@ core.register_tool(name.."_discharged", {
     wield_image = def.inventory_image, 
     color = "red",
     stack_max = 1,
+    _mcl_toollike_wield = true,
     groups = {weapons = 1},
     
     on_use = function(itemstack, user, pointed_thing)
@@ -31,6 +32,7 @@ core.register_tool(name.."_recharged", {
     inventory_image = def.inventory_image, 
     wield_image = def.inventory_image, 
     stack_max = 1,
+    _mcl_toollike_wield = true,
     groups = {not_in_creative_inventory = 1,weapons = 1},
 
     on_use = function(itemstack, user, pointed_thing)

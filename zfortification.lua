@@ -2,8 +2,8 @@
 core.register_node("zombies4test:metal_wall", {
 	description = "Metal Wall",
 	tiles = {"metal_wallpng.png"},
-	groups = {cracky = 3},
-	_mcl_hardness = 2,
+	groups = {choppy = 3, pickaxey=2,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,
         drop = "zombies4test:metal_wall",
         ounds = {        
 		footstep = {name = "metal_footstep", gain = 0.5,max_hear_distance = 10},
@@ -24,9 +24,9 @@ core.register_node("zombies4test:barbed_wire", {
 	walkable = false,
 	move_resistance = 7,
 	damage_per_second = 3,
-    drop = "zombies4test:barbed_wire",
+        drop = "zombies4test:barbed_wire",
      
-    selection_box = {
+        selection_box = {
 		type = "fixed",
 		fixed = {-0.3, -0.5, -0.3, 0.3, 0.2, 0.3},
 	},
@@ -42,12 +42,12 @@ core.register_node("zombies4test:grid", {
 	description = "Grid",
 	tiles = {"grid.png"},
 	use_texture_alpha = "blend",
-	groups = {cracky = 3},
+	groups = {choppy = 3,pickaxey=2},
 	_mcl_hardness = 2,
 	paramtype = "light",
 	paramtype2 = "facedir",
 	walkable = true,
-    drop = "zombies4test:grid",
+        drop = "zombies4test:grid",
        
     selection_box = {
 		type = "fixed",
@@ -66,7 +66,7 @@ core.register_node("zombies4test:iron_plate", {
 	description = "Iron Plate",
 	tiles = {"iron_plate.png"},
 	use_texture_alpha = "blend",
-	groups = {cracky = 3},
+	groups = {choppy = 3,pickaxey=2},
 	_mcl_hardness = 2,
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -88,7 +88,7 @@ core.register_node("zombies4test:iron_plate", {
 core.register_node("zombies4test:sandbag", {
 	description = "Sand Bag",
 	tiles = {"sandbag.png"},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3,pickaxey=2},
 	_mcl_hardness = 0.5,
     drop = "zombies4test:sandbag",	
 })
@@ -105,7 +105,7 @@ core.register_node("zombies4test:wirefence", {
 	walkable = true, 
 	floodable = false,
 	damage_per_second =2,
-	groups = {cracky = 3, oddly_breakable_by_hand = 1},
+	groups = {pickaxey=2, oddly_breakable_by_hand = 1},
 	_mcl_hardness = 2,
 	drop = "zombies4test:wirefence",	
 	selection_box = {
@@ -131,8 +131,8 @@ core.register_node("zombies4test:punji_sticks", {
 	walkable = false, 
 	floodable = false,
 	damage_per_second =1,
-	groups = {cracky = 3, oddly_breakable_by_hand = 2},
-	_mcl_hardness = 2,
+	groups = {handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 0.2,
 	drop = "zombies4test:punji_sticks",	
 	selection_box = {
 		type = "fixed",
@@ -157,8 +157,8 @@ core.register_node("zombies4test:planks_barricade", {
 	use_texture_alpha = "blend",
 	walkable = true, 
 	floodable = false,
-	groups = {wood=1,oddly_breakable_by_hand = 2},
-	_mcl_hardness = 2,	
+	groups = {choppy = 3, axey = 1,handy=1,oddly_breakable_by_hand = 3},
+	_mcl_hardness = 2.5,	
 	selection_box = {
 		type = "fixed",
 		fixed = {-0.5, -0.5, 0.43, 0.5, 0.5, 0.5},

@@ -34,12 +34,13 @@ mobs:register_mob("zombies4test:spitterzombie", {
 	armor = 100,
 	collisionbox = {-0.4, 0, -0.4, 0.4, 1.8, 0.4},
 	visual = "mesh",
-	mesh = "fatzombie.b3d",
+	mesh = "spitterzombie.b3d",
 	textures = {
-		{"fatzombie.png"},
+		{"spitterzombie.png"},
 		--{"walkingzombie.png"},
 
 	},
+	visual_size = {x=10, y=10},
 	makes_footstep_sound = true,
 	sounds = {
 	        random ="zombie_angry",
@@ -55,12 +56,9 @@ mobs:register_mob("zombies4test:spitterzombie", {
 	view_range = 35,
 	drops = {
 		--{name = "", chance = 2, min = 1, max = 1},		
-		{name = "zombies4test:chocolate_bar", chance = 2, min = 1, max = 1},
 		{name = "zombies4test:pan", chance = 2, min = 1, max = 1},
 		{name = "zombies4test:cleaver", chance = 6, min = 1, max = 1},
 		{name = "zombies4test:zcoin", chance = 1, min = 3, max = 5},
-		
-
 	},
 	water_damage = 0,
 	lava_damage = 1,
@@ -68,18 +66,18 @@ mobs:register_mob("zombies4test:spitterzombie", {
 	animation = {
 		speed_normal = 15,
 		speed_run = 15,
-		stand_start = 0,
-		stand_end = 80,
-		walk_start = 100,
-		walk_end = 180,
-		run_start = 200,
-		run_end = 240,
-		punch_start = 200,
-		punch_end = 240,
-		die_start = 280,
-		die_end = 300,
-		shoot_start =340,
-		shoot_end = 380,
+		stand_start = 1,
+		stand_end = 30,
+		walk_start = 40,
+		walk_end = 70,
+		run_start = 40,
+		run_end = 70,
+		--punch_start = 200,
+		--punch_end = 240,
+		die_start = 100,
+		die_end = 130,
+		shoot_start =75,
+		shoot_end = 95,
 	},
 	
 	on_die = function(...) 

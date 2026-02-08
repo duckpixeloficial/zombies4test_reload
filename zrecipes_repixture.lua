@@ -6,7 +6,6 @@ crafting.register_craft(
 }
   })
 
-
 crafting.register_craft(
   {
   output = "zombies4test:metal_can",
@@ -14,7 +13,6 @@ crafting.register_craft(
                 "zombies4test:canned_beans",
 }
   })
-
 
 crafting.register_craft(
   {
@@ -25,37 +23,22 @@ crafting.register_craft(
   })
 
 ----- NODES : =========================================================================================
-
-
-
-  crafting.register_craft(
+crafting.register_craft(
   {
   output = "zombies4test:sidewalk 6",
   items = {
   "zombies4test:plastic 2",
   "group:stone 2",
-  
-  
-  
-  
+
 }
   })
-
-
-
-
-  --- FORTIFICATION : ===================================================================================
-
+ --- FORTIFICATION : ===================================================================================
 crafting.register_craft(
   {
   output = "zombies4test:metal_wall 1",
   items = {
   
   "zombies4test:metal_can 9",
-  
-  
-  
-  
 }
   })
 
@@ -64,24 +47,15 @@ crafting.register_craft(
   output = "zombies4test:barbed_wire 2",
   items = {
   
-  "zombies4test:metal_can 4",
-  
-  
-  
-  
+  "zombies4test:metal_can 4", 
 }
   })
 
-  crafting.register_craft(
+crafting.register_craft(
   {
   output = "zombies4test:grid 4",
   items = {
   "zombies4test:barbed_wire 4",
- 
-  
-  
-  
-  
 }
   })
 
@@ -90,10 +64,6 @@ crafting.register_craft(
   output = "zombies4test:sandbag",
   items = {
   "group:sand 9"
-  
-  
-  
-  
 }
   })
 
@@ -103,9 +73,6 @@ crafting.register_craft(
   items = {
   "zombies4test:metal_can 4",
    "zombies4test:barbed_wire 2"
-  
-  
-  
 }  
 })
 
@@ -113,39 +80,25 @@ crafting.register_craft(
   {
   output = "zombies4test:punji_sticks",
   items = {
-  "group:stick 3",
-  
-  
-  
-  
-  
+  "group:stick 3", 
 }
   })
-  ----- DECORAÇÃO : =====================================================================================
-
-
-
+----- DECORAÇÃO : =====================================================================================
 crafting.register_craft(
   {
   output = "zombies4test:shelving",
   items = {
   "zombies4test:metal_can 7",
-  
- 
-  
+
 }
   })
   
-  
-
 crafting.register_craft(
   {
   output = "zombies4test:stopsign",
   items = {
   "zombies4test:metal_can 2",
-  "zombies4test:metal_wall",
-  
- 
+  "zombies4test:metal_wall", 
 }
   })
 
@@ -153,36 +106,26 @@ crafting.register_craft(
   {
   output = "zombies4test:trashcan",
   items = {
-  "zombies4test:metal_can 7",
-
-  
+  "zombies4test:metal_can 7", 
 }
   })
 
-
-  crafting.register_craft(
+crafting.register_craft(
   {
   output = "zombies4test:radio",
   items = {
   "zombies4test:metal_can",
-  "zombies4test:plastic",
- 
-  
+  "zombies4test:plastic", 
 }
   })
-
 
 crafting.register_craft(
   {
   output = "zombies4test:table",
   items = {
   "group:wood 7",
-  
- 
-  
 }
   })
-
 
 crafting.register_craft(
   {
@@ -199,9 +142,6 @@ crafting.register_craft(
   output = "zombies4test:armchair",
   items = {
   "group:tree 6",
-  
- 
-  
 }
   })
 
@@ -211,8 +151,7 @@ crafting.register_craft(
   items = {
   "group:leaves",
   "group:soil"
-  
- 
-  
 }
   })
+  
+  

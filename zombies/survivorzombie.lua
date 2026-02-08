@@ -18,7 +18,7 @@ mobs:register_mob("zombies4test:survivorzombie", {
 	textures = {
 		{"survivorzombie3.png"},
 		{"survivorzombie.png"},
-		{"survivorzombie2.png"}
+		{"survivorzombie2.png"},	
 	},
 
 	makes_footstep_sound = true,

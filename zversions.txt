@@ -1,0 +1,32 @@
+0.50
+
+- New items
+- New structures
+- New zombies
+- New armor
+- New weapons and tools
+- Various bug fixes and improvements
+
+0.53
+
+- Fixed item purchases even with a full inventory
+- Fixed the price of the fire axe in the trader's shop
+- Reduced the chance of some zombies dropping zcoins
+
+0.55
+- Equipable Backpack (Experimental)
+- Police Zombies with police armor drop
+- Military Zombies with military armor drop
+- New boss "Jumper", drops "katanas and Zcoins"
+- New model for the Spitter
+- New model for the "Zombie Tank"
+- New model for the Boomer
+- Two armors and a mask
+
+- Weapons and bullets no longer appear in the trader menu if mods such as "rangedweapons", "ctf_core", "rifles", "guns4d_pack_1" are installed.
+- Correction to some nodes that could be dug
+- Correction to the item wielded in games like Mineclonia and Voxelibre
+- Correction to the "Jugernaut" not counting as a dead zombie
+- Improvements to the "Zombie Tank" attack
+- Zombie Tank now only appears in invasions
+- Increased number of loot drops

@@ -19,24 +19,24 @@ function spawn_zombies_invasion(player)
     -- acha o chão (procurar bloco para baixo)
     for y = 10, -10, -1 do
         local p = {x = spawn_pos.x, y = spawn_pos.y + y, z = spawn_pos.z}
-        local node = minetest.get_node(p).name
-        --if minetest.registered_nodes[node] and minetest.registered_nodes[node].walkable then
-        if minetest.get_item_group(node, "soil") > 0 or minetest.get_item_group(node, "stone") > 0 then
+        local node = core.get_node(p).name
+        --if core.registered_nodes[node] and core.registered_nodes[node].walkable then
+        if core.get_item_group(node, "soil") > 0 or core.get_item_group(node, "stone") > 0 then
             spawn_pos.y = p.y + 1
             break
         end
     end
     
     -- Wave (Não se repete para não causar lags)
-    minetest.add_entity(spawn_pos, "zombies4test:survivorzombie")
-    minetest.add_entity(spawn_pos, "zombies4test:lumberjackzombie")
-    minetest.add_entity(spawn_pos, "zombies4test:clown_zombie")
-    minetest.add_entity(spawn_pos, "zombies4test:walkingzombie")
-    minetest.add_entity(spawn_pos, "zombies4test:crawlerzombie")
-    minetest.add_entity(spawn_pos, "zombies4test:runner")
-    minetest.add_entity(spawn_pos, "zombies4test:spitterzombie")
-    minetest.add_entity(spawn_pos, "zombies4test:boomer")
-    minetest.add_entity(spawn_pos, "zombies4test:tankzombie")
+    core.add_entity(spawn_pos, "zombies4test:survivorzombie")
+    core.add_entity(spawn_pos, "zombies4test:lumberjackzombie")
+    core.add_entity(spawn_pos, "zombies4test:clown_zombie")
+    core.add_entity(spawn_pos, "zombies4test:survivorzombie")
+    core.add_entity(spawn_pos, "zombies4test:crawlerzombie")
+    core.add_entity(spawn_pos, "zombies4test:runner")
+    core.add_entity(spawn_pos, "zombies4test:spitterzombie")
+    core.add_entity(spawn_pos, "zombies4test:boomer")
+    core.add_entity(spawn_pos, "zombies4test:tankzombie")
     --core.log("sucesso")
 end
 

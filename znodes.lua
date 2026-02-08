@@ -125,7 +125,7 @@ zstairs_stone("zombies4test:zstone_brick_stair","Z Stone Brick Stair","zstone_br
 
 -- FENCE :===================================================================================
 local function zfences_register(name_fences,zdesc_fences,zfence_textures)
-minetest.register_node(name_fences, {
+core.register_node(name_fences, {
                 description = zdesc_fences,
                 paramtype = "light",
 		drawtype = "nodebox",
