@@ -72,3 +72,6 @@ core.register_on_joinplayer(function(player)
 	local inv = player:get_inventory()	
 	inv:set_size("zbackpack",32)		
 end)
+
+
+

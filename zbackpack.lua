@@ -1,6 +1,19 @@
 local storage = core.get_mod_storage()
 zombies4test.backpack = core.settings:get_bool("zombies4test.backpack", false)
 
+local function zbackpack(player)
+core.show_formspec(player:get_player_name(), "backpack",
+[[              
+formspec_version[6]
+size[10.5,11]
+listcolors[#000000BB;#000000BB]
+list[current_player;zbackpack;0.4,0.3;8,4;]
+listring[current_player;zbackpack]
+list[current_player;main;0.4,5.9;8,4;0]
+]]
+)
+end
+
 -- MOCHILA :
 core.register_node("zombies4test:backpack", {
 	description = "Backpack",

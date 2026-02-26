@@ -73,7 +73,7 @@ mobs:register_mob("zombies4test:walkingzombie", {
 	end,
 	
 	on_die = function(...) 
-  	zombies_count(...)
+  	 zombies_count(...)
 	end
 })
 
