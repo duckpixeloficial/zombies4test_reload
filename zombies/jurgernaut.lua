@@ -60,8 +60,10 @@ mobs:register_mob("zombies4test:juggernaut", {
 		punch_end = 120,
 	},
 		
-	on_die = function(...) 	
-         zombies_count(...)
+	on_die = function(self, pos) -- POSIÇÃO
+--		self:death_anim()
+		zombies_count(self, pos)
+--		return true -- dont remove mob until death anim finished
 	end
 })
 
@@ -130,8 +132,10 @@ mobs:register_mob("zombies4test:policezombie", {
 		punch_end = 120,
 	},
 		
-	on_die = function(...) 	
-         zombies_count(...)  
+	on_die = function(self, pos) -- POSIÇÃO
+--		self:death_anim()
+		zombies_count(self, pos)
+--		return true -- dont remove mob until death anim finished
 	end
 })
 
@@ -199,8 +203,10 @@ mobs:register_mob("zombies4test:militaryzombie", {
 		punch_end = 120,
 	},
 		
-	on_die = function(...) 	
-         zombies_count(...)
+	on_die = function(self, pos) -- POSIÇÃO
+--		self:death_anim()
+		zombies_count(self, pos)
+--		return true -- dont remove mob until death anim finished
 	end
 })
 
