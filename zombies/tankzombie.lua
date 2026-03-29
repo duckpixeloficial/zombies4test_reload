@@ -18,7 +18,6 @@ core.add_particlespawner({
     collisiondetection = true,
     vertical = false,
     texture = "default_dirt.png",   
-    --glow = 14,
 })  
 end
 
@@ -80,7 +79,7 @@ mobs:register_mob("zombies4test:tankzombie", {
 		run_speed = 25,
 		run_start = 25,
 		run_end = 55,
-		punch_speed = 5,
+		punch_speed = 10,
 		punch_start = 60,
 		punch_end = 85,
 		die_speed = 25,
@@ -96,25 +95,19 @@ mobs:register_mob("zombies4test:tankzombie", {
 
 	    self:set_animation("punch", true)
 	  	  
-	  core.after(0.5,function()
+	  --core.after(0.5,function()
 	    punch_tank (pp) 
-	    core.sound_play("missozzy", {pos = pos, gain = 0.5})
+	    core.sound_play("punch_impact_ground", {pos = pos, gain = 0.5})
 	    self.attack:set_pos({x=pp.x+3,y=pp.y+5,z=pp.z})
-	  end)	
+	  --end)	
 
 	 return true 
 	 
 	end,
   	   	    	   	  
   	on_die = function(...) 
-  	zombies_count(...)
+  	  zombies_count(...)
 	end
-	
-	--[[
-	on_death = function(self, killer)
-           zombies_count(self, killer, self.object:get_pos())
-	end
-	]]
 })
 
 mobs:register_egg("zombies4test:tankzombie", S("Tank Zombie"), "zombies_egg.png", 0)
