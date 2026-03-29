@@ -161,6 +161,7 @@ function huds_pos_days(player)
         position = {x=1, y=0},
         offset = {x=-140, y=310},
         scale = {x=1, y=1},
+number = 0xFFFF22,
         text = "Player : "..p_name
     })
 
@@ -169,6 +170,7 @@ function huds_pos_days(player)
         position = {x=1, y=0},
         offset = {x=-180, y=330},
         scale = {x=1, y=1},
+number = 0xFFFF22,
         text = p_days
     })
 
@@ -177,6 +179,7 @@ function huds_pos_days(player)
         position = {x=1, y=0},
         offset = {x=-160, y=350},
         scale = {x=1, y=1},
+number = 0xFFFF22,
         text = "Zombie Kills : "..zombies_kills_hud
     })
 
@@ -185,6 +188,7 @@ function huds_pos_days(player)
         position = {x=1, y=0},
         offset = {x=-120, y=370},
         scale = {x=1, y=1},
+number = 0xFFFF22,
         text = pos_text
     })
     
