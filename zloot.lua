@@ -183,7 +183,7 @@ core.register_node("zombies4test:gravestone", {
     paramtype = "light",
     paramtype2 = "facedir",
     sunlight_propagates = true,
-    walkable = true, 
+    walkable = true,
     floodable = false,
     groups = {cracky = 3},
     _mcl_hardness = 2,
