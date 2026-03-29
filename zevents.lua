@@ -1,3 +1,11 @@
+local function hud_add(player, hud)
+	local hud_style = core.has_feature("hud_def_type_field")
+	if hud_style and hud["hud_elem_type"] then
+		hud["type"] = hud["hud_elem_type"]
+		hud["hud_elem_type"] = nil
+	end
+	return player:hud_add(hud)
+end
 
 zombies4test.event = core.settings:get_bool("zombies4test.event", true)
 
@@ -119,10 +127,12 @@ local function invasion_update()
 end
 
 --- ZOMBIES KILLS  DATA : ==========================================================================================
-for _, player in ipairs(core.get_connected_players()) do
-local meta = player:get_player_name()
-meta:set_int("zombie kills" ,0)
-end
+core.after(0, function() -- stops error on newer clients
+  for _, player in ipairs(core.get_connected_players()) do
+    local meta = player:get_player_name()
+    meta:set_int("zombie kills" ,0)
+  end
+end)
 
 ----- HUDS : =======================================================================================================
 local zhuds = {}
@@ -138,7 +148,7 @@ function huds_pos_days(player)
     local p_days = "Days : "..math.floor(core.get_day_count())
 
       
-      zhuds[1] = player:hud_add({
+      zhuds[1] = hud_add(player, {
         hud_elem_type = "image",
         alignment = {x=1, y=0},
         offset = {x=1670, y=340},
@@ -146,35 +156,39 @@ function huds_pos_days(player)
         text = "hud_bg.png"
     })
         
-    zhuds[2] = player:hud_add({
+    zhuds[2] = hud_add(player, {
         hud_elem_type = "text",
         position = {x=1, y=0},
         offset = {x=-140, y=310},
         scale = {x=1, y=1},
+number = 0xFFFF22,
         text = "Player : "..p_name
     })
 
-    zhuds[3] = player:hud_add({
+    zhuds[3] = hud_add(player, {
         hud_elem_type = "text",
         position = {x=1, y=0},
         offset = {x=-180, y=330},
         scale = {x=1, y=1},
+number = 0xFFFF22,
         text = p_days
     })
 
-    zhuds[4] = player:hud_add({
+    zhuds[4] = hud_add(player, {
         hud_elem_type = "text",
         position = {x=1, y=0},
         offset = {x=-160, y=350},
         scale = {x=1, y=1},
+number = 0xFFFF22,
         text = "Zombie Kills : "..zombies_kills_hud
     })
 
-    zhuds[5] = player:hud_add({
+    zhuds[5] = hud_add(player, {
         hud_elem_type = "text",
         position = {x=1, y=0},
         offset = {x=-120, y=370},
         scale = {x=1, y=1},
+number = 0xFFFF22,
         text = pos_text
     })
     

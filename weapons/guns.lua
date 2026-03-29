@@ -14,15 +14,16 @@ core.register_tool(name.."_discharged", {
             -- ITEM NECESSARIO : 
             local bullets_stack = ItemStack(def.bullet_name .. " " .. def.bullet_amount) 
             local bullets = user:get_inventory():contains_item("main", bullets_stack)
+            local pos = user:get_pos()
             
 
                 if bullets then 
-                core.sound_play("reload", {pos, gain=1.0, max_hear_distance = 10})
+                core.sound_play("reload", {pos = pos, max_hear_distance = 10}, true)
                 user:get_inventory():remove_item("main",bullets_stack)
                 user:set_wielded_item(ItemStack(name.."_recharged 1")) 
                
                 else               
-                core.sound_play("click", {pos, gain=1.0, max_hear_distance = 10})
+                core.sound_play("click", {pos = pos, max_hear_distance = 10}, true)
                 end           
     end,
 })

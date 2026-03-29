@@ -60,8 +60,10 @@ mobs:register_mob("zombies4test:boomer", {
 	--remove_glass (...)
 	--end,
 	
-	on_die = function(...) -- POSIÇÃO
-	 zombies_count(...)
+	on_die = function(self, pos) -- POSIÇÃO
+		self:death_anim()
+		zombies_count(self, pos)
+		return true -- dont remove mob until death anim finished
 	end
 })
 

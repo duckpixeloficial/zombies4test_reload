@@ -61,13 +61,12 @@ mobs:register_mob("zombies4test:crawlerzombie", {
 		die_start = 280,
 		die_end = 300,
 	},
-	
-	
-	on_die = function(...) 
 
-  	zombies_count(...)
+	on_die = function(self, pos) -- POSIÇÃO
+		self:death_anim()
+		zombies_count(self, pos)
+		return true -- dont remove mob until death anim finished
 	end
-	 
 })
 
 mobs:register_egg("zombies4test:crawlerzombie", S("Crawler Zombie"), "zombies_egg.png",0)

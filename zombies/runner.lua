@@ -69,8 +69,10 @@ mobs:register_mob("zombies4test:runner", {
 	
 	end,
 	
-	on_die = function(...) 
-  	zombies_count(...)
+	on_die = function(self, pos) -- POSIÇÃO
+		self:death_anim()
+		zombies_count(self, pos)
+		return true -- dont remove mob until death anim finished
 	end
 })
 
