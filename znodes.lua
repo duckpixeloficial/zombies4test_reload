@@ -99,7 +99,7 @@ core.register_node(zstairsname_stone, {
     paramtype = "light",
     paramtype2 = "facedir",
     groups = {znodes = 1},
-    drop = zstairsname,
+    drop = zstairsname_stone,
     _mcl_blast_resistance = 3600000,
     _mcl_hardness = 5,
     sounds = {footstep = {name = "stone_step", gain = 0.5,max_hear_distance = 3}},     
