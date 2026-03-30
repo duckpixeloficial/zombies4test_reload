@@ -140,7 +140,7 @@ local zhuds = {}
 function huds_pos_days(player)
     local p_name = player:get_player_name()
     local p_pos = player:get_pos()
-    local pos_text = string.format("Pos: (%.2f, %.2f, %.2f)", p_pos.x, p_pos.y, p_pos.z)
+    local pos_text = string.format("Pos: (%.0f, %.0f, %.0f)", p_pos.x, p_pos.y, p_pos.z)
 
     local meta = player:get_meta()
     local zombies_kills_hud = meta:get_int("zombie_kills")
@@ -150,45 +150,46 @@ function huds_pos_days(player)
       
       zhuds[1] = hud_add(player, {
         hud_elem_type = "image",
-        alignment = {x=1, y=0},
-        offset = {x=1670, y=340},
+	position = {x = 1, y = .5},
+	alignment = {x=-1, y=-1},
+	offset = {x=0, y=0},
         scale = {x=3.5, y=3.5},
         text = "hud_bg.png"
     })
         
     zhuds[2] = hud_add(player, {
         hud_elem_type = "text",
-        position = {x=1, y=0},
-        offset = {x=-140, y=310},
+	position = {x = 1, y = .5},
+	alignment = {x=1, y=1},
+	offset = {x=-224, y=-100},
         scale = {x=1, y=1},
-number = 0xFFFF22,
         text = "Player : "..p_name
     })
 
     zhuds[3] = hud_add(player, {
         hud_elem_type = "text",
-        position = {x=1, y=0},
-        offset = {x=-180, y=330},
         scale = {x=1, y=1},
-number = 0xFFFF22,
+	position = {x = 1, y = .5},
+	alignment = {x=1, y=1},
+	offset = {x=-224, y=-80},
         text = p_days
     })
 
     zhuds[4] = hud_add(player, {
         hud_elem_type = "text",
-        position = {x=1, y=0},
-        offset = {x=-160, y=350},
+	position = {x = 1, y = .5},
+	alignment = {x=1, y=1},
+	offset = {x=-224, y=-60},
         scale = {x=1, y=1},
-number = 0xFFFF22,
         text = "Zombie Kills : "..zombies_kills_hud
     })
 
     zhuds[5] = hud_add(player, {
         hud_elem_type = "text",
-        position = {x=1, y=0},
-        offset = {x=-120, y=370},
+	position = {x = 1, y = .5},
+	alignment = {x=1, y=1},
+	offset = {x=-224, y=-40},
         scale = {x=1, y=1},
-number = 0xFFFF22,
         text = pos_text
     })
     
@@ -202,7 +203,7 @@ function huds_pos_day_update(player)
     local zombies_kills_hud = meta:get_int("zombie_kills")
 
     local p_pos = player:get_pos()
-    local pos_text = string.format("Pos: (%.2f, %.2f, %.2f)", p_pos.x, p_pos.y, p_pos.z)
+    local pos_text = string.format("Pos: (%.0f, %.0f, %.0f)", p_pos.x, p_pos.y, p_pos.z)
 
     -- Atualiza os elementos HUD
     player:hud_change(zhuds[3], "text", p_days)
