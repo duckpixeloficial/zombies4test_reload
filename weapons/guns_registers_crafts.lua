@@ -75,7 +75,7 @@ zweapons.bullet_register("zombies4test:colt_python_bullet", {
 --- fnscar:
 zweapons.guns_register ("zombies4test:fnscar", {
    description = "Fnscar\n"..core.colorize("#fca800","Damage = 15\nBullet = 1 (Fnscar Cartridge)"),
-   inventory_image = "FNSCAR.png",
+   inventory_image = "fnscar.png",
    bullet_name = "zombies4test:fnscar_cartridge",
    bullet_amount = 1,  
    max_shot  = 8,
@@ -85,7 +85,7 @@ zweapons.guns_register ("zombies4test:fnscar", {
 
 zweapons.bullet_register("zombies4test:fnscar_cartridge", {
     description = "Fnscar Cartridge",
-    inventory_image = "FNSCAR_cartridge.png",
+    inventory_image = "fnscar_cartridge.png",
     damage = 15, 
 })
 
@@ -93,11 +93,11 @@ zweapons.bullet_register("zombies4test:fnscar_cartridge", {
 --- model1887:
 zweapons.guns_register ("zombies4test:model1887", {
    description = "Model1887\n"..core.colorize("#fca800","Damage = 20\nBullet = 6 (Model1887 Bullet)"),
-   inventory_image = "M1887.png",
+   inventory_image = "m1887.png",
    bullet_name = "zombies4test:model1887_bullet",
    bullet_amount = 6,  
    max_shot  = 8,
-   sound_guns = "Sawedoffshotgun"
+   sound_guns = "sawedoffshotgun"
   
 })
 
@@ -110,17 +110,17 @@ zweapons.bullet_register("zombies4test:model1887_bullet", {
 --- remington870:
 zweapons.guns_register ("zombies4test:remington870", {
    description = "Remington870\n"..core.colorize("#fca800","Damage = 20\nBullet = 4 (Remington870 Bullet)"),
-   inventory_image = "Remington870.png",
+   inventory_image = "remington870.png",
    bullet_name = "zombies4test:remington870_bullet",
    bullet_amount = 4,  
    max_shot  = 6,
-   sound_guns = "Sawedoffshotgun"
+   sound_guns = "sawedoffshotgun"
   
 })
 
 zweapons.bullet_register("zombies4test:remington870_bullet", {
     description = "Remington870 Bullet",
-    inventory_image = "Remington870_bullet.png",
+    inventory_image = "remington870_bullet.png",
     damage = 20, 
 })
 
@@ -131,12 +131,12 @@ zweapons.guns_register ("zombies4test:sawedoffshotgunt", {
    bullet_name = "zombies4test:sawedoffshotgun_bullet",
    bullet_amount = 2,  
    max_shot  = 3,
-   sound_guns = "Sawedoffshotgun"
+   sound_guns = "sawedoffshotgun"
   
 })
 
 zweapons.bullet_register("zombies4test:sawedoffshotgun_bullet", {
     description = "Sawed Off Shotgun Bullet",
-    inventory_image = "Sawedoffshotgun_bullet.png",
+    inventory_image = "sawedoffshotgun_bullet.png",
     damage = 25, 
 })

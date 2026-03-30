@@ -47,7 +47,7 @@ core.register_tool(name.."_recharged", {
         local shot_pos = vector.add(player_pos, {x = dir.x, y = dir.y + 1.5, z = dir.z})
       
         if itemstack:get_wear() <= 1571 then
-            core.sound_play("click", {pos = player_pos, gain = 1.0, max_hear_distance = 10})
+            core.sound_play("click", {pos = player_pos, max_hear_distance = 10}, true)
             user:set_wielded_item(ItemStack(name.."_discharged 1"))
             return 
         else
@@ -75,7 +75,7 @@ core.register_tool(name.."_recharged", {
                 z = dir.z * 0.1
             })
             
-           core.sound_play(def.sound_guns, {pos = player_pos, gain = 1.0, max_hear_distance = 10})
+           core.sound_play(def.sound_guns, {pos = player_pos, max_hear_distance = 10}, true)
 
             core.add_particlespawner({
                 amount = 1,

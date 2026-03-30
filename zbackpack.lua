@@ -36,7 +36,7 @@ core.register_node("zombies4test:backpack", {
        
 	on_rightclick = function(pos, node, player)	 
          zbackpack(player)
-         core.sound_play("open_backpack", {pos = pos,gain = 1.0,max_hear_distance = 5})
+         core.sound_play("open_backpack", {pos = pos,max_hear_distance = 5}, true)
         end,
 })
 

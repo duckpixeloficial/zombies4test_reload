@@ -65,7 +65,7 @@ local function invasion_event()
                     })
                 end
                     
-                    core.sound_play({name = "emergency_power", gain = 1.0, max_hear_distance = 2})
+                    core.sound_play({name = "emergency_power", max_hear_distance = 2}, true)
                     core.chat_send_all(core.colorize("#ff0000", "Attention: Invasion has started!"))
 	            
 	             spawn_zombies_invasion(player)            

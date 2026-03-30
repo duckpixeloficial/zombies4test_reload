@@ -72,7 +72,7 @@ core.register_node(zloot_name, {
 	      local lpos = pos.x .. "," .. pos.y .. "," .. pos.z
 	      local nsloots = def.slots
 	      
-	      core.sound_play(def.sound, {pos = pos,gain = 1.0,max_hear_distance = 5,})
+	      core.sound_play(def.sound, {pos = pos, max_hear_distance = 5}, true)
 
              if meta:get_string("opened") ~= "true"  then
                 inv:set_size("main", 8 * nsloots)

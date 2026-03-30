@@ -360,7 +360,7 @@ core.register_tool("zombies4test:chainsaw", {
 	range = 3,
 	_mcl_toollike_wield = true,
 	wield_scale = {x = 1.5, y = 1.5, z = 1.5},
-	inventory_image = "Chainsaw.png",
+	inventory_image = "chainsaw.png",
 	tool_capabilities = {
 		full_punch_interval = 3.0,
 		max_drop_level=1,
@@ -372,8 +372,8 @@ core.register_tool("zombies4test:chainsaw", {
 
 	sound = {
 	--breaks = "default_tool_breaks",
-	punch_use = "Chainsaw",
-	punch_use_air ="Chainsaw",
+	punch_use = "chainsaw",
+	punch_use_air ="chainsaw",
 	},
 
 	groups = {sword = 1}

@@ -14,11 +14,7 @@ core.register_craftitem("zombies4test:walkietalkie", {
 
 	local player_name = user:get_player_name()
 	
-	core.sound_play("Walkietalkiesoundeffect", {
-			pos = pos,
-			gain = 1.0,
-			max_hear_distance = 5,
-		})
+	core.sound_play("walkietalkiesoundeffect", {pos = pos, max_hear_distance = 5}, true)
 				          
         local formspec_walkietalkie_wiki = "size[7,3]"..
             "background[-0.5,-0.5;7.7,4;walkietalkie_msg.png;false]"..
