@@ -80,7 +80,7 @@ core.register_on_player_receive_fields(function(player, formname, fields )
 			  inv:remove_item("main",zcoins_stack)
 		          --inv:add_item("main", item.sell)
 			   --core.chat_send_player(player:get_player_name(), item.sell)
-		          core.sound_play("cash", {pos = pos, gain = 0.5})
+		          core.sound_play("cash", {pos = pos, gain = 0.5}, true)
 		       end                                
 			else
 		     core.chat_send_player(player:get_player_name(), "Insufficient Zcoins")

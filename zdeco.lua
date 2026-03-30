@@ -85,7 +85,7 @@ core.register_node("zombies4test:trashcan", {
 	on_rightclick = function(pos, node, clicker, itemstack) -- 0033
 	local player_name = clicker:get_player_name()
 	local inv_name = "trashs_" .. player_name
-	core.sound_play("trash_can_open", {pos = pos,gain = 1.0,max_hear_distance = 10})
+	core.sound_play("trash_can_open", {pos = pos, max_hear_distance = 10}, true)
 	local inv = core.create_detached_inventory(inv_name,{
 	on_put = function(inv, listname, index, stack, player) 
 	  inv:set_stack("trashs", 1, ItemStack(""))	    
@@ -148,7 +148,7 @@ core.register_node("zombies4test:vendingmachine", {
 		
 		if item_name == "zombies4test:zcoin" then		
 		-- Sound : https://freesound.org/people/Kyodon/sounds/153422/
-		core.sound_play("v_machine", {pos = pos,gain = 1.0,max_hear_distance = 3,})
+		core.sound_play("v_machine", {pos = pos, max_hear_distance = 3}, true)
 
 		inv:add_item("main", "zombies4test:soda 1")
 		itemstack:take_item()
@@ -187,11 +187,7 @@ core.register_node("zombies4test:radio", {
 
 	 on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
         -- Play a sound to the player at the node position
-        core.sound_play("radioo", {
-            pos = pos,
-            gain = 1.0,
-            max_hear_distance = 10,
-        })
+        core.sound_play("radioo", {pos = pos, max_hear_distance = 10}, true)
     end,
 	
 	
@@ -580,7 +576,7 @@ core.register_node("zombies4test:fake_door", {
 	
 	
 	on_rightclick = function(pos, node)
-	 core.sound_play({name="door_open_duck",gain = 1.0,max_hear_distance = 2 })
+	 core.sound_play({name="door_open_duck", max_hear_distance = 2}, true)
 	 core.set_node(pos,{name = "zombies4test:fake_door_open",param2=node.param2})
 	   return 
 	end	
@@ -611,7 +607,7 @@ core.register_node("zombies4test:fake_door_open", {
 	},
 	
 	on_rightclick = function(pos, node)
-	  core.sound_play({name="door_closed_duck",gain = 1.0,max_hear_distance = 2 })
+	  core.sound_play({name="door_closed_duck", max_hear_distance = 2}, true)
 	  core.set_node(pos,{name = "zombies4test:fake_door",param2=node.param2})
 	   return 
 	end		
@@ -783,7 +779,7 @@ core.register_node("zombies4test:toilet", {
 	},
 	
 	on_rightclick = function(pos, node)
-	 core.sound_play({name="flush_toilet",gain = 1.0,max_hear_distance = 3 })	 
+	 core.sound_play({name="flush_toilet", max_hear_distance = 3}, true)
 	end	
 })
 
@@ -1012,7 +1008,7 @@ core.register_node("zombies4test:bedside", {
        end,
 	 
        on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
-         core.sound_play("bedsitetable", {pos = pos,gain = 1.0,max_hear_distance = 10})
+         core.sound_play("bedsitetable", {pos = pos, max_hear_distance = 10}, true)
        end		
 })
 

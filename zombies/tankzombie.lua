@@ -97,7 +97,7 @@ mobs:register_mob("zombies4test:tankzombie", {
 	  	  
 	  --core.after(0.5,function()
 	    punch_tank (pp) 
-	    core.sound_play("punch_impact_ground", {pos = pos, gain = 0.5})
+	    core.sound_play("punch_impact_ground", {pos = pos, gain = 0.5}, true)
 	    self.attack:set_pos({x=pp.x+3,y=pp.y+5,z=pp.z})
 	  --end)	
 
