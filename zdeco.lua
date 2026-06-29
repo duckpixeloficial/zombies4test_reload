@@ -576,9 +576,9 @@ core.register_node("zombies4test:fake_door", {
 	
 	
 	on_rightclick = function(pos, node)
-	 core.sound_play({name="door_open_duck", max_hear_distance = 2}, true)
+	 core.sound_play("door_open_duck", {max_hear_distance = 2})
 	 core.set_node(pos,{name = "zombies4test:fake_door_open",param2=node.param2})
-	   return 
+	   return
 	end	
 })
 
@@ -607,7 +607,7 @@ core.register_node("zombies4test:fake_door_open", {
 	},
 	
 	on_rightclick = function(pos, node)
-	  core.sound_play({name="door_closed_duck", max_hear_distance = 2}, true)
+	  core.sound_play({name="door_closed_duck", max_hear_distance = 2})
 	  core.set_node(pos,{name = "zombies4test:fake_door",param2=node.param2})
 	   return 
 	end		
@@ -1008,7 +1008,7 @@ core.register_node("zombies4test:bedside", {
        end,
 	 
        on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
-         core.sound_play("bedsitetable", {pos = pos, max_hear_distance = 10}, true)
+         core.sound_play("bedsitetable", {pos = pos, max_hear_distance = 10})
        end		
 })
 
