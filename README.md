@@ -1,4 +1,3 @@
-## Welcome to the official Zombies4test wiki!
 
 ![Zombies4test](https://raw.githubusercontent.com/duckpixeloficial/zombies4test_reload/refs/heads/main/zombies4test.jpg)
 
