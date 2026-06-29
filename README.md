@@ -1,5 +1,5 @@
 
-![Zombies4test](https://codeberg.org/pixelzone/zombies4test_reload/raw/branch/main/zombies4test.jpg)
+![Zombies4test](https://raw.githubusercontent.com/duckpixeloficial/zombies4test_reload/refs/heads/main/zombies4test.jpg)
 
 ##### Zombies4Test Reload" is a rework of the Zombies4Test modpack,
 
@@ -19,19 +19,7 @@
  - depends = mobs
  - optional_depends = rp_crafting,mcl_mobs,mobs_mc,3d_armor,mcl_armor
 
----
 
-1 - [Getting Starded](https://codeberg.org/pixelzone/zombies4test_reload/src/branch/main/zwiki/Getting_Started.md)
-
-2 - [Mobs](https://codeberg.org/pixelzone/zombies4test_reload/src/branch/main/zwiki/Mobs.md)
-
-3 - [Recipes](https://codeberg.org/pixelzone/zombies4test_reload/src/branch/main/zwiki/Recipes.md)
-
-4 - [Armor](https://codeberg.org/pixelzone/zombies4test_reload/src/branch/main/zwiki/Armor.md)
-
-5 - [Weapons](https://codeberg.org/pixelzone/zombies4test_reload/src/branch/main/zwiki/Weapons.md)
-
----
 Thanks to all the testers, TenPlus1,and Darth_Tiktaalik for the help :)
 ---
 
