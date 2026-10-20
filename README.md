@@ -31,7 +31,7 @@
  - optional_depends = rp_crafting,mcl_mobs,mobs_mc,3d_armor,mcl_armor
 
 
-Thanks to all the testers, TenPlus1,and Darth_Tiktaalik for the help :)
+Thanks to all the testers, TenPlus1, and Darth_Tiktaalik for the help :)
 ---
 
 
