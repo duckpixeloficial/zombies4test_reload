@@ -1,6 +1,15 @@
-
 local S = minetest.get_translator("zombies4test")
 -- Sound zombie_girl : https://freesound.org/people/Bernuy/sounds/277473/
+
+local bride_drops  = {
+ {name = "zombies4test:claws", chance = 6, min = 1, max = 1},
+ {name = "zombies4test:zcoin", chance = 2, min = 2, max = 5},
+}
+
+if core.get_modpath("mcl_mobitems") then 
+	table.insert(bride_drops ,{name = "mcl_mobitems:rotten_flesh", chance = 1, min = 0, max = 2})
+end
+
 mobs:register_mob("zombies4test:bride", {
 	type = "monster",
 	passive = false,
@@ -64,6 +73,11 @@ mobs:register_mob("zombies4test:bride", {
 	on_die = function(self, pos) -- POSIÇÃO
 		self:death_anim()
 		zombies_count(self, pos)
+
+		if core.get_modpath("mcl_experience") then 
+		   mcl_experience.throw_xp(pos, 3)
+		end
+
 		return true -- dont remove mob until death anim finished
 	end
 })

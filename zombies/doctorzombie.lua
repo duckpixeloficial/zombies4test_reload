@@ -1,5 +1,16 @@
 local S = minetest.get_translator("zombies4test")
 
+local doctor_drops    = {
+ {name = "zombies4test:candy", chance = 2, min = 1, max = 1},
+ {name = "zombies4test:bandaid", chance = 4, min = 1, max = 1},
+ {name = "zombies4test:medicalkit", chance = 6, min = 1, max = 1},
+ {name = "zombies4test:zcoin", chance = 5, min = 1, max = 1},
+}
+
+if core.get_modpath("mcl_mobitems") then 
+	table.insert(doctor_drops   ,{name = "mcl_mobitems:rotten_flesh", chance = 1, min = 0, max = 2})
+end
+
 mobs:register_mob("zombies4test:doctorzombie", {
 	type = "monster",
 	passive = false,
@@ -38,12 +49,7 @@ mobs:register_mob("zombies4test:doctorzombie", {
 	view_range = 25,
 	fall_damage = 0,
 	-------------------------
-	drops = {
-		  {name = "zombies4test:candy", chance = 2, min = 1, max = 1},
-		  {name = "zombies4test:bandaid", chance = 4, min = 1, max = 1},
-		  {name = "zombies4test:medicalkit", chance = 6, min = 1, max = 1},
-		  {name = "zombies4test:zcoin", chance = 5, min = 1, max = 1},
-	},
+	drops = doctor_drops,
 	water_damage = 0,
 	lava_damage = 1,
 	light_damage = 0,
@@ -71,6 +77,11 @@ mobs:register_mob("zombies4test:doctorzombie", {
 	on_die = function(self, pos) -- POSIÇÃO
 		self:death_anim()
 		zombies_count(self, pos)
+
+		if core.get_modpath("mcl_experience") then 
+		   mcl_experience.throw_xp(pos, 3)
+		end
+		
 		return true -- dont remove mob until death anim finished
 	end
 })

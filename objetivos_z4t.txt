@@ -1,0 +1,2 @@
+- RETORNAR CONQUISTAS
+- CIDADES COM OBÇÃ DE DESABILITAR (desabilitando adicionar as pequenas estruturas) - somente para mcl e mt

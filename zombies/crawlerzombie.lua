@@ -2,6 +2,15 @@
 
 local S = minetest.get_translator("zombies4test")
 
+local crawler_drops    = {
+ {name = "zombies4test:canned_tomato", chance = 4, min = 1, max = 1},
+ {name = "zombies4test:zcoin", chance = 5, min = 1, max = 1},
+}
+
+if core.get_modpath("mcl_mobitems") then 
+	table.insert(crawler_drops   ,{name = "mcl_mobitems:rotten_flesh", chance = 1, min = 0, max = 2})
+end
+
 mobs:register_mob("zombies4test:crawlerzombie", {
 	type = "monster",
 	passive = false,
@@ -65,6 +74,11 @@ mobs:register_mob("zombies4test:crawlerzombie", {
 	on_die = function(self, pos) -- POSIÇÃO
 		self:death_anim()
 		zombies_count(self, pos)
+
+		if core.get_modpath("mcl_experience") then 
+		   mcl_experience.throw_xp(pos, 3)
+		end
+		
 		return true -- dont remove mob until death anim finished
 	end
 })

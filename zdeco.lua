@@ -779,7 +779,7 @@ core.register_node("zombies4test:toilet", {
 	},
 	
 	on_rightclick = function(pos, node)
-	 core.sound_play({name="flush_toilet", max_hear_distance = 3}, true)
+	 core.sound_play({name="flush_toilet", max_hear_distance = 3})
 	end	
 })
 

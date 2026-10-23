@@ -1,5 +1,15 @@
 local S = minetest.get_translator("zombies4test")
 
+local s_drops = {
+	
+ {name = "zombies4test:canned_tomato", chance = 4, min = 1, max = 1},
+ {name = "zombies4test:zcoin", chance = 3, min = 1, max = 2},
+}
+
+if core.get_modpath("mcl_mobitems") then 
+	table.insert(s_drops ,{name = "mcl_mobitems:rotten_flesh", chance = 1, min = 0, max = 2})
+end
+
 mobs:register_mob("zombies4test:survivorzombie", {
 	type = "monster",
 	passive = false,
@@ -41,12 +51,7 @@ mobs:register_mob("zombies4test:survivorzombie", {
 	view_range = 25,
 	fall_damage = 0,
 	-------------------------
-	drops = {
-	
-		{name = "zombies4test:canned_tomato", chance = 4, min = 1, max = 1},
-		{name = "zombies4test:zcoin", chance = 3, min = 1, max = 2},
-		
-	},
+	drops = s_drops,
 	water_damage = 0,
 	lava_damage = 1,
 	light_damage = 0,
@@ -73,6 +78,11 @@ mobs:register_mob("zombies4test:survivorzombie", {
 	on_die = function(self, pos) -- POSIÇÃO
 		self:death_anim()
 		zombies_count(self, pos)
+
+		if core.get_modpath("mcl_experience") then 
+		   mcl_experience.throw_xp(pos, 3)
+		end
+
 		return true -- dont remove mob until death anim finished
 	end
 })

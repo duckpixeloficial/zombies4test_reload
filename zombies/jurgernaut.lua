@@ -1,5 +1,26 @@
 local S = minetest.get_translator("zombies4test")
 
+local jugger_drops  = {
+ 	 {name = "zombies4test:helmet_juggernaut", chance = 5, min = 1, max = 1},
+	 {name = "zombies4test:chestplate_juggernaut", chance = 4, min = 1, max = 1},
+	 {name = "zombies4test:leggings_juggernaut", chance = 4, min = 1, max = 1},
+	 {name = "zombies4test:boots_juggernaut", chance = 2, min = 1, max = 1},
+	 {name = "zombies4test:zcoin", chance = 1, min = 10, max = 25}
+}
+
+local mili_drops  = {
+ 	 {name = "zombies4test:helmet_military", chance = 5, min = 1, max = 1},
+	 {name = "zombies4test:chestplate_military", chance = 4, min = 1, max = 1},
+	 {name = "zombies4test:leggings_military", chance = 4, min = 1, max = 1},
+	 {name = "zombies4test:boots_military", chance = 2, min = 1, max = 1},
+	 {name = "zombies4test:zcoin", chance = 1, min = 5, max = 10}
+}
+
+if core.get_modpath("mcl_mobitems") then 
+	table.insert(jugger_drops  ,{name = "mcl_mobitems:rotten_flesh", chance = 1, min = 0, max = 2})
+	table.insert(mili_drops  ,{name = "mcl_mobitems:rotten_flesh", chance = 1, min = 0, max = 2})
+end
+
 mobs:register_mob("zombies4test:juggernaut", {
 	type = "monster",
 	passive = false,
@@ -23,13 +44,7 @@ mobs:register_mob("zombies4test:juggernaut", {
 	sounds = {
 		random ="zombie_angry_j",
 	},
-	drops = {
-	 {name = "zombies4test:helmet_juggernaut", chance = 5, min = 1, max = 1},
-	 {name = "zombies4test:chestplate_juggernaut", chance = 4, min = 1, max = 1},
-	 {name = "zombies4test:leggings_juggernaut", chance = 4, min = 1, max = 1},
-	 {name = "zombies4test:boots_juggernaut", chance = 2, min = 1, max = 1},
-	 {name = "zombies4test:zcoin", chance = 1, min = 10, max = 25}
-	},
+	drops = jugger_drops,
 	-----------------------
 	pathfinding = 1,
 	fear_height = 6,
@@ -135,6 +150,11 @@ mobs:register_mob("zombies4test:policezombie", {
 	on_die = function(self, pos) -- POSIÇÃO
 --		self:death_anim()
 		zombies_count(self, pos)
+
+		if core.get_modpath("mcl_experience") then 
+		   mcl_experience.throw_xp(pos, 15)
+		end
+
 --		return true -- dont remove mob until death anim finished
 	end
 })
@@ -164,15 +184,9 @@ mobs:register_mob("zombies4test:militaryzombie", {
 	makes_footstep_sound = true,
 	sounds = {
 	        random ="zombie_angry",
-		death = "zombie_death ",
+			death = "zombie_death ",
 	},
-	drops = {
-	 {name = "zombies4test:helmet_military", chance = 5, min = 1, max = 1},
-	 {name = "zombies4test:chestplate_military", chance = 4, min = 1, max = 1},
-	 {name = "zombies4test:leggings_military", chance = 4, min = 1, max = 1},
-	 {name = "zombies4test:boots_military", chance = 2, min = 1, max = 1},
-	 {name = "zombies4test:zcoin", chance = 1, min = 5, max = 10}
-	},
+	drops = mili_drops,
 	-----------------------
 	pathfinding = 1,
 	fear_height = 6,
@@ -206,6 +220,11 @@ mobs:register_mob("zombies4test:militaryzombie", {
 	on_die = function(self, pos) -- POSIÇÃO
 --		self:death_anim()
 		zombies_count(self, pos)
+
+		if core.get_modpath("mcl_experience") then 
+		   mcl_experience.throw_xp(pos, 5)
+		end
+		
 --		return true -- dont remove mob until death anim finished
 	end
 })
