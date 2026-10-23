@@ -74,10 +74,11 @@ mobs:register_mob("zombies4test:clown_zombie", {
 	on_die = function(self, pos) -- POSIÇÃO
 		self:death_anim()
 		zombies_count(self, pos)
-
+       --[[
 		if core.get_modpath("mcl_experience") then 
 		   mcl_experience.throw_xp(pos, 3)
 		end
+		]]
 		
 		return true -- dont remove mob until death anim finished
 	end
